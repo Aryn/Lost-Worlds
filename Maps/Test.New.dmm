@@ -1,0 +1,20 @@
+"a" = (/turf,/area)
+"b" = (/tile/floor,/tile/wall,/turf,/area)
+"c" = (/tile/floor,/turf,/area)
+"d" = (/tile/floor,/item/test,/turf,/area)
+"e" = (/tile/floor,/structure/marker,/turf,/area)
+"f" = (/tile/floor/metal,/tile/wall/metal,/turf,/area)
+"g" = (/tile/floor/metal,/turf,/area)
+
+(1,1,1) = {"
+aaaaaaaaaa
+aaaaaaaaaa
+aabbbbbbaa
+aabccccbaa
+aabccdcbaa
+aabceccbaa
+aafggggfaa
+aaffffffaa
+aaaaaaaaaa
+aaaaaaaaaa
+"}

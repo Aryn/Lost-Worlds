@@ -6,8 +6,6 @@
  * about 1 million scheduled events with no significant cost to performance.
  */
 
-var/EventScheduler/scheduler = new
-
 EventScheduler
 	proc
 		/**

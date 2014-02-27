@@ -132,12 +132,12 @@ proc/FirePixelProjectile(atom/owner, destination, proj_type = \
 	else
 		world.log << "Invalid destination: FirePixelProjectile([owner], [destination], \
 			[proj_type])"
-		del(P)
+		erase(P)
 		return
 
 	if(P)
 		spawn(P.delay)	// so this proc can return normally
-			while(P)
+			while(P.loc != null)
 				P.UpdatePosition()
 				//if(P && (alert("[P.x]:[P.cx], [P.y]:[P.cy]",,"Ok", "Delete")=="Delete"))
 				//	del(P)
@@ -191,11 +191,6 @@ obj/sd_px_projectile
 		owner	// who/what the projectile belongs to
 		same_turf = 1	// cleared when proj leaves start turf
 
-	Read()
-		// somehow ended up saved to a file. delete it
-		. = ..()
-		spawn(2) del(src)
-
 	proc
 		CheckHit(turf/T)
 			if(!T) return
@@ -221,7 +216,7 @@ obj/sd_px_projectile
 			world << "[owner]'s [src] hit [A] at ([A.x], [A.y])."
 
 			// Hit() should ALWAYS end with the following line:
-			del(src)
+			erase(src)
 
 		Intercept()
 			/* checks the path between current postion and new
@@ -281,7 +276,7 @@ obj/sd_px_projectile
 		Terminate()
 			/* overide if you want the missile to do something
 				if it reaches range without hitting something */
-			del(src)
+			erase(src)
 
 		TurfOf(atom/A)
 			if(istype(A)) return locate(A.x, A.y, A.z)
@@ -297,12 +292,12 @@ obj/sd_px_projectile
 				same_turf = 0
 				cx -= 32
 				if(++x > world.maxx)
-					del(src)
+					erase(src)
 			while(cx < 0)
 				same_turf = 0
 				cx += 32
 				if(--x < 1)
-					del(src)
+					erase(src)
 			pixel_x = cx
 
 			cy += dy
@@ -310,12 +305,12 @@ obj/sd_px_projectile
 				same_turf = 0
 				cy -= 32
 				if(++y > world.maxy)
-					del(src)
+					erase(src)
 			while(cy < 0)
 				same_turf = 0
 				cy += 32
 				if(--y < 1)
-					del(src)
+					erase(src)
 			pixel_y = cy
 
 			if(--range<=0)

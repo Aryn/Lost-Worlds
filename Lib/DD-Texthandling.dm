@@ -295,5 +295,5 @@ obj/test/texthandling/verb/dd_list2text_test()
 		CRASH("dd_list2text() returned incorrect text: [text]")
 
 	mylist -= basic
-	del(basic)
-	del(mylist)
+	//del(basic)
+	//del(mylist)

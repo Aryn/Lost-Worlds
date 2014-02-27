@@ -169,7 +169,7 @@ window "charcreation"
 		on-size = ""
 		text = "Oppa"
 		image = ""
-		command = "ChangeFacialHair"
+		command = "ChangeBeard"
 		is-flat = true
 		stretch = false
 		is-checked = false
@@ -335,7 +335,7 @@ window "charcreation"
 		on-size = ""
 		text = "A"
 		image = ""
-		command = "ChangeColor Eyes"
+		command = "ChangeColor Text"
 		is-flat = true
 		stretch = false
 		is-checked = false
@@ -417,7 +417,7 @@ window "charcreation"
 		on-size = ""
 		text = "None"
 		image = ""
-		command = "Specialization"
+		command = "ChangeSkill"
 		is-flat = true
 		stretch = false
 		is-checked = false
@@ -757,7 +757,7 @@ window "charcreation"
 		on-size = ""
 		text = "Female"
 		image = ""
-		command = "Gender-Female"
+		command = "BeFemale"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -785,7 +785,7 @@ window "charcreation"
 		on-size = ""
 		text = "Male"
 		image = ""
-		command = "Gender-Male"
+		command = "BeMale"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -920,7 +920,7 @@ window "charcreation"
 		on-size = ""
 		text = "X"
 		image = ""
-		command = "Confirm"
+		command = "Finished"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -1017,7 +1017,7 @@ window "charselect"
 		on-size = ""
 		text = "X"
 		image = ""
-		command = "DeleteCharacter"
+		command = "Delete"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -1045,7 +1045,7 @@ window "charselect"
 		on-size = ""
 		text = "Create"
 		image = ""
-		command = "EditCharacter"
+		command = "Edit"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -1166,7 +1166,7 @@ window "charselect"
 		on-size = ""
 		text = "Ready"
 		image = ""
-		command = "Ready"
+		command = "Finished"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -1194,7 +1194,7 @@ window "charselect"
 		on-size = ""
 		text = "New Character"
 		image = ""
-		command = "SelectCharacter 3"
+		command = "Select 3"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -1222,7 +1222,7 @@ window "charselect"
 		on-size = ""
 		text = "New Character"
 		image = ""
-		command = "SelectCharacter 2"
+		command = "Select 2"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -1250,7 +1250,7 @@ window "charselect"
 		on-size = ""
 		text = "New Character"
 		image = ""
-		command = "SelectCharacter 1"
+		command = "Select 1"
 		is-flat = false
 		stretch = false
 		is-checked = true
@@ -2527,7 +2527,7 @@ window "jobpage1"
 		on-size = ""
 		text = "===>>"
 		image = ""
-		command = "JobPageNext"
+		command = "NextPage"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -2555,21 +2555,21 @@ window "jobpage1"
 		on-size = ""
 		text = "<<==="
 		image = ""
-		command = "JobPageBack"
+		command = "PrevPage"
 		is-flat = false
 		stretch = false
 		is-checked = false
 		group = ""
 		button-type = pushbutton
-	elem "jobdesc10"
+	elem "jobdesc0"
 		type = LABEL
 		pos = 112,380
 		size = 352x28
 		anchor1 = none
 		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
+		font-family = "Georgia"
+		font-size = 8
+		font-style = "bold"
 		text-color = #000000
 		background-color = none
 		is-visible = true
@@ -2587,7 +2587,7 @@ window "jobpage1"
 		keep-aspect = false
 		align = top-left
 		text-wrap = false
-	elem "jobtitle10"
+	elem "jobtitle0"
 		type = BUTTON
 		pos = 16,380
 		size = 92x32
@@ -2609,7 +2609,7 @@ window "jobpage1"
 		on-size = ""
 		text = "Job Title"
 		image = ""
-		command = "SelectJob 10"
+		command = "Select 10"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -2621,9 +2621,9 @@ window "jobpage1"
 		size = 352x28
 		anchor1 = none
 		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
+		font-family = "Georgia"
+		font-size = 8
+		font-style = "bold"
 		text-color = #000000
 		background-color = none
 		is-visible = true
@@ -2663,7 +2663,7 @@ window "jobpage1"
 		on-size = ""
 		text = "Job Title"
 		image = ""
-		command = "SelectJob 9"
+		command = "Select 9"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -2675,9 +2675,9 @@ window "jobpage1"
 		size = 352x28
 		anchor1 = none
 		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
+		font-family = "Georgia"
+		font-size = 8
+		font-style = "bold"
 		text-color = #000000
 		background-color = none
 		is-visible = true
@@ -2717,7 +2717,7 @@ window "jobpage1"
 		on-size = ""
 		text = "Job Title"
 		image = ""
-		command = "SelectJob 8"
+		command = "Select 8"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -2729,9 +2729,9 @@ window "jobpage1"
 		size = 352x28
 		anchor1 = none
 		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
+		font-family = "Georgia"
+		font-size = 8
+		font-style = "bold"
 		text-color = #000000
 		background-color = none
 		is-visible = true
@@ -2771,7 +2771,7 @@ window "jobpage1"
 		on-size = ""
 		text = "Job Title"
 		image = ""
-		command = "SelectJob 7"
+		command = "Select 7"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -2783,9 +2783,9 @@ window "jobpage1"
 		size = 352x28
 		anchor1 = none
 		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
+		font-family = "Georgia"
+		font-size = 8
+		font-style = "bold"
 		text-color = #000000
 		background-color = none
 		is-visible = true
@@ -2825,7 +2825,7 @@ window "jobpage1"
 		on-size = ""
 		text = "Job Title"
 		image = ""
-		command = "SelectJob 6"
+		command = "Select 6"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -2837,9 +2837,9 @@ window "jobpage1"
 		size = 352x28
 		anchor1 = none
 		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
+		font-family = "Georgia"
+		font-size = 8
+		font-style = "bold"
 		text-color = #000000
 		background-color = none
 		is-visible = true
@@ -2879,7 +2879,7 @@ window "jobpage1"
 		on-size = ""
 		text = "Job Title"
 		image = ""
-		command = "SelectJob 5"
+		command = "Select 5"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -2891,9 +2891,9 @@ window "jobpage1"
 		size = 352x28
 		anchor1 = none
 		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
+		font-family = "Georgia"
+		font-size = 8
+		font-style = "bold"
 		text-color = #000000
 		background-color = none
 		is-visible = true
@@ -2933,7 +2933,7 @@ window "jobpage1"
 		on-size = ""
 		text = "Job Title"
 		image = ""
-		command = "SelectJob 4"
+		command = "Select 4"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -2945,9 +2945,9 @@ window "jobpage1"
 		size = 352x28
 		anchor1 = none
 		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
+		font-family = "Georgia"
+		font-size = 8
+		font-style = "bold"
 		text-color = #000000
 		background-color = none
 		is-visible = true
@@ -2987,7 +2987,7 @@ window "jobpage1"
 		on-size = ""
 		text = "Job Title"
 		image = ""
-		command = "SelectJob 3"
+		command = "Select 3"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -2999,9 +2999,9 @@ window "jobpage1"
 		size = 352x28
 		anchor1 = none
 		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
+		font-family = "Georgia"
+		font-size = 8
+		font-style = "bold"
 		text-color = #000000
 		background-color = none
 		is-visible = true
@@ -3041,7 +3041,7 @@ window "jobpage1"
 		on-size = ""
 		text = "Job Title"
 		image = ""
-		command = "SelectJob 2"
+		command = "Select 2"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -3053,9 +3053,9 @@ window "jobpage1"
 		size = 352x28
 		anchor1 = none
 		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
+		font-family = "Georgia"
+		font-size = 8
+		font-style = "bold"
 		text-color = #000000
 		background-color = none
 		is-visible = true
@@ -3095,7 +3095,7 @@ window "jobpage1"
 		on-size = ""
 		text = "Job Title"
 		image = ""
-		command = "SelectJob 1"
+		command = "Select 1"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -4837,7 +4837,7 @@ window "sealpage1"
 		on-size = ""
 		text = "===>>"
 		image = ""
-		command = "SealPageNext"
+		command = "NextPage"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -4865,7 +4865,7 @@ window "sealpage1"
 		on-size = ""
 		text = "<<==="
 		image = ""
-		command = "SealPageBack"
+		command = "PrevPage"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -4945,7 +4945,7 @@ window "sealpage1"
 		on-size = ""
 		text = ""
 		image = ""
-		command = "SelectSeal 6"
+		command = "Select 6"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -5025,7 +5025,7 @@ window "sealpage1"
 		on-size = ""
 		text = ""
 		image = ""
-		command = "SelectSeal 5"
+		command = "Select 5"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -5105,7 +5105,7 @@ window "sealpage1"
 		on-size = ""
 		text = ""
 		image = ""
-		command = "SelectSeal 4"
+		command = "Select 4"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -5185,7 +5185,7 @@ window "sealpage1"
 		on-size = ""
 		text = ""
 		image = ""
-		command = "SelectSeal 3"
+		command = "Select 3"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -5265,7 +5265,7 @@ window "sealpage1"
 		on-size = ""
 		text = ""
 		image = ""
-		command = "SelectSeal 2"
+		command = "Select 2"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -5345,7 +5345,7 @@ window "sealpage1"
 		on-size = ""
 		text = ""
 		image = ""
-		command = "SelectSeal 1"
+		command = "Select 1"
 		is-flat = false
 		stretch = false
 		is-checked = false
