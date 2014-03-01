@@ -1,13 +1,17 @@
 "a" = (/turf/sky,/area)
-"b" = (/tile/floor,/tile/wall,/turf/sky,/area)
-"c" = (/tile/floor,/item/clothing/coat,/turf/sky,/area)
-"d" = (/tile/floor,/item/clothing/shirt,/turf/sky,/area)
-"e" = (/tile/floor,/item/clothing/trousers,/turf/sky,/area)
-"f" = (/tile/floor,/turf/sky,/area)
-"g" = (/tile/floor,/item/clothing/coat/transparent,/turf/sky,/area)
-"h" = (/tile/floor,/structure/marker,/turf/sky,/area)
-"i" = (/tile/floor/metal,/tile/wall/metal,/turf/sky,/area)
-"j" = (/tile/floor/metal,/turf/sky,/area)
+"b" = (/tile/floor,/turf/sky,/area)
+"c" = (/tile/floor,/structure/marker/eye,/turf/sky,/area)
+"d" = (/tile/floor,/character/player,/turf/sky,/area)
+"e" = (/tile/floor,/structure/marker/player_in_a_box,/turf/sky,/area)
+"f" = (/tile/floor,/tile/wall,/turf/sky,/area)
+"g" = (/tile/floor,/item/clothing/coat,/turf/sky,/area)
+"h" = (/tile/floor,/item/clothing/shirt,/turf/sky,/area)
+"i" = (/tile/floor,/item/clothing/trousers,/turf/sky,/area)
+"j" = (/tile/floor,/item/clothing/coat/transparent,/turf/sky,/area)
+"k" = (/tile/floor,/structure/marker,/turf/sky,/area)
+"l" = (/tile/floor/metal,/tile/wall/metal,/turf/sky,/area)
+"m" = (/tile/floor/metal,/turf/sky,/area)
+"n" = (/tile/floor/metal,/structure/marker/player_in_a_box,/turf/sky,/area)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaa
@@ -25,14 +29,14 @@ aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaa
-aabbbbbbaaaaaaaaaaaaaaaaa
-aabcdefbaaaaaaaaaaaaaaaaa
-aafcdeffaaaaaaaaaaaaaaaaa
-aafghfffaaaaaaaaaaaaaaaaa
-aaijjjjiaaaaaaaaaaaaaaaaa
-aaiiiiiiaaaaaaaaaaaaaaaaa
+aaabcbdaaaaaaaaaaaaaaaaaa
+aaaebbbaaaaaaaaaaaaaaaaaa
+aaffffffaaaaaaaaaaaaaaaaa
+aafghibfaaaaaaaaaaaaaaaaa
+aabghibbaaaaaaaaaaaaaaaaa
+aabjkbbbaaaaaaaaaaaaaaaaa
+aalmmmnlaaaaaaaaaaaaaaaaa
+aallllllaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 "}

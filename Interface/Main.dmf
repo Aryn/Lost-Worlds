@@ -1398,9 +1398,9 @@ window "default"
 	elem "mapsplitter"
 		type = CHILD
 		pos = 4,8
-		size = 792x560
+		size = 792x548
 		anchor1 = 1,1
-		anchor2 = 100,95
+		anchor2 = 100,93
 		font-family = ""
 		font-size = 0
 		font-style = ""
@@ -1423,9 +1423,9 @@ window "default"
 		lock = none
 	elem "Input"
 		type = INPUT
-		pos = 4,576
+		pos = 4,560
 		size = 788x15
-		anchor1 = 1,96
+		anchor1 = 1,93
 		anchor2 = 99,96
 		font-family = ""
 		font-size = 0

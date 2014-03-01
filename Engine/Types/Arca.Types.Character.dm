@@ -10,7 +10,7 @@ Things with health, combat capability and the ability to use items.
 	var/list/slots
 	var/RefSortedList/hud_objects
 	var/RefSortedList/equip_images
-	var/form //Allows clothes to fit differently on different characters.
+	var/data/form/form //Allows clothes to fit differently on different characters.
 
 /character/New()
 	. = ..()
@@ -97,4 +97,4 @@ Things with health, combat capability and the ability to use items.
 	form = new_form
 	for(var/slot_name in slots)
 		var/inv_slot/slot = slots[slot_name]
-		if(slot.item && slot.item.equip_data.form_slots) slot.item.Swap(slot) //Resets any form equip states.
+		if(slot.item && slot.item.data.form_slots) slot.item.Swap(slot) //Resets any form equip states.

@@ -54,7 +54,7 @@ Example: Hands, back, ear, belt.
 		user.RemoveHUD(item)
 
 /inv_slot/proc/Check(item/item)
-	return !src.item && item.equip_data.equip_slots && item.equip_data.equip_slots.Find(name)
+	return !src.item && item.data.equip_slots && item.data.equip_slots.Find(name)
 
 /inv_slot/proc/AssignHUD(hud)
 	src.hud = hud

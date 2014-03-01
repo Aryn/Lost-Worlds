@@ -1,8 +1,14 @@
 
+data/player/var/data/hud/hud = new
 
-var/player_hud/player_hud = new
+obj/display/blank
+	name = ""
+	icon = null
+	mouse_opacity = 2
+	layer = 0
 
-/player_hud
+data/hud
+	var/obj/display/blank/blank
 	var/obj/display/drop/drop
 	var/obj/display/swap/swap
 	var/obj/display/equipment/l_hand
@@ -26,9 +32,8 @@ var/player_hud/player_hud = new
 	var/obj/display/equipment/l_pocket
 	var/obj/display/equipment/r_pocket
 
-	//var/display_group/container
-
-/player_hud/New()
+/data/hud/New()
+	blank = new("1,1 to 15,15")
 	l_hand = new("[HANDS_OFFSET]:8,1","L Hand")
 	r_hand = new("[HANDS_OFFSET+1]:8,1","R Hand")
 	drop = new("[HANDS_OFFSET]:8,2")

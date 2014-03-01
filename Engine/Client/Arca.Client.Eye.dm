@@ -11,20 +11,28 @@
 		var/atom/movable/movable_eye = eye
 		movable_eye.RemoveHost(src)
 		eye = mob
-		UpdateView()
+		for(var/turf/T in turfs_in_view)
+			T.viewing_clients.Remove(mob)
+			if(!T.viewing_clients.len) T.viewing_clients = null
 
-//Works like viewers() but returns clients, including clients whose eye is not equal to their mob.
-proc/ViewingClients(atom/A)
+//Works like viewers() but including mobs whose client.eye is not equal to themselves.
+proc/Viewers(atom/A)
 	var/turf/T = GetTurf(A)
-	return T.viewing_clients
+	//Include remotely viewing clients if any.
+	if(T.viewing_clients)
+		return viewers(T)+T.viewing_clients
+	else
+		return viewers(T)
 
 //Clears the turfs-in-view list and rebuilds it using standard view().
 /client/proc/UpdateView()
 	for(var/turf/T in turfs_in_view)
-		T.RemoveViewer(src)
+		T.viewing_clients.Remove(mob)
+		if(!T.viewing_clients.len) T.viewing_clients = null
 	turfs_in_view.Cut()
 	for(var/turf/T in view(view,eye))
-		T.AddViewer(src)
+		if(!T.viewing_clients) T.viewing_clients = list(mob)
+		else T.viewing_clients.Add(mob)
 		turfs_in_view.Add(T)
 
 /atom/movable/var/list/hosting_clients
@@ -40,20 +48,6 @@ proc/ViewingClients(atom/A)
 /client/var/list/turfs_in_view = list()
 
 /turf/var/list/viewing_clients
-
-/turf/proc/AddViewer(client/c)
-	if(!viewing_clients) viewing_clients = list(c)
-	else viewing_clients.Add(c)
-
-/turf/proc/RemoveViewer(client/c)
-	viewing_clients.Remove(c)
-	if(!viewing_clients.len) viewing_clients = null
-
-mob/Moved()
-	. = ..()
-	if(client)
-		client.UpdateView()
-
 
 atom/movable/Moved()
 	. = ..()
