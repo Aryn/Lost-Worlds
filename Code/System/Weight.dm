@@ -1,4 +1,4 @@
-var/no_weight_log = "Logs/ErrorLists/ItemsWithoutWeight.txt"
+var/no_weight_log = "Logs/ItemsWithoutWeight.txt"
 
 /atom/movable/var/weight = 20
 /item/weight = 0

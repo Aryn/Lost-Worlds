@@ -1,20 +1,38 @@
-"a" = (/turf,/area)
-"b" = (/tile/floor,/tile/wall,/turf,/area)
-"c" = (/tile/floor,/turf,/area)
-"d" = (/tile/floor,/item/test,/turf,/area)
-"e" = (/tile/floor,/structure/marker,/turf,/area)
-"f" = (/tile/floor/metal,/tile/wall/metal,/turf,/area)
-"g" = (/tile/floor/metal,/turf,/area)
+"a" = (/turf/sky,/area)
+"b" = (/tile/floor,/tile/wall,/turf/sky,/area)
+"c" = (/tile/floor,/item/clothing/coat,/turf/sky,/area)
+"d" = (/tile/floor,/item/clothing/shirt,/turf/sky,/area)
+"e" = (/tile/floor,/item/clothing/trousers,/turf/sky,/area)
+"f" = (/tile/floor,/turf/sky,/area)
+"g" = (/tile/floor,/item/clothing/coat/transparent,/turf/sky,/area)
+"h" = (/tile/floor,/structure/marker,/turf/sky,/area)
+"i" = (/tile/floor/metal,/tile/wall/metal,/turf/sky,/area)
+"j" = (/tile/floor/metal,/turf/sky,/area)
 
 (1,1,1) = {"
-aaaaaaaaaa
-aaaaaaaaaa
-aabbbbbbaa
-aabccccbaa
-aabccdcbaa
-aabceccbaa
-aafggggfaa
-aaffffffaa
-aaaaaaaaaa
-aaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aabbbbbbaaaaaaaaaaaaaaaaa
+aabcdefbaaaaaaaaaaaaaaaaa
+aafcdeffaaaaaaaaaaaaaaaaa
+aafghfffaaaaaaaaaaaaaaaaa
+aaijjjjiaaaaaaaaaaaaaaaaa
+aaiiiiiiaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
 "}

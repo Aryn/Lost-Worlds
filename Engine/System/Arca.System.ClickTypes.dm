@@ -5,6 +5,11 @@ CONTINUE - The operation did not complete. Try a different one.
 SUCCESS - The operation succeeded, and no more operations should be tried.
 */
 
+atom/movable/Click()
+	var/character/user = usr
+	if(istype(user))
+		user.TryOperate(src)
+
 atom/movable/proc/AppliedBy(mob/user, item/item)
 	return CONTINUE
 

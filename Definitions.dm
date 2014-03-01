@@ -39,3 +39,6 @@
 #define NONE 0
 #define SEARCHING 1
 #define INCLUDE_SHIELD 1
+
+//HUD
+#define HANDS_OFFSET 8
