@@ -7,6 +7,7 @@ Examples: Uniforms, guns, medical kits, backpacks.
 	parent_type = /obj
 	name = "Item"
 	layer = 3
+	can_select = true
 
 	//The slot this item is currently equipped to, if any. Only holds a value when inside a mob.
 	var/inv_slot/slot

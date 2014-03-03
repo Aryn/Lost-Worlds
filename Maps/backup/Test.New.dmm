@@ -1,11 +1,15 @@
 "a" = (/turf/sky,/area)
 "b" = (/tile/floor,/tile/wall,/turf/sky,/area)
-"c" = (/tile/floor,/turf/sky,/area)
-"d" = (/tile/floor,/item/test,/turf/sky,/area)
-"e" = (/tile/floor,/structure/marker,/turf/sky,/area)
-"f" = (/tile/floor,/item/test/coat,/turf/sky,/area)
-"g" = (/tile/floor/metal,/tile/wall/metal,/turf/sky,/area)
-"h" = (/tile/floor/metal,/turf/sky,/area)
+"c" = (/tile/floor,/item/clothing/coat,/turf/sky,/area)
+"d" = (/tile/floor,/item/clothing/shirt,/turf/sky,/area)
+"e" = (/tile/floor,/item/clothing/trousers,/turf/sky,/area)
+"f" = (/tile/floor,/structure/chair,/turf/sky,/area)
+"g" = (/tile/floor,/turf/sky,/area)
+"h" = (/tile/floor,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/turf/sky,/area)
+"i" = (/tile/floor,/item/clothing/coat/transparent,/turf/sky,/area)
+"j" = (/tile/floor,/structure/marker,/turf/sky,/area)
+"k" = (/tile/floor/metal,/tile/wall/metal,/turf/sky,/area)
+"l" = (/tile/floor/metal,/turf/sky,/area)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaa
@@ -26,11 +30,11 @@ aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aabbbbbbaaaaaaaaaaaaaaaaa
-aabccccbaaaaaaaaaaaaaaaaa
-aaccddccaaaaaaaaaaaaaaaaa
-aaccefccaaaaaaaaaaaaaaaaa
-aaghhhhgaaaaaaaaaaaaaaaaa
-aaggggggaaaaaaaaaaaaaaaaa
+aabcdefbaaaaaaaaaaaaaaaaa
+aagcdeghaaaaaaaaaaaaaaaaa
+aagijgggaaaaaaaaaaaaaaaaa
+aakllllkaaaaaaaaaaaaaaaaa
+aakkkkkkaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 "}

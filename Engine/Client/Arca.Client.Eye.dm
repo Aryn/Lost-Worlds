@@ -17,7 +17,7 @@
 
 //Works like viewers() but including mobs whose client.eye is not equal to themselves.
 proc/Viewers(atom/A)
-	var/turf/T = GetTurf(A)
+	var/turf/T = get_turf(A)
 	//Include remotely viewing clients if any.
 	if(T.viewing_clients)
 		return viewers(T)+T.viewing_clients

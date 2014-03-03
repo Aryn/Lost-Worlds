@@ -2,6 +2,8 @@
 item/clothing/New()
 	. = ..()
 	color = rgb(rand(0,255),rand(0,255),rand(0,255))
+	pixel_x = rand(-8,8)
+	pixel_y = rand(-8,8)
 
 data/item/coat
 	icon = 'Icons/Items/Clothes/Jacket.dmi'

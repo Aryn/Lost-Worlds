@@ -15,7 +15,7 @@ data/player/var/list/online = list()
 	form = players.forms[pick(players.forms)]
 
 	body = form.body
-	skin_tone = rand(40,200)
+	skin_tone = rand(100,255)
 	body.color = rgb(skin_tone*1.2, skin_tone, skin_tone)
 	body.layer = layer
 	overlays += body
@@ -31,6 +31,9 @@ data/player/var/list/online = list()
 		var/image/beard = players.beards[pick(players.beards)]
 		beard.color = hair.color
 		overlays += beard
+
+	players.eyebrows.color = hair_color
+	overlays += players.eyebrows
 
 /character/player/SetupEquipmentSlots()
 	AddHUD(players.hud.blank)

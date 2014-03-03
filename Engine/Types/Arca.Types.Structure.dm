@@ -7,4 +7,5 @@ Examples: Portable canisters, shelves, machinery.
 	parent_type = /obj
 	name = "Structure"
 	layer = 2.5
+	can_select = true
 	var/is_anchored = false

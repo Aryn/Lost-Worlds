@@ -1,6 +1,7 @@
 
 /data/player/var/list/forms = list("male" = /data/form/male, "female" = /data/form/female)
 /data/player/var/list/beards = 'Icons/Creatures/Players/Beards.dmi'
+/data/player/var/image/eyebrows
 
 /data/player/New()
 	. = ..()
@@ -13,6 +14,8 @@
 		var/form_type = forms[form_name]
 		var/data/form/form = new form_type
 		forms[form_name] = form
+
+	eyebrows = image('Icons/Creatures/Players/Features.dmi',icon_state="eyebrows",layer=MOB_LAYER+1.4)
 
 /data/form
 	var/name

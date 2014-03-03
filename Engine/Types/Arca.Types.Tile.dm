@@ -24,6 +24,8 @@ or whether a turf has any tiles on it, use that. Think of it as a peek operation
 
 	proc/CheckExposed(turf/turf)
 		if(!turf.exposed_tile || layer >= turf.exposed_tile.layer)
+			if(turf.exposed_tile) turf.exposed_tile.can_select = false
 			turf.exposed_tile = src
+			can_select = true
 
 /turf/var/tile/exposed_tile

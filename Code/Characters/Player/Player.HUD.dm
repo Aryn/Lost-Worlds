@@ -32,6 +32,8 @@ data/hud
 	var/obj/display/equipment/l_pocket
 	var/obj/display/equipment/r_pocket
 
+	var/obj/display/selector/test
+
 /data/hud/New()
 	blank = new("1,1 to 15,15")
 	l_hand = new("[HANDS_OFFSET]:8,1","L Hand")
