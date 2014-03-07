@@ -1,40 +1,67 @@
-"a" = (/turf/sky,/area)
-"b" = (/tile/floor,/tile/wall,/turf/sky,/area)
-"c" = (/tile/floor,/item/clothing/coat,/turf/sky,/area)
-"d" = (/tile/floor,/item/clothing/shirt,/turf/sky,/area)
-"e" = (/tile/floor,/item/clothing/trousers,/turf/sky,/area)
-"f" = (/tile/floor,/structure/bed,/turf/sky,/area)
-"g" = (/tile/floor,/turf/sky,/area)
-"h" = (/tile/floor,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/item/clothing/coat/transparent,/turf/sky,/area)
-"i" = (/tile/floor,/item/clothing/coat/transparent,/turf/sky,/area)
-"j" = (/tile/floor,/structure/marker,/turf/sky,/area)
-"k" = (/tile/floor/metal,/tile/wall/metal,/turf/sky,/area)
-"l" = (/tile/floor/metal,/turf/sky,/area)
+"a" = (/turf,/area/outside)
+"b" = (/turf/mapping/floor,/area/outside)
+"c" = (/turf/mapping/supports,/area/outside)
+"d" = (/turf/mapping/wall/metal,/area)
+"e" = (/turf/mapping/wall,/area)
+"f" = (/structure/door,/turf/mapping/floor,/area)
+"g" = (/structure/table,/turf/mapping/floor/metal,/area)
+"h" = (/turf/mapping/floor/metal,/area)
+"i" = (/structure/ladder/up,/turf/mapping/floor,/area)
+"j" = (/turf/mapping/floor,/area)
+"k" = (/structure/table,/turf/mapping/floor,/area)
+"l" = (/structure/lamp{pixel_y = 32},/structure/table,/turf/mapping/floor,/area)
+"m" = (/structure/lamp{pixel_x = -32},/structure/table,/turf/mapping/floor/metal,/area)
+"n" = (/structure/lamp{pixel_x = 32},/structure/table,/turf/mapping/floor/metal,/area)
+"o" = (/structure/door/metal,/turf/mapping/floor/metal,/area)
+"p" = (/turf/mapping/window,/area)
+"q" = (/structure/lamp{pixel_x = 32},/turf/mapping/floor,/area)
+"r" = (/structure/lamp{pixel_x = -32},/turf/mapping/floor,/area)
+"s" = (/structure/marker,/turf/mapping/floor,/area)
+"t" = (/structure/lamp{pixel_y = -32},/structure/table,/turf/mapping/floor,/area)
+"u" = (/structure/ladder/down,/turf/mapping/floor,/area/outside)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaabbbbbbbaaaa
+aaacccccccccccbbbbbbbaaaa
+aaadddddddeeeeeeefeeeeaaa
+aaadghhhgdeijklkjjjjjeaaa
+aaadmhhhndejjjjjjjjjjeaaa
+aaadghhhgdejjjjjjjjjjeaaa
+aaadghhhgdejjjjjjjjjjeaaa
+aaadddodddeeppeejjjjqeaaa
+aaaekkjkkeejjjjjjjjjjeaaa
+aaaejjjjjejjjjjjjjjjjeaaa
+aaaejjjjjjjjjjjjjjjjjeaaa
+aaaerjsjjjjjjjjjjjjjjeaaa
+aaaejjjjjjjjjjjjjjjjjeaaa
+aaaejjjjjejktkkkkjjjjeaaa
+aaaeeepeeeeeeeeeeepeeeaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+"}
+
+(1,1,2) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
+aaabbbbbbbbbbbbbbbbbbbbaa
+aaabbbbbbbbubbbbbbbbbbbaa
+aaabbbbbbbbbbbbbbbbbbbbaa
+aaabbbbbbbbbbbbbbbbbbbbaa
+aaabbbbbbbbbbbbbbbbbbbbaa
+aaabbbbbbbbbbbbbbbbbbbbaa
+aaabbbbbbbbbbbbbbbbbbbbaa
+aaabbbbbbbbbbbbbbbbbbbbaa
+aaabbbbbbbbbbbbbbbbbbbbaa
+aaabbbbbbbbbbbbbbbbbbbbaa
+aaabbbbbbbbbbbbbbbbbbbbaa
+aaabbbbbbbbbbbbbbbbbbbbaa
+aaabbbbbbbbbbbbbbbbbbbbaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaa
-aabbbbbbaaaaaaaaaaaaaaaaa
-aabcdefbaaaaaaaaaaaaaaaaa
-aagcdeghaaaaaaaaaaaaaaaaa
-aagijgggaaaaaaaaaaaaaaaaa
-aakllllkaaaaaaaaaaaaaaaaa
-aakkkkkkaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 "}

@@ -1,39 +1,20 @@
-
-var/data/player/players = new
-data/player/var/list/online = list()
-
 /character/player
 	form = "female"
+	desc = "A person."
+	can_select = true
+
 	var/image/body
+	var/image/hair
+	var/image/beard
+
 	var/obj/display/active_overlay
-	var/skin_tone
-	var/hair_color
 	var/text_color
 
 /character/player/SetupAppearance()
-
-	form = players.forms[pick(players.forms)]
-
-	body = form.body
-	skin_tone = rand(100,255)
-	body.color = rgb(skin_tone*1.2, skin_tone, skin_tone)
-	body.layer = layer
+	color = "#FFFFFF"
 	overlays += body
-
-	var/image/hair = form.hair_images[pick(form.hair_images)]
-	hair_color = rgb(rand(0,255), rand(0,255), rand(0,255))
-	hair.color = hair_color
 	overlays += hair
-
-	text_color = rgb(rand(120,255), rand(120,255), rand(120,255))
-
-	if(form.name == "male")
-		var/image/beard = players.beards[pick(players.beards)]
-		beard.color = hair.color
-		overlays += beard
-
-	players.eyebrows.color = hair_color
-	overlays += players.eyebrows
+	overlays += beard
 
 /character/player/SetupEquipmentSlots()
 	AddHUD(players.hud.blank)
@@ -88,14 +69,18 @@ data/player/var/list/online = list()
 
 /character/player/Login()
 	. = ..()
-	players.online.Add(client)
+	if(!client.in_game)
+		client << "Added to player list."
+		game.players.Add(client)
 
 /character/player/Logout()
-	players.online.Remove(client)
+	if(client.in_game)
+		client << "Removed from player list."
+		game.players.Remove(client)
 
-/character/player/ClientMoved()
+/*character/player/ClientMoved()
 	. = ..()
 	if(client.last_moved > world.time-1)
 		var/turf/T = loc
-		if(isturf(T) && T.exposed_tile)
-			Sound(T.exposed_tile.Footstep(),50)
+		if(isturf(T) && T.exposed_tile && !T.exposed_tile.muted_footstep)
+			Sound(T.exposed_tile.Footstep(),rand(10,25))*/

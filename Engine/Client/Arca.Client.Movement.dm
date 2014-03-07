@@ -11,5 +11,5 @@ client/Move()
 	if(mob.IsStunned()) return 0
 	. = ..()
 	if(.)
-		last_moved = world.time
+		if(last_moved < world.time) last_moved = world.time
 		mob.ClientMoved()

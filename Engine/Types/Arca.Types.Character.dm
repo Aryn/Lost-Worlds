@@ -14,9 +14,6 @@ Things with health, combat capability and the ability to use items.
 
 /character/New()
 	. = ..()
-	SetupAppearance()
-	SetupEquipmentSlots()
-	SetupDamage()
 
 /character/Login()
 	. = ..()
@@ -40,33 +37,33 @@ Things with health, combat capability and the ability to use items.
 /character/proc/TryOperate(atom/movable/target)
 
 	if(!InRangeOf(target))
-		src << "Out of range."
+		//src << "Out of range."
 		TryRangedOperate(target)
 
 	else if(active_slot.item)
-		src << "Have an item."
+		//src << "Have an item."
 		if(active_slot.item == target)
-			src << "Operated."
+			//src << "Operated."
 			target.OperatedBy(src)
 		else if(target.AppliedBy(src,active_slot.item) == CONTINUE)
 			active_slot.item.ApplyTo(target)
 
 	else
-		src << "No item."
+		//src << "No item."
 		if(!istype(target,/item))
-			src << "Target is not an item, operated."
+			//src << "Target is not an item, operated."
 			target.OperatedBy(src)
 		else
 			var/item/item = target
 			if(active_slot.Check(item))
 				if(!item.slot)
 					item.PickUp(active_slot)
-					src << "Picked up with [active_slot]."
+					//src << "Picked up with [active_slot]."
 				else
 					item.Swap(active_slot)
-					src << "Swapped to [active_slot]."
+					//src << "Swapped to [active_slot]."
 			else
-				src << "No slot available."
+				//src << "No slot available."
 
 //Performs nothing, AppliedLongRange(), or ApplyLongRange() with the target.
 /character/proc/TryRangedOperate(atom/movable/target)
@@ -98,3 +95,9 @@ Things with health, combat capability and the ability to use items.
 	for(var/slot_name in slots)
 		var/inv_slot/slot = slots[slot_name]
 		if(slot.item && slot.item.data.form_slots) slot.item.Swap(slot) //Resets any form equip states.
+
+/character/proc/AddEquipOverlay(img)
+	overlays += img
+
+/character/proc/RemoveEquipOverlay(img)
+	overlays -= img

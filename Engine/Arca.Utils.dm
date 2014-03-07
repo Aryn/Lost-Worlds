@@ -21,3 +21,9 @@ proc/parse_screenloc(screenloc)
 	_screenloc.y = text2num(copytext(screenloc,comma+1,colon))
 	_screenloc.pixel_y = text2num(copytext(screenloc,colon+1))
 	return _screenloc
+
+proc/parse_time(total_seconds)
+	var/seconds = round(total_seconds%60)
+	var/minutes = round(total_seconds/60) % 60
+	var/hours = round(total_seconds/3600)
+	return "[hours>9 ? "" : "0"][hours]:[minutes>9 ? "" : "0"][minutes]:[seconds>9 ? "" : "0"][seconds]"

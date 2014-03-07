@@ -90,5 +90,5 @@ obj/display/group_closer
 	if(!client)
 		//world << "No client to update."
 		return
-	client.screen = hud_objects.contents
+	if(hud_objects) client.screen = hud_objects.contents
 	//world << "HUD updated."

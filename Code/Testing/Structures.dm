@@ -3,9 +3,6 @@ structure/bed
 	icon = 'Icons/Ship/Furniture/Bed.dmi'
 	dir = 2
 
-	commands = list("Flip")
-	command_icon = 'Icons/HUD/Commands.dmi'
-
 structure/proc/Flip()
 	var/matrix/M = transform
 	M.Scale(-1,1)

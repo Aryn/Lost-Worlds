@@ -14,14 +14,15 @@ var/list/item_data_types = list()
 	var/list/supported_forms   //Forms the icon has available when using form-fitting states. Null: All forms supported.
 	var/default_form           //The default form that is used when a form is unsupported. Null: requires a supported form.
 
-/data/item/New()
+/data/item/New(item/from)
+	if(from) icon = from.icon
 	if(!icon) CRASH("No equip icon for equip data: [type]")
 	var/list/states = icon_states(icon)
 
 	//Images are generated for each icon state besides the default.
 	for(var/state in states)
 		if(!IsEquipState(state)) continue
-		var/image/image = image(icon = icon, icon_state = state, layer = MOB_LAYER+layer)
+		var/image/image = image(icon = icon, icon_state = state, layer = MOB_LAYER+1+(layer/10))
 		images[state] = image
 
 proc/IsEquipState(state)

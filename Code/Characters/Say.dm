@@ -1,22 +1,29 @@
 character/player/verb/Say(msg as text)
-	Speak("said",msg)
+	Speak("says",msg)
+
+character/player/verb/Whisper(msg as text)
+	Speak("whispers",msg,1,80,2,"i")
+
+character/player/verb/Shout(msg as text)
+	Speak("shouts",msg,-1,20,30,"font size=4")
 
 character/verb/Occlude(msg as text)
 	src << OccludeMsg(msg, 60)
 
-character/player/proc/Speak(said, msg, occlusion=60)
+character/player/proc/Speak(says, msg, volume = -1, occlusion=60, occluded_volume = 3, tag="a")
 	//Immediate (mob can see sound source)
-	var/list/hearers = Viewers(src)
+	var/list/hearers = Viewers(src, volume>=0 ? volume : null)
 	for(var/mob/M in hearers)
 		if(!M.client) continue
-		M << "<font color=[text_color]><b>[src]</b> [said] \"[msg]\"</font>"
+		M << "<[tag]><font color=[text_color]><b>[src]</b> [says], \"[msg]\"</font></[tag]>"
 
 	//Obscured (source is in range but not visible)
-	var/occluded = OccludeMsg(msg, occlusion)
-	for(var/client/C in players.online)
+	for(var/client/C in game.players.contents)
 		if(C.mob in hearers) continue
-		if(get_dist(C.eye,src) <= world.view)
-			C << occluded
+		if(istype(C.mob,/mob/ghost))
+			C << "<[tag]><font color=[text_color]><b>[src]</b> [says], \"[msg]\"</font></[tag]>"
+		else if(get_dist(C.eye,src) <= occluded_volume)
+			C << "<[tag]><small><font color=[text_color]><b>Someone</b> [says], \"[OccludeMsg(msg,occlusion)]\"</font></small></[tag]>"
 
 proc/OccludeMsg(msg, amt)
 	var/list/word_list = dd_text2list(msg," ")

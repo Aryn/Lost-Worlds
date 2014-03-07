@@ -46,6 +46,13 @@ Examples: Uniforms, guns, medical kits, backpacks.
 	next.user.UpdateHUD()
 	next.user.Sound('Sounds/Inventory/Equip.ogg',30)
 
+/item/proc/Consume()
+	Erase()
+
+/item/Erase()
+	if(slot) slot.Clear()
+	. = ..()
+
 /item/proc/OnSlotSet(inv_slot/slot)
 	src.slot = slot
 	var/equip_state = slot.equip_state
@@ -55,19 +62,22 @@ Examples: Uniforms, guns, medical kits, backpacks.
 	equip_image = data.images[equip_state]
 	equip_image.color = color
 	equip_image.alpha = alpha
-	slot.user.overlays += equip_image
+	slot.user.AddEquipOverlay(equip_image)
 
 /item/proc/OnSlotClear()
-	slot.user.overlays -= equip_image
+	slot.user.RemoveEquipOverlay(equip_image)
 	src.slot = null
 
 /item/proc/SetData()
 	if(ispath(data))
 		var/data/item/type_data = item_data_types[data]
 		if(!type_data)
-			type_data = new data
+			type_data = new data(src)
 			item_data_types[data] = type_data
 		data = type_data
 	else
-		loc = null
-		CRASH("No data path for [type]")
+		var/data/item/type_data = item_data_types[type]
+		if(!type_data)
+			type_data = new /data/item(src)
+			item_data_types[type] = type_data
+		data = type_data

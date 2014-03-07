@@ -11,9 +11,10 @@ atom/proc/Sound(sound/sound, base_volume=100, distant_file)
 	sound.volume = base_volume-30
 	if(sound.volume <= 0 && !distant_file) return
 
-	for(var/client/C in players.online)
+	for(var/client/C in game.players.contents)
 		if(C.mob in hearers) continue
-		if(get_dist(C.eye,src) > world.view)
+		var/atom/eye = C.eye
+		if(!eye || eye.z != z || get_dist(eye,src) > world.view)
 			if(distant_file) C << distant_file
 		else
 			C << sound

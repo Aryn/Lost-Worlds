@@ -1,0 +1,4 @@
+#define HUD_LAYER 15
+#define LIGHT_LAYER 10
+#define HAIR_LAYER MOB_LAYER+2
+#define BEARD_LAYER MOB_LAYER+2.5

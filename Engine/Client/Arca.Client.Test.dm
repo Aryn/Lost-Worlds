@@ -13,10 +13,3 @@ mob/verb/TestEye()
 	invisibility = 0
 
 client/perspective = EYE_PERSPECTIVE
-
-/structure/marker/player_in_a_box
-	icon = 'Icons/Ship/Box.dmi'
-	invisibility = 0
-	New()
-		. = ..()
-		new/character/player(src)
