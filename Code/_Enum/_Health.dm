@@ -1,0 +1,2 @@
+#define MAX_HEALTH 100
+#define TARGET_NUMBER_PER_DMG 1/15

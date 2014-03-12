@@ -1,9 +1,4 @@
-#define HOME 1
-#define START 2
-#define MAP_TICK_SPEED 2
-#define MAP_TIMESCALE SECONDS(10) //Amount of time it takes the ship to cross a map grid square.
-#define STANDARD_TIMESCALE MINUTES(5)
-#define STD_CONVERSION(X) ((X)*(STANDARD_TIMESCALE/MAP_TIMESCALE))
+
 
 var/game/game = new
 
@@ -12,6 +7,7 @@ client/var/in_game = false
 /game
 	var/started = true
 	var/map_ticks = false
+	var/char_ticks = false
 	var/RefSortedList/players = new  //Players in this round, including ghosts.
 
 	var/ports_in_route = 4
@@ -44,6 +40,14 @@ client/var/in_game = false
 
 	for(var/structure/table/T)
 		T.Join()
+
+	dead_matrix = new
+	dead_matrix.Turn(90)
+	dead_matrix.Translate(0,-10)
+
+	SelectRoute()
+
+	spawn TickCharacters()
 
 
 /game/proc/SelectRoute(home_at_end = false)
@@ -159,6 +163,12 @@ game/proc/Arrived()
 				engine_sound.Stop()
 			in_transit = false
 
+/game/proc/TickCharacters()
+	char_ticks = true
+	while(char_ticks)
+		sleep(LIFE_TICK_SPEED)
+		for(var/character/C) C.Life()
+
 /proc/Closest(obj/map_point/port/A, obj/map_point/port/B)
 	ASSERT(A)
 	ASSERT(B)
@@ -179,9 +189,10 @@ game/proc/Arrived()
 /game/proc/MakeCharacter(mob/login/login)
 	winshow(login,"charselect",0)
 
-	var/character/player/P = new(get_turf(locate(/structure/marker)))
+	var/character/humanoid/human/P = new(get_turf(locate(/structure/marker)))
 	login.selected.WriteToPlayer(P)
 	P.SetupEquipmentSlots()
+	P.SetupDamage()
 
 	if(started)
 		var/inv_slot/fill = P.slots["Shirt"]

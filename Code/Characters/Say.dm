@@ -1,16 +1,13 @@
-character/player/verb/Say(msg as text)
+character/humanoid/verb/Say(msg as text)
 	Speak("says",msg)
 
-character/player/verb/Whisper(msg as text)
+character/humanoid/verb/Whisper(msg as text)
 	Speak("whispers",msg,1,80,2,"i")
 
-character/player/verb/Shout(msg as text)
+character/humanoid/verb/Shout(msg as text)
 	Speak("shouts",msg,-1,20,30,"font size=4")
 
-character/verb/Occlude(msg as text)
-	src << OccludeMsg(msg, 60)
-
-character/player/proc/Speak(says, msg, volume = -1, occlusion=60, occluded_volume = 3, tag="a")
+character/humanoid/proc/Speak(says, msg, volume = -1, occlusion=60, occluded_volume = 3, tag="a")
 	//Immediate (mob can see sound source)
 	var/list/hearers = Viewers(src, volume>=0 ? volume : null)
 	for(var/mob/M in hearers)

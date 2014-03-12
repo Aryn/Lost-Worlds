@@ -36,6 +36,8 @@ Things with health, combat capability and the ability to use items.
 
 /character/proc/TryOperate(atom/movable/target)
 
+	if(IsStunned()) return FAILED
+
 	if(!InRangeOf(target))
 		//src << "Out of range."
 		TryRangedOperate(target)

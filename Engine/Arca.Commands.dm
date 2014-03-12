@@ -38,7 +38,7 @@ client/Click(atom/A,control,location,params)
 obj/display/command
 	layer = HUD_LAYER+2
 	var/atom/movable/thing
-	var/command
+	var/command/command
 	New(screen_loc,atom/movable/S,command/command)
 		. = ..()
 		thing = S
@@ -52,11 +52,8 @@ obj/display/command
 		if(plist["right"])
 			usr.client << "<b>[command.name]</b><br><small>[command.desc]</small>"
 		else
-			var/character/C = usr
-			if(C && C.combatant && !C.combatant.acting)
-				C.combatant.Select(thing, command)
-			else
-				call(thing,command.name)()
+			//var/character/C = usr
+			call(thing,command.name)()
 			var/client/client = usr.client
 			if(client.selectors.len)
 				client.screen -= client.selectors
@@ -73,19 +70,22 @@ client/proc/DisplayCommands(atom/movable/S, screen_loc)
 	var/nextx = 1
 	var/nexty = 0
 
-	for(var/command_name in S.commands)
-		var/obj/display/command/c = new("[sloc.x]:[sloc.pixel_x+nextx*24],[sloc.y]:[sloc.pixel_y+nexty*24]",S,command_name,
-		S.commands[command_name])
+	var/context = NORMAL
+	var/character/C = mob
+	if(istype(C) && C.combatant) context = BATTLE
 
+	for(var/command/command in S.commands)
+		if(!(command.context & context)) continue
+		var/obj/display/command/c = new("[sloc.x]:[sloc.pixel_x+nextx*24],[sloc.y]:[sloc.pixel_y+nexty*24]",S,command)
 		selectors.Add(c)
 		nextx++
 		if(nextx*24+48 > remaining_screen)
 			nextx = 0
 			nexty++
 
-	for(var/command_name in standard_commands)
-		var/obj/display/command/standard/c = new("[sloc.x]:[sloc.pixel_x+nextx*24],[sloc.y]:[sloc.pixel_y+nexty*24]",S,command_name,
-		standard_commands[command_name])
+	for(var/command/command in standard_commands)
+		if(!(command.context & context)) continue
+		var/obj/display/command/standard/c = new("[sloc.x]:[sloc.pixel_x+nextx*24],[sloc.y]:[sloc.pixel_y+nexty*24]",S,command)
 
 		selectors.Add(c)
 		nextx++

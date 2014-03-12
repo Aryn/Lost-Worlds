@@ -6,11 +6,15 @@ structure/table
 	density = 1
 
 	commands = list(
-	"Hide" = "Crawl under the table and hide."
+	new/command("Hide", NORMAL, "Crawl under the table and hide.")
 	)
 	command_icon = 'Icons/Commands/Concealment.dmi'
 
 	var/auto_dir = 0
+
+structure/table/AppliedBy(character/C, item/I)
+	I.Drop(loc)
+	return SUCCESS
 
 structure/table/proc/Join()
 	auto_dir = 0

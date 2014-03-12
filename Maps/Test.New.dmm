@@ -1,43 +1,51 @@
 "a" = (/turf,/area/outside)
 "b" = (/turf/mapping/floor,/area/outside)
-"c" = (/turf/mapping/supports,/area/outside)
-"d" = (/turf/mapping/wall/metal,/area)
-"e" = (/turf/mapping/wall,/area)
-"f" = (/structure/door,/turf/mapping/floor,/area)
-"g" = (/structure/table,/turf/mapping/floor/metal,/area)
-"h" = (/turf/mapping/floor/metal,/area)
-"i" = (/structure/ladder/up,/turf/mapping/floor,/area)
-"j" = (/turf/mapping/floor,/area)
-"k" = (/structure/table,/turf/mapping/floor,/area)
-"l" = (/structure/lamp{pixel_y = 32},/structure/table,/turf/mapping/floor,/area)
-"m" = (/structure/lamp{pixel_x = -32},/structure/table,/turf/mapping/floor/metal,/area)
-"n" = (/structure/lamp{pixel_x = 32},/structure/table,/turf/mapping/floor/metal,/area)
-"o" = (/structure/door/metal,/turf/mapping/floor/metal,/area)
-"p" = (/turf/mapping/window,/area)
-"q" = (/structure/lamp{pixel_x = 32},/turf/mapping/floor,/area)
-"r" = (/structure/lamp{pixel_x = -32},/turf/mapping/floor,/area)
-"s" = (/structure/marker,/turf/mapping/floor,/area)
-"t" = (/structure/lamp{pixel_y = -32},/structure/table,/turf/mapping/floor,/area)
-"u" = (/structure/ladder/down,/turf/mapping/floor,/area/outside)
+"c" = (/structure/controls,/turf/mapping/floor,/area/outside)
+"d" = (/turf/mapping/supports,/area/outside)
+"e" = (/turf/mapping/wall/metal,/area)
+"f" = (/turf/mapping/wall,/area)
+"g" = (/structure/door,/turf/mapping/floor,/area)
+"h" = (/structure/table,/turf/mapping/floor/metal,/area)
+"i" = (/character/lizard/blue,/turf/mapping/floor/metal,/area)
+"j" = (/turf/mapping/floor/metal,/area)
+"k" = (/structure/ladder/up,/turf/mapping/floor,/area)
+"l" = (/turf/mapping/floor,/area)
+"m" = (/structure/table,/turf/mapping/floor,/area)
+"n" = (/structure/lamp{pixel_y = 32},/structure/table,/turf/mapping/floor,/area)
+"o" = (/structure/lamp{pixel_x = -32},/structure/table,/turf/mapping/floor/metal,/area)
+"p" = (/structure/lamp{pixel_x = 32},/structure/table,/turf/mapping/floor/metal,/area)
+"q" = (/structure/door/metal,/turf/mapping/floor/metal,/area)
+"r" = (/turf/mapping/window,/area)
+"s" = (/structure/lamp{pixel_x = 32},/turf/mapping/floor,/area)
+"t" = (/structure/lamp{pixel_x = -32},/turf/mapping/floor,/area)
+"u" = (/structure/marker,/turf/mapping/floor,/area)
+"v" = (/structure/table,/item/stack/bandages,/turf/mapping/floor,/area)
+"w" = (/structure/lamp{pixel_y = -32},/structure/table,/item/stack/bandages,/turf/mapping/floor,/area)
+"x" = (/structure/table,/item/medical/sutures,/turf/mapping/floor,/area)
+"y" = (/structure/table,/item/weapon/gun/revolver,/turf/mapping/floor,/area)
+"z" = (/structure/table,/item/weapon/sword,/turf/mapping/floor,/area)
+"A" = (/structure/ladder/down,/turf/mapping/floor,/area/outside)
+"B" = (/character/lizard/blue,/turf/mapping/floor,/area/outside)
+"C" = (/character/lizard/green,/turf/mapping/floor,/area/outside)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaabbbbbbbaaaa
-aaacccccccccccbbbbbbbaaaa
-aaadddddddeeeeeeefeeeeaaa
-aaadghhhgdeijklkjjjjjeaaa
-aaadmhhhndejjjjjjjjjjeaaa
-aaadghhhgdejjjjjjjjjjeaaa
-aaadghhhgdejjjjjjjjjjeaaa
-aaadddodddeeppeejjjjqeaaa
-aaaekkjkkeejjjjjjjjjjeaaa
-aaaejjjjjejjjjjjjjjjjeaaa
-aaaejjjjjjjjjjjjjjjjjeaaa
-aaaerjsjjjjjjjjjjjjjjeaaa
-aaaejjjjjjjjjjjjjjjjjeaaa
-aaaejjjjjejktkkkkjjjjeaaa
-aaaeeepeeeeeeeeeeepeeeaaa
+aaaaaaaaaaaaaabbbcbbbaaaa
+aaadddddddddddbbbbbbbaaaa
+aaaeeeeeeefffffffgffffaaa
+aaaehiijhefklmnmlllllfaaa
+aaaeoijjpefllllllllllfaaa
+aaaehjjjhefllllllllllfaaa
+aaaehjjjhefllllllllllfaaa
+aaaeeeqeeeffrrffllllsfaaa
+aaafmmlmmffllllllllllfaaa
+aaaflllllflllllllllllfaaa
+aaaflllllllllllllllllfaaa
+aaaftlullllllllllllllfaaa
+aaaflllllllllllllllllfaaa
+aaaflllllflvwxyzmllllfaaa
+aaafffrfffffffffffrfffaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
@@ -49,17 +57,17 @@ aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aaabbbbbbbbbbbbbbbbbbbbaa
-aaabbbbbbbbubbbbbbbbbbbaa
+aaabbbbbbbbAbbbbbbbbbbbaa
 aaabbbbbbbbbbbbbbbbbbbbaa
 aaabbbbbbbbbbbbbbbbbbbbaa
 aaabbbbbbbbbbbbbbbbbbbbaa
 aaabbbbbbbbbbbbbbbbbbbbaa
 aaabbbbbbbbbbbbbbbbbbbbaa
 aaabbbbbbbbbbbbbbbbbbbbaa
+aaabbbbBbbbbbbbbbbbbbbbaa
+aaabbbbbbbbbbBbbbbbbbbbaa
 aaabbbbbbbbbbbbbbbbbbbbaa
-aaabbbbbbbbbbbbbbbbbbbbaa
-aaabbbbbbbbbbbbbbbbbbbbaa
-aaabbbbbbbbbbbbbbbbbbbbaa
+aaabbbbbbCbbbbbbbbbbbbbaa
 aaabbbbbbbbbbbbbbbbbbbbaa
 aaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaa

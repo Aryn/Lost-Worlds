@@ -75,7 +75,10 @@ data/hud
 	var/obj/display/equipment/l_pocket
 	var/obj/display/equipment/r_pocket
 
-	var/obj/display/selector/test
+	var/display_group/combat
+
+	var/obj/display/combat/hit/hit
+	var/obj/display/combat/stand/stand
 
 /data/hud/New()
 	blank = new("1,1 to 15,15")
@@ -110,6 +113,14 @@ data/hud
 
 	equip_group.Add(boots)
 	equip_group.Add(trousers)
+
+	combat = new
+
+	hit = new("[HANDS_OFFSET]:8, 3")
+	stand = new("[HANDS_OFFSET+1]:8, 3")
+
+	combat.Add(hit)
+	combat.Add(stand)
 
 	/*container = new
 	states = list("H<","H","H=","H","H=","H>")

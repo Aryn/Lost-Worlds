@@ -23,7 +23,7 @@
 	for(var/state in icon_states(hair_icon))
 		hair_images[state] = image(icon = hair_icon, icon_state = state, layer = HAIR_LAYER)
 
-/character/player/ChangeForm(form_name)
+/character/humanoid/ChangeForm(form_name)
 	form = players.forms[form_name]
 	for(var/slot_name in slots)
 		var/inv_slot/slot = slots[slot_name]

@@ -7,7 +7,7 @@ structure/door
 	density = 1
 
 	commands = list(
-	"Peek" = "Peek at the other side of the door. Moving cancels the peek."
+	new/command("Peek", NORMAL, "Peek at the other side of a door. Moving cancels the peek.")
 	)
 	command_icon = 'Icons/Commands/Door.dmi'
 

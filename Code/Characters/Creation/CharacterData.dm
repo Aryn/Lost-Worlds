@@ -124,7 +124,7 @@
 		creation_date = f.getstring(11)
 		CHECK_FILE_ERRORS
 
-	proc/WriteToPlayer(character/player/P)
+	proc/WriteToPlayer(character/humanoid/human/P)
 		var/image/i_body = form.body
 		var/image/i_hair = form.hair_images[hair_style]
 		var/image/i_beard = players.beards[beard]

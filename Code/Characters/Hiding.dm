@@ -31,7 +31,7 @@ character/Move()
 				is_hiding = WELL
 
 
-character/player/Hide()
+character/humanoid/human/Hide()
 	world << "Hiding..."
 	if(!perceptive_mark)
 		perceptive_mark = image('Icons/Markers/Perception.dmi',src,layer=MOB_LAYER)
@@ -48,7 +48,7 @@ character/player/Hide()
 		is_hiding = POORLY
 	else
 		is_hiding = WELL
-character/player/UnHide()
+character/humanoid/human/UnHide()
 	world << "Unhiding..."
 	overlays += body
 	overlays += hair
@@ -60,6 +60,6 @@ character/player/UnHide()
 	for(var/item/item in src)
 		item.OnSlotSet(item.slot)
 
-character/player/AddEquipOverlay(img)
+character/humanoid/AddEquipOverlay(img)
 	if(!is_hiding)
 		. = ..()

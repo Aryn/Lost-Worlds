@@ -1,22 +1,27 @@
-/character/player
-	form = "female"
-	desc = "A person."
-	can_select = true
+/character/humanoid
 
+	desc = "A personish thing."
+
+	can_select = true
 	var/image/body
-	var/image/hair
-	var/image/beard
 
 	var/obj/display/active_overlay
 	var/text_color
 
-/character/player/SetupAppearance()
+/character/humanoid/human
+	form = "female"
+	desc = "A person"
+
+	var/image/hair
+	var/image/beard
+
+/character/humanoid/human/SetupAppearance()
 	color = "#FFFFFF"
 	overlays += body
 	overlays += hair
 	overlays += beard
 
-/character/player/SetupEquipmentSlots()
+/character/humanoid/SetupEquipmentSlots()
 	AddHUD(players.hud.blank)
 
 	slots = new
@@ -51,7 +56,11 @@
 
 	active_slot = slots["L Hand"]
 
-/character/player/SwapActiveSlot()
+/character/humanoid/SetupDamage()
+	health_meter = new("1,1")
+	AddHUD(health_meter)
+
+/character/humanoid/SwapActiveSlot()
 	if(active_slot == slots["L Hand"])
 		active_slot = slots["R Hand"]
 		active_overlay.screen_loc = players.hud.r_hand.screen_loc
@@ -60,20 +69,20 @@
 		active_overlay.screen_loc = players.hud.l_hand.screen_loc
 	//UpdateHUD()
 
-/character/player/proc/CreateSlot(slot_name, obj/hud, equip_layer = 0)
+/character/humanoid/proc/CreateSlot(slot_name, obj/hud, equip_layer = 0)
 	if(!slots) slots = new
 	var/inv_slot/slot = new/inv_slot(src,slot_name,equip_layer)
 	slot.AssignHUD(hud)
 	slots.Add(slot_name)
 	slots[slot_name] = slot
 
-/character/player/Login()
+/character/humanoid/Login()
 	. = ..()
 	if(!client.in_game)
 		client << "Added to player list."
 		game.players.Add(client)
 
-/character/player/Logout()
+/character/humanoid/Logout()
 	if(client.in_game)
 		client << "Removed from player list."
 		game.players.Remove(client)

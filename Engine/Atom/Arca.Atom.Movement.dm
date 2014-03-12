@@ -2,6 +2,7 @@
 /*
 Proc that force-moves the atom into a new location, ignoring checks.
 */
+atom/movable/var/last_moved
 
 atom/movable/proc/ForceMove(atom/newloc)
 	//loc.Exit(src)
@@ -25,6 +26,7 @@ Proc that catches all movement, forced or otherwise.
 */
 
 atom/movable/proc/Moved(atom/oldloc)
+	last_moved = world.time
 
 atom/movable/proc/Bumped(atom/movable/by)
 
