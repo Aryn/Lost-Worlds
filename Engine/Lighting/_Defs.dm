@@ -10,7 +10,7 @@ Some math procs used by lighting, including ul's fastroot.
 #define LIGHTING_READY lighting_controller && lighting_controller.started
 
 #define DISTSQ3(A,B,C) (SQ(A)+SQ(B)+SQ(C))
-#define FSQRT(X) (X > fastroot.len ? new_fsqrt(X) : fastroot[(X)+1])
+#define FSQRT(X) (X >= fastroot.len ? new_fsqrt(X) : fastroot[(X)+1])
 #define MAX_VALUE(X) (X.cached_value < 0 ? X.max_value() : X.cached_value)
 #define VALUE_OF(X) ( !X ? 0 : ( X.is_outside ? LIGHTCLAMP(lighting_controller.starlight) : X.lit_value ) )
 #define LIGHTCLAMP(x) ( max(0,min(LIGHT_STATES,round(x,1))) )

@@ -1,5 +1,3 @@
-
-
 var/game/game = new
 
 client/var/in_game = false
@@ -46,6 +44,8 @@ client/var/in_game = false
 	dead_matrix.Translate(0,-10)
 
 	SelectRoute()
+
+	CallHook("game_start")
 
 	spawn TickCharacters()
 

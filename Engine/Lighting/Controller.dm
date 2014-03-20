@@ -91,6 +91,10 @@ var/all_lightpoints_made = 0
 	all_lightpoints_made = 1
 	started = 1
 
+	var/n = LIGHTCLAMP(starlight)
+	for(var/area/outside/O)
+		O.icon_state = "[n][n][n][n]"
+
 	for(var/turf/T in light_border)
 		T.CheckForOpaqueObjects()
 		if(!T.has_opaque) T.SetLight(starlight,5)
@@ -113,6 +117,15 @@ var/all_lightpoints_made = 0
 		T.ResetValue()
 		T.light_overlay.icon_state = "[MAX_VALUE(T.lightSE)][MAX_VALUE(T.lightSW)][MAX_VALUE(T.lightNW)][MAX_VALUE(T.lightNE)]"
 
+/datum/controller/lighting/proc/AmbientFlash(t)
+	var/c = LIGHTCLAMP(starlight)
+	var/max = LIGHT_STATES
+	for(var/area/outside/O)
+		O.icon_state = "[max][max][max][max]"
+
+	spawn(t)
+		for(var/area/outside/O)
+			O.icon_state = "[c][c][c][c]"
 
 	//for(var/turf/T)
 	//	if(T.light_overlay)

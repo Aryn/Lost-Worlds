@@ -17,10 +17,6 @@ tile/floor/metal/Footstep()
 tile/support/Footstep()
 	return pick(footsteps_support)
 
-var/global_ambience/storm_sound = new/global_ambience/storm
-var/global_ambience/wind_sound = new/global_ambience/wind
-var/global_ambience/engine_sound = new/global_ambience/engine
-
 /global_ambience
 	var/playing = false
 
@@ -35,7 +31,11 @@ var/global_ambience/engine_sound = new/global_ambience/engine
 		start = sound(start, channel=channel, volume = volume)
 		loop = sound(loop, repeat=1, channel=channel, volume = volume)
 		end = sound(end, channel=channel, volume = volume)
-		//loop.status = SOUND_UPDATE
+
+	proc/SetVol(mob/M, n)
+		var/sound/s = sound(loop, repeat=1, channel=channel, volume = n)
+		s.status = SOUND_UPDATE
+		M << s
 
 	proc/Play(mob/M)
 		playing = true
@@ -56,20 +56,28 @@ var/global_ambience/engine_sound = new/global_ambience/engine
 			for(M)
 				Stop(M)
 
-/global_ambience/storm
-	start = 'Sounds/Weather/StormStart.ogg'
-	start_length = 48
-	volume = 75
-	loop = 'Sounds/Weather/Storm2.ogg'
-	end = 'Sounds/Weather/StormEnd.ogg'
-	channel = 2
+/global_ambience/outside/var/inside_volume
+/global_ambience/outside/Play(mob/M)
+	if(M)
+		var/master_volume = inside_volume
+		if(isturf(M.loc))
+			var/area/A = M.loc
+			A = A.loc
+			if(istype(A,/area/outside))
+				master_volume = volume
 
-/global_ambience/wind
-	loop = 'Sounds/Weather/WindLoop.ogg'
-	channel = 1
-	volume = 40
+		start.volume = master_volume
+		loop.volume = master_volume
+	. = ..()
 
-/global_ambience/engine
-	loop = 'Sounds/Ship/Engine.ogg'
-	channel = 3
-	volume = 50
+/global_ambience/outside/Stop(mob/M)
+	if(M)
+		var/master_volume = inside_volume
+		if(isturf(M.loc))
+			var/area/A = M.loc
+			A = A.loc
+			if(istype(A,/area/outside))
+				master_volume = volume
+
+		end.volume = master_volume
+	. = ..()

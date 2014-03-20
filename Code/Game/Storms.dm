@@ -90,19 +90,17 @@
 		radius = r
 
 	proc/Affect()
-		world << "<font color=yellow><b>You are caught in a [severity > 50 ? "<font color=red>severe</font>" : ""] [storm_type] storm!</b></font>"
-		storm_sound.Play()
-		wind_sound.Stop()
+		//world << "<font color=yellow><b>You are caught in a [severity > 50 ? "<font color=red>severe</font>" : ""] [storm_type] storm!</b></font>"
+		StartWeather(storm_type, severity)
 		storm_time = world.time
 		affecting = true
 
 	proc/Stop()
-		world << "\green <b>The [storm_type] storm has passed.</b>"
-		var/time = (world.time - storm_time)/10
-		world << "\green You were in the storm for [parse_time(time)]."
-		storm_sound.Stop()
-		wind_sound.Play()
-		world << "([parse_time(STD_CONVERSION(time))] Standard)"
+		//world << "\green <b>The [storm_type] storm has passed.</b>"
+		//var/time = (world.time - storm_time)/10
+		//world << "\green You were in the storm for [parse_time(time)]."
+		EndWeather(storm_type, severity)
+		//world << "([parse_time(STD_CONVERSION(time))] Standard)"
 		affecting = false
 
 	proc/Regenerate(into_wind = true)
@@ -136,11 +134,11 @@
 
 	proc/PickStormType()
 		if(map_y < 160)
-			storm_type = "snow"
+			storm_type = /weather/snow
 			color = "#FFFFFF88"
 		else if(map_y > 320)
-			storm_type = "sand"
+			storm_type = /weather/lightning/dust
 			color = "#AAAA0088"
 		else
-			storm_type = "rain"
+			storm_type = /weather/lightning/rain
 			color = "#55555588"

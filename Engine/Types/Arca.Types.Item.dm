@@ -26,6 +26,7 @@ Examples: Uniforms, guns, medical kits, backpacks.
 	src.ForceMove(slot.user)
 	slot.user.UpdateHUD()
 	Sound('Sounds/Inventory/Get.ogg')
+	if(light) light.Reset()
 
 //Called when an item drops from a mob's inventory to a map location.
 /item/proc/Drop(turf/maploc)
@@ -34,6 +35,7 @@ Examples: Uniforms, guns, medical kits, backpacks.
 	src.ForceMove(maploc)
 	user.UpdateHUD()
 	Sound('Sounds/Inventory/Drop.ogg')
+	if(light) light.Reset()
 
 //Called when an item is moved from one slot to another without moving to a turf.
 /item/proc/Swap(inv_slot/next)

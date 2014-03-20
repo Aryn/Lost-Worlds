@@ -7,8 +7,16 @@ atom/movable/var/last_moved
 atom/movable/proc/ForceMove(atom/newloc)
 	//loc.Exit(src)
 	//newloc.Enter(src)
+	var/area/area
+	if(isturf(loc))
+		area = loc:loc
+		area.Exited(src)
 	loc = newloc
 	loc.Exited(src)
+
+	if(isturf(newloc))
+		area = newloc.loc
+		area.Entered(src)
 	newloc.Entered(src)
 	Moved(loc)
 

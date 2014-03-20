@@ -90,14 +90,14 @@ atom/movable/Del()
 	if(opacity) SetOpacity(0)
 	. = ..()
 
-atom/movable/Move()
+atom/movable/Move(loc)
 	var/o = opacity
 	if(o) SetOpacity(0)
 	. = ..()
 	if(.)
 		if(o) SetOpacity(1)
-		if(light)
-			light.Reset()
+		if(ismob(src)) UpdateLights()
+		else if(light) light.Reset()
 			//if(lighting_ready()) lighting_controller.FlushIconUpdates()
 
 atom/proc/SetLight(intensity, radius)
@@ -135,14 +135,18 @@ atom/proc/SetOpacity(o)
 			else T.SetLight(0,0)
 		//lighting_controller.FlushIconUpdates()
 
+atom/proc/UpdateLights()
+	if(light) light.Reset()
+	for(var/atom/movable/A in src)
+		if(A.light) A.light.Reset()
+
 //turf/proc/UpdateLight()
 //	if(light_overlay)
 //		light_overlay.icon_state = "[MAX_VALUE(lightSE)][MAX_VALUE(lightSW)][MAX_VALUE(lightNW)][MAX_VALUE(lightNE)]"
 
-turf/proc/AddLight(light/light)
+turf/proc/AddLight(light/light, brightness)
 	if(is_outside) return
 
-	var/brightness = light.CalculateBrightness(src)
 	if(brightness <= 0) return
 
 	if(!lit_by) lit_by = list()
