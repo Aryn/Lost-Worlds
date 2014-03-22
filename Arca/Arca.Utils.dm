@@ -1,8 +1,7 @@
 proc/get_turf(atom/A)
-	var/attempts = 15
-	while(!isturf(A) && attempts-- > 0)
-		A = A.loc
-	return A
+	if(isturf(A)) return A
+	if(isarea(A) || !A.locs.len) return null
+	return A.locs[1]
 
 /data/screenloc
 	var/x = 0
