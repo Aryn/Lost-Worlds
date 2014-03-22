@@ -29,7 +29,7 @@
 
 		if(dist_from_storm < SQ(visible_radius))
 			if(!storm.visible) ShowIcon(storm)
-			storm.visible = true
+			storm.visible = TRUE
 
 			if(dist_from_storm < SQ(storm.radius))
 				if(!storm.affecting)
@@ -42,7 +42,7 @@
 
 		else
 			if(storm.visible) EraseIcon(storm)
-			storm.visible = false
+			storm.visible = FALSE
 
 		if(storm.lifetime++ > storm.severity*10)
 			storm.Regenerate()
@@ -60,8 +60,8 @@
 	var/matrix/scale
 
 	var/lifetime
-	var/visible = false
-	var/affecting = false
+	var/visible = FALSE
+	var/affecting = FALSE
 	var/storm_time
 
 	pixel_x = -32
@@ -72,7 +72,7 @@
 	New()
 		. = ..()
 		spawn(1)
-			Regenerate(false)
+			Regenerate(FALSE)
 			lifetime = rand(0,severity*5)
 
 	proc/StormMovement()
@@ -93,7 +93,7 @@
 		//world << "<font color=yellow><b>You are caught in a [severity > 50 ? "<font color=red>severe</font>" : ""] [storm_type] storm!</b></font>"
 		StartWeather(storm_type, severity)
 		storm_time = world.time
-		affecting = true
+		affecting = TRUE
 
 	proc/Stop()
 		//world << "\green <b>The [storm_type] storm has passed.</b>"
@@ -101,9 +101,9 @@
 		//world << "\green You were in the storm for [parse_time(time)]."
 		EndWeather(storm_type, severity)
 		//world << "([parse_time(STD_CONVERSION(time))] Standard)"
-		affecting = false
+		affecting = FALSE
 
-	proc/Regenerate(into_wind = true)
+	proc/Regenerate(into_wind = TRUE)
 		if(affecting)
 			Stop()
 		screen_loc = null

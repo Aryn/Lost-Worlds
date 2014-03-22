@@ -1,9 +1,9 @@
 
 var/list/active_lizards = list()
-var/running_lizards = false
+var/running_lizards = FALSE
 
 proc/RunLizards()
-	running_lizards = true
+	running_lizards = TRUE
 	while(active_lizards.len)
 		sleep(6)
 		for(var/character/lizard/lizard in active_lizards)

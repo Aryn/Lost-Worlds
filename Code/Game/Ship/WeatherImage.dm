@@ -1,6 +1,6 @@
 var/list/weather_images
 var/list/aux_weather_images
-var/aux_weather_on = false
+var/aux_weather_on = FALSE
 
 proc/SetWeatherImage(state, color)
 	if(!weather_images)
@@ -23,7 +23,7 @@ proc/SetWeatherImage(state, color)
 			T.overlays += weather_images[((T.y%3)*3)+((T.x%3)+1)]
 
 proc/SetAuxWeatherImage(state, color)
-	aux_weather_on = false
+	aux_weather_on = FALSE
 	if(!aux_weather_images)
 		aux_weather_images = list()
 		for(var/i = 1, i <= 9, i++)
@@ -43,4 +43,4 @@ proc/SetAuxWeatherImage(state, color)
 		for(var/turf/T in outside_turfs)
 			T.overlays += aux_weather_images[((T.y%3)*3)+((T.x%3)+1)]
 
-		aux_weather_on = true
+		aux_weather_on = TRUE

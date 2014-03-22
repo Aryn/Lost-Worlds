@@ -10,7 +10,7 @@
 
 /data/port //Used by the game when a port is selected as part of the route.
 	var/obj/map_point/port/point
-	var/visited = false
+	var/visited = FALSE
 	var/value = 800 //Minimum total value of the cargo at this port.
 	var/flags = 0
 

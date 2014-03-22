@@ -1,8 +1,3 @@
-//Click handling
-#define FAILED 0
-#define CONTINUE 1
-#define SUCCESS 2
-
 //Commands
 #define NORMAL 1
 #define BATTLE 2

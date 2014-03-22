@@ -35,7 +35,7 @@
  *	This is equivalent to B.open("filename.txt", "wb+"), which creates a new file (or truncates it if already existing),
  *  and then allows reading and writing in binary mode.
  *
- *	Both open() and create() return 0 to flag an error condition, true if the operation was successful.
+ *	Both open() and create() return 0 to flag an error condition, TRUE if the operation was successful.
  *
  *	With the file open, various reading and writing procs can be called:
  *
@@ -95,7 +95,7 @@
  *
  *		end = B.eof()
  *
- *	This return true (1) if the file is currently at the end-of-file marker, false (0) otherwise.
+ *	This return TRUE (1) if the file is currently at the end-of-file marker, FALSE (0) otherwise.
  *
  *	To find the actual read/write position in the file, use:
  *
@@ -118,7 +118,7 @@
  *  SEEK_SET:	Move to position "pos" bytes from the start of file. Note this is the same value as returned by tell().
  *
  *
- *	If an error occurred during a file operation, this is usually flagged by a return value of 0 (false), or for functions
+ *	If an error occurred during a file operation, this is usually flagged by a return value of 0 (FALSE), or for functions
  *  that can return 0 in normal operation (get..() functions and tell()), the null value. In this case, the actual error
  *	condition can be found with:
  *
@@ -200,7 +200,7 @@ binfile
 				return null
 			return 1
 
-		// Returns true if the file position is at the end of the file
+		// Returns TRUE if the file position is at the end of the file
 
 		eof()
 
@@ -224,7 +224,7 @@ binfile
 
 
 		// Write a string to the file
-		// Returns false if an error occurred
+		// Returns FALSE if an error occurred
 
 		putstring(var/str)
 
@@ -246,7 +246,7 @@ binfile
 			return text2num(result)
 
 		// Write a single byte to the file
-		// Return false if an error occurred.
+		// Return FALSE if an error occurred.
 
 		putbyte(var/byte)
 
@@ -278,7 +278,7 @@ binfile
 
 
 		// Write a two-byte word to the file
-		// Returns false if an error occurred.
+		// Returns FALSE if an error occurred.
 		// Set the optional parameter to non-zero to write in big-endian order (high-byte, low-byte)
 		// Otherwise the default is little-endian order (low-byte, high-byte)
 

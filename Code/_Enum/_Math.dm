@@ -1,5 +1,5 @@
-#define true 1
-#define false 0
+#define TRUE 1
+#define FALSE 0
 
 #define PI 3.1415926
 #define EX 2.7182818 //Constant e defined so as not to interfere with stray temp variables called E.

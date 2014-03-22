@@ -10,7 +10,7 @@ proc/shuffle(list/L)
 /b_deck
 	var/list/cards = list()
 	var/list/combatants = list()
-	var/over = false
+	var/over = FALSE
 	var/chosen = 0
 	var/pcs = 0
 
@@ -120,7 +120,7 @@ proc/shuffle(list/L)
 
 /b_deck/proc/Next()
 	if(over) return
-	var/game_end = true
+	var/game_end = TRUE
 	for(var/combatant/c in combatants)
 		if(c.ai) c.ai.Run()
 		if(c.stand) continue
@@ -130,7 +130,7 @@ proc/shuffle(list/L)
 			shuffle(c.enemies)
 			for(var/combatant/enemy in c.enemies)
 				if(c.char.AnimateClash(enemy.char)) break
-			game_end = false
+			game_end = FALSE
 
 	chosen = 0
 
@@ -140,7 +140,7 @@ proc/shuffle(list/L)
 	else if(chosen >= pcs) Next()
 
 /b_deck/proc/EndGame()
-	over = true
+	over = TRUE
 
 	var/combatant/highest
 	var/list/ties = list()
@@ -151,27 +151,27 @@ proc/shuffle(list/L)
 		else if(c.total == highest.total)
 			ties.Add(c)
 
-	var/next_round = false
+	var/next_round = FALSE
 
 	if(!ties.len)
 		for(var/combatant/loser in highest.enemies)
-			if(!loser.Lose(highest)) next_round = true
+			if(!loser.Lose(highest)) next_round = TRUE
 			else loser.char.stun(10)
 	else
 		ties.Add(highest)
 		for(var/combatant/winner in ties)
 			for(var/combatant/loser in winner.enemies)
 				if(loser.total == highest.total)
-					next_round = true
+					next_round = TRUE
 					continue
-				if(!loser.Lose(winner)) next_round = true
+				if(!loser.Lose(winner)) next_round = TRUE
 				else loser.char.stun(10)
 
 	world << "<b>Round Over</b>"
 	world << "Result: [ties.len?"Tie!":"[highest.char] wins!"]"
 
 	if(next_round)
-		over = false
+		over = FALSE
 		world << "\green <b>New Round!</b>"
 		Shuffle()
 		for(var/combatant/c in combatants)

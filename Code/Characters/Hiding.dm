@@ -1,18 +1,18 @@
 #define POORLY 1
 #define WELL 2
 
-character/var/is_hiding = false
+character/var/is_hiding = FALSE
 character/var/last_spotted = 0
 
 character/var/perceptive_mark
 
 character/proc/Hide()
 	layer = 2
-	is_hiding = true
+	is_hiding = TRUE
 
 character/proc/UnHide()
 	layer = MOB_LAYER
-	is_hiding = false
+	is_hiding = FALSE
 
 character/Move()
 	. = ..()
@@ -56,9 +56,9 @@ character/humanoid/human/UnHide()
 	if(is_hiding == POORLY)
 		for(var/client/C in game.players.contents)
 			C.images -= perceptive_mark
-	is_hiding = false
+	is_hiding = FALSE
 	for(var/item/item in src)
-		item.OnSlotSet(item.slot)
+		item.SlotSet(item.slot)
 
 character/humanoid/AddEquipOverlay(img)
 	if(!is_hiding)

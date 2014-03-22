@@ -1,10 +1,4 @@
-/turf
-	name = "Sky"
-	icon = 'Icons/World/Sky.dmi'
-
-/turf/New()
-	. = ..()
-	icon_state = "[x%3],[y%3]"
+/area/layer = 0
 
 //These turfs magically become sky after placing tiles at their location. Defined to make mapping easier.
 /turf/mapping
@@ -13,7 +7,7 @@
 	var/obj
 
 /turf/mapping/New()
-	new tile(src)
+	if(tile) new tile(src)
 	if(obj) new obj(src)
 	icon = 'Icons/World/Sky.dmi'
 	. = ..()
@@ -53,12 +47,24 @@
 	tile = /tile/floor/metal
 	obj = /tile/window/metal
 
+/turf/mapping/frame
+	icon = 'Icons/Mapping/Base.dmi'
+	icon_state = "wood"
+	tile = /tile/floor
+	obj = /tile/frame
+
+/turf/mapping/frame/metal
+	icon = 'Icons/Mapping/Base.dmi'
+	icon_state = "iron"
+	tile = /tile/floor/metal
+	obj = /tile/frame/metal
+
 /structure/marker
 	name = "Marker"
 	icon = 'Icons/Debug/Marker.dmi'
 	icon_state = "job"
 	invisibility = 101
-	is_anchored = true
+	is_anchored = TRUE
 
 /structure/marker/erasing/proc/Initialize()
 
@@ -78,13 +84,6 @@ structure/marker/erasing/cargo_box
 		else
 			cargo = new cargo()
 			cargo.Assemble(loc)
-
-structure/marker/erasing/light_border
-	name = "Light Border"
-	Initialize()
-		var/turf/T = loc
-		lighting_controller.AddBorder(T)
-		world << "Added border."
 
 structure/marker/light
 	name = "Light"

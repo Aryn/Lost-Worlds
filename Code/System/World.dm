@@ -8,7 +8,7 @@ world/area = /area/outside
 	icon_state = "2222"
 	layer = 9
 	mouse_opacity = 0
-	is_outside = true
+	is_outside = TRUE
 
 world/New()
 	. = ..()

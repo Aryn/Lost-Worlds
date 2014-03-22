@@ -1,14 +1,14 @@
 
 item/weapon/ApplyTo(character/C)
 	if(istype(C))
-		if(C.IsStunned())
+		if(C.IsStunned() || C == slot.user)
 			slot.user.WinAgainst(C)
 		else
 			Battle(slot.user, C)
 
 item/weapon/gun/ApplyLongRange(character/C)
 	if(istype(C))
-		if(C.IsStunned())
+		if(C.IsStunned() || C == slot.user)
 			slot.user.WinAgainst(C)
 		else
 			Battle(slot.user, C)

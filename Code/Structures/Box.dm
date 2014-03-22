@@ -3,9 +3,9 @@
 	desc = "A big wooden box full of stuff. Or not, if it's empty."
 	density = 1
 	icon = 'Icons/Ship/Box.dmi'
-	var/open = false
-	var/locked = false
-	var/nailed = false
+	var/open = FALSE
+	var/locked = FALSE
+	var/nailed = FALSE
 
 	OperatedBy(mob/M)
 		if(locked)
@@ -17,7 +17,7 @@
 		if(!open)
 			Sound('Sounds/Structure/Creak.ogg',60)
 			icon_state = "open"
-			open = true
+			open = TRUE
 			for(var/item/I in src)
 				I.Move(loc)
 		else
@@ -25,16 +25,16 @@
 			for(var/item/I in loc)
 				I.Move(src)
 			icon_state = ""
-			open = false
+			open = FALSE
 
 	AppliedBy(mob/M, item/I)
 		if(open)
 			I.Drop(loc)
 
 /structure/box/locked
-	locked = true
+	locked = TRUE
 	icon_state = "locked"
 
 /structure/box/nailed
-	nailed = true
+	nailed = TRUE
 	icon_state = "nailed"

@@ -5,7 +5,7 @@ mob/map_test/Login()
 mob/map_test/verb/CircularRoute()
 	game.SelectRoute()
 mob/map_test/verb/LinearRoute()
-	game.SelectRoute(true)
+	game.SelectRoute(TRUE)
 
 mob/map_test/verb/GrandSize()
 	game.ports_in_route = game.map.ports.len

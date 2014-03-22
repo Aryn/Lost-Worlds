@@ -5,13 +5,13 @@
 	var/ckey
 	var/list/saves = list()
 	var/binfile/f = new
-	var/first_login = false
+	var/first_login = FALSE
 
 	New(ckey)
 		src.ckey = ckey
 		world << "New savefile created for [ckey]"
 		if(!fexists("Saves/[ckey]"))
-			first_login = true
+			first_login = TRUE
 			world << "First Login."
 			return
 
@@ -43,7 +43,7 @@
 
 /data/save
 	var/name       //string
-	var/data/form/form  //list-index
+	var/char_form/form  //list-index
 	var/age        //word
 
 	var/hair_style //list-index

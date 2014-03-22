@@ -38,7 +38,7 @@
 		Consume()
 		M.Sound('Sounds/Inventory/Get.ogg')
 		M.UpdateHUD()
-		return SUCCESS
+		return TRUE
 	else
 		. = ..()
 

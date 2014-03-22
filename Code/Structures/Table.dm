@@ -14,7 +14,7 @@ structure/table
 
 structure/table/AppliedBy(character/C, item/I)
 	I.Drop(loc)
-	return SUCCESS
+	return TRUE
 
 structure/table/proc/Join()
 	auto_dir = 0

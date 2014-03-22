@@ -3,4 +3,4 @@ structure/controls
 	icon_state = "controls"
 
 	OperatedBy(character/humanoid/H)
-		game.map.ShowTo(H, true)
+		game.map.ShowTo(H, TRUE)

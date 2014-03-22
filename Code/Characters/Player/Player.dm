@@ -2,7 +2,7 @@
 
 	desc = "A personish thing."
 
-	can_select = true
+	can_select = TRUE
 	var/image/body
 
 	var/obj/display/active_overlay

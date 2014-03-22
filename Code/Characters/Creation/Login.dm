@@ -131,10 +131,10 @@ mob/login/verb/Ready()
 	if(game.started)
 		game.MakeCharacter(src)
 	else if(client.in_game)
-		client.in_game=false
+		client.in_game = FALSE
 		game.players.Remove(client)
 	else
-		client.in_game = true
+		client.in_game = TRUE
 		game.players.Add(client)
 
 mob/login/Topic(href,data[])

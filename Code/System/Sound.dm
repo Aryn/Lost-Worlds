@@ -7,7 +7,7 @@ var/footsteps_metal = list('Sounds/Footsteps/Metal1.ogg','Sounds/Footsteps/Metal
 var/footsteps_support = list('Sounds/Footsteps/Support1.ogg','Sounds/Footsteps/Support2.ogg','Sounds/Footsteps/Support3.ogg',
 							 'Sounds/Footsteps/Support4.ogg','Sounds/Footsteps/Support5.ogg','Sounds/Footsteps/Support6.ogg')
 
-tile/var/muted_footstep = false
+tile/var/muted_footstep = FALSE
 tile/proc/Footstep()
 	return pick(footsteps_wood)
 
@@ -18,7 +18,7 @@ tile/support/Footstep()
 	return pick(footsteps_support)
 
 /global_ambience
-	var/playing = false
+	var/playing = FALSE
 
 	var/channel
 	var/volume = 100
@@ -38,7 +38,7 @@ tile/support/Footstep()
 		M << s
 
 	proc/Play(mob/M)
-		playing = true
+		playing = TRUE
 		if(M)
 			M << start
 			spawn(start_length)
@@ -49,7 +49,7 @@ tile/support/Footstep()
 				Play(M)
 
 	proc/Stop(mob/M)
-		playing = false
+		playing = FALSE
 		if(M)
 			M << end
 		else

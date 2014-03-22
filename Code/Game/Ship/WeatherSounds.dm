@@ -3,7 +3,7 @@ var/global_ambience/outside/engine_sound = new/global_ambience/outside/engine
 
 /global_ambience/outside/storm
 	start = 'Sounds/Weather/Thunderstorm/Start.ogg'
-	start_length = 48
+	start_length = 47
 	volume = 75
 	inside_volume = 15
 	loop = 'Sounds/Weather/Thunderstorm/Loop.ogg'
@@ -12,18 +12,18 @@ var/global_ambience/outside/engine_sound = new/global_ambience/outside/engine
 
 /global_ambience/outside/rain
 	start = 'Sounds/Weather/Rain/Start.ogg'
-	start_length = 10
+	start_length = 9
 	volume = 150
-	inside_volume = 20
+	inside_volume = 50
 	loop = 'Sounds/Weather/Rain/Loop.ogg'
 	end = 'Sounds/Weather/Rain/End.ogg'
 	channel = 2
 
 /global_ambience/outside/dust
 	start = 'Sounds/Weather/Sandstorm/Start.ogg'
-	start_length = 12
+	start_length = 11
 	volume = 100
-	inside_volume = 15
+	inside_volume = 20
 	loop = 'Sounds/Weather/Sandstorm/Loop.ogg'
 	end = 'Sounds/Weather/Sandstorm/End.ogg'
 	channel = 2
@@ -36,12 +36,21 @@ var/global_ambience/outside/engine_sound = new/global_ambience/outside/engine
 
 /global_ambience/outside/strong_wind
 	start = 'Sounds/Weather/Gale/Start.ogg'
-	start_length = 9
+	start_length = 8
 	loop = 'Sounds/Weather/Gale/Loop.ogg'
 	end = 'Sounds/Weather/Gale/End.ogg'
 	channel = 2
 	volume = 80
-	inside_volume = 15
+	inside_volume = 20
+
+/global_ambience/outside/hail
+	start = 'Sounds/Weather/Hail/Start.ogg'
+	start_length = 9
+	loop = 'Sounds/Weather/Hail/Loop.ogg'
+	end = 'Sounds/Weather/Hail/End.ogg'
+	channel = 2
+	volume = 100
+	inside_volume = 30
 
 /global_ambience/outside/engine
 	loop = 'Sounds/Ambience/Engine.ogg'

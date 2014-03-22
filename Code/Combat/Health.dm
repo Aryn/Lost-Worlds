@@ -8,8 +8,8 @@ character/var/temp_damage = 0     //Goes away over a far shorter time.
 
 character/var/stun_time = 0    //Seconds stunned for.
 character/var/ko_time = 0      //Seconds KO'd for.
-character/var/dead = false     //Set when people are killed, which results in death.
-character/var/critical = false
+character/var/dead = FALSE     //Set when people are killed, which results in death.
+character/var/critical = FALSE
 
 character/var/archived_damage
 character/var/obj/display/health_meter/health_meter
@@ -52,13 +52,13 @@ character/proc/Life()
 	archived_damage = damage()
 	if(archived_damage > MAX_HEALTH + 40) Die()
 	else if(archived_damage > MAX_HEALTH && !critical)
-		critical = true
+		critical = TRUE
 		ko(20)
 
 	if(temp_damage > 2) temp_damage -= 2
 	else temp_damage = 0
 
-	if(recovery_damage > 0.1) recovery_damage -= 0.1
+	if(recovery_damage > 0.05) recovery_damage -= 0.05
 	else recovery_damage = 0
 
 	if(stun_time) stun_time -= 0.5
@@ -71,7 +71,7 @@ character/proc/Die()
 	if(!ko_time)
 		transform = dead_matrix
 		Sound('Sounds/Combat/Collapse.ogg')
-	dead = true
+	dead = TRUE
 
 character/humanoid/human/Life()
 	. = ..()
@@ -80,16 +80,13 @@ character/humanoid/human/Life()
 	else if(archived_damage > MAX_HEALTH*0.6) move_delay = 4
 	else move_delay = 2
 
-	if(ko_time)
+	if(ko_time || dead)
 		health_meter.icon_state = "blind"
 		health_meter.layer = HUD_LAYER-1
 	else
 		switch(100 - (archived_damage * (100/MAX_HEALTH)))
 			if(1 to 30)   health_meter.icon_state = "20"
-			if(31 to 50)  health_meter.icon_state = "40"
-			if(51 to 70)  health_meter.icon_state = "60"
-			if(71 to 90)  health_meter.icon_state = "80"
+			if(30 to 50)  health_meter.icon_state = "40"
+			if(50 to 70)  health_meter.icon_state = "60"
+			if(70 to 90)  health_meter.icon_state = "80"
 			if(90 to 100) health_meter.icon_state = "100"
-			else
-				health_meter.icon_state = "blind"
-				health_meter.layer = HUD_LAYER-1

@@ -9,7 +9,12 @@ var/list/outside_turfs
 		for(var/turf/T in A)
 			outside_turfs.Add(T)
 
-	return true
+
+	return TRUE
+
+/hook/game_start/proc/SpawnTurbulenceLoop()
+	spawn TurbulenceLoop()
+	return TRUE
 
 area/outside/New(turf/loc)
 	. = ..()
@@ -28,6 +33,9 @@ mob/verb/End_Weather(new_weather as anything in typesof(/weather))
 mob/verb/Lightning()
 	var/weather/lightning/l_weather = weather
 	if(istype(l_weather)) l_weather.Lightning()
+
+mob/verb/Turbulence_Lol()
+	Turbulence()
 
 proc/ChangeWeather(type, severity=5)
 	ASSERT(ispath(type, /weather))
@@ -62,16 +70,15 @@ proc/EndWeather(type, severity)
 
 proc/TurbulenceLoop()
 	while(weather)
-		var/next = rand(SECONDS(5), MINUTES(0.3)) * 100 / weather.severity
-		world << "\green Next turbulence in [next/10] seconds."
-		sleep(next)
-		Turbulence()
+		sleep(rand(8,12))
+		if(prob(weather.severity/5))
+			Turbulence()
 
 proc/Turbulence()
 	world << pick('Sounds/Ambience/Creak1.ogg','Sounds/Ambience/Creak2.ogg','Sounds/Ambience/Creak3.ogg',
 	'Sounds/Ambience/Creak4.ogg','Sounds/Ambience/Creak5.ogg','Sounds/Ambience/Creak6.ogg')
-	for(var/client/c in game.players)
-		c.HShake(10)
+	for(var/client/c in game.players.contents)
+		c.SlowShake(20)
 
 /weather
 	var/name = "Clear"
@@ -86,7 +93,7 @@ proc/Turbulence()
 	var/global_ambience/outside/amb
 
 	var/ambient_light = 4
-	var/severity
+	var/severity = 5
 
 /weather/proc/Change()
 	if(weather && weather.amb) weather.amb.Stop()
@@ -96,7 +103,7 @@ proc/Turbulence()
 	else if(aux_weather_on) SetAuxWeatherImage(null)
 
 	if(amb) amb.Play()
-	if(lighting_controller.starlight != ambient_light) lighting_controller.ChangeAmbient(ambient_light)
+	if(lighting_controller.ambient != ambient_light) lighting_controller.ChangeAmbient(ambient_light)
 
 /weather/proc/AddSeverity(s)
 	severity += s
@@ -121,7 +128,7 @@ proc/Turbulence()
 	aux_image = "hail"
 	aux_color = "#FFFFFFFE"
 
-	amb = new/global_ambience/outside/strong_wind
+	amb = new/global_ambience/outside/hail
 	ambient_light = 5
 
 /weather/lightning/Change()
@@ -129,24 +136,24 @@ proc/Turbulence()
 	spawn LightningLoop()
 
 /weather/lightning/proc/LightningLoop()
-	var/next
 	while(weather == src)
-		next = rand(MINUTES(0.2), MINUTES(1))
-		world << "\green Next lightning in [next/10] seconds."
-		sleep(next)
-		if(weather == src) Lightning()
+		sleep(rand(8,12))
+		if(prob(severity / 5)) Lightning()
 
 var/light/lightning_strike = new(5,5)
 
 /weather/lightning/proc/Lightning()
-	lighting_controller.AmbientFlash(2)
+	lighting_controller.FlashAmbient(2)
 	if(prob(10))
 		var/turf/struck = pick(outside_turfs)
 		world << pick('Sounds/Weather/DirectLightning.ogg','Sounds/Weather/DirectLightning2.ogg')
 		lightning_strike.atom = struck
 		lightning_strike.Flash(2)
+		for(var/client/c in game.players.contents)
+			c.VShake(8, 16)
 	else
 		world << pick('Sounds/Weather/Lightning1.ogg','Sounds/Weather/Lightning2.ogg','Sounds/Weather/Lightning3.ogg')
+
 
 
 var/global_ambience/amb_rain = new/global_ambience/outside/rain
@@ -167,11 +174,11 @@ var/global_ambience/amb_storm = new/global_ambience/outside/storm
 			amb = amb_storm
 			amb.Play()
 		ambient_light = 1
-		if(lighting_controller.starlight != 1)
+		if(lighting_controller.ambient != 1)
 			lighting_controller.ChangeAmbient(1)
 	else
 		ambient_light = 2
-		if(lighting_controller.starlight != 2)
+		if(lighting_controller.ambient != 2)
 			lighting_controller.ChangeAmbient(2)
 		if(severity >= 45)
 			SetWeatherImage("heavy rain")

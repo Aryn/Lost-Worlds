@@ -1,7 +1,6 @@
 item/weapon/sword
 	icon = 'Icons/Items/Weapons/Sabre.dmi'
 	icon_state = "sword"
-	light = new(5,5)
 
 item/weapon/sword/AnimateClash(character/opponent)
 	slot.user.Sound(pick(clash_melee_sounds))

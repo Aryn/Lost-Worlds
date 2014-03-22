@@ -89,3 +89,16 @@ mob/verb/MakeDustIcon()
 		base.Insert(frame, icon_state = "", frame=fnum)
 
 	src << ftp(base, "Dust.dmi")
+
+mob/verb/MakeSky(basefile as file, state as text, speed as num)
+	var/icon/icon_in = icon(basefile, state)
+	var/icon/base = new
+
+	var/width = icon_in.Width()
+	for(var/i = 1, i <= width/speed, i++)
+		icon_in.Shift(SOUTH,speed,TRUE)
+		base.Insert(icon_in, icon_state=state, frame=i)
+		world << "[i] \..."
+	world << ""
+
+	src << ftp(base, "Sky.dmi")

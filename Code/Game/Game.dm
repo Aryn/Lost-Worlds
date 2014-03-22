@@ -1,18 +1,18 @@
 var/game/game = new
 
-client/var/in_game = false
+client/var/in_game = FALSE
 
 /game
-	var/started = true
-	var/map_ticks = false
-	var/char_ticks = false
+	var/started = TRUE
+	var/map_ticks = FALSE
+	var/char_ticks = FALSE
 	var/RefSortedList/players = new  //Players in this round, including ghosts.
 
 	var/ports_in_route = 4
 	var/departure_time
 	var/accumulated_time = 0
 
-	var/in_transit = false
+	var/in_transit = FALSE
 	var/obj/map_point/port/selected
 	var/list/route = list()
 	var/world_map/map = new
@@ -28,13 +28,9 @@ client/var/in_game = false
 
 	map.Initialize()
 
-	lighting_controller = new
-
 	for(var/structure/marker/erasing/marker)
 		marker.Initialize()
 		marker.Erase()
-
-	lighting_controller.Initialize()
 
 	for(var/structure/table/T)
 		T.Join()
@@ -50,9 +46,9 @@ client/var/in_game = false
 	spawn TickCharacters()
 
 
-/game/proc/SelectRoute(home_at_end = false)
+/game/proc/SelectRoute(home_at_end = FALSE)
 	accumulated_time = 0
-	started = false
+	started = FALSE
 	route.Cut()
 	for(var/obj/port in map.ports)
 		port.icon_state = "port"
@@ -112,7 +108,7 @@ client/var/in_game = false
 	world << "Route ETC: [parse_time(total_time)]"
 	world << "([parse_time(STD_CONVERSION(total_time))] Standard)"
 	start.route_data.LoadCargo()
-	started = true
+	started = TRUE
 	world << "Weather Report:"
 	NextCity:
 		for(var/obj/map_point/port/P in route)
@@ -149,22 +145,22 @@ game/proc/Arrived()
 	selected = null
 
 /game/proc/TickMap()
-	map_ticks = true
+	map_ticks = TRUE
 	while(map_ticks)
 		sleep(MAP_TICK_SPEED)
 		map.Storms()
 		if(selected && game.started)
 			if(!in_transit)
 				engine_sound.Play()
-			in_transit = true
+			in_transit = TRUE
 			map.ship.FlyTo(selected.map_x,selected.map_y)
 		else
 			if(in_transit)
 				engine_sound.Stop()
-			in_transit = false
+			in_transit = FALSE
 
 /game/proc/TickCharacters()
-	char_ticks = true
+	char_ticks = TRUE
 	while(char_ticks)
 		sleep(LIFE_TICK_SPEED)
 		for(var/character/C) C.Life()
@@ -180,7 +176,7 @@ game/proc/Arrived()
 	return distsq_a - distsq_b
 
 /game/proc/PlaceCharacters()
-	started = true
+	started = TRUE
 	for(var/client/C in players)
 		if(C.mob.type == /mob/login)
 			MakeCharacter(C.mob)

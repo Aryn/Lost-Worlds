@@ -1,7 +1,7 @@
 /structure/ladder
 	name = "Ladder"
 	icon = 'Icons/Ship/Ladder.dmi'
-	is_anchored = true
+	is_anchored = TRUE
 	pixel_y = 12
 
 	var/next_level = 0
@@ -19,7 +19,7 @@
 	#ifdef MAP_WARNINGS
 	if(!T.exposed_tile) log_warning("Ladder on sky at [x],[y],[z]")
 	#endif
-	T.exposed_tile.muted_footstep = true
+	T.exposed_tile.muted_footstep = TRUE
 	#ifdef MAP_WARNINGS
 	spawn(10)
 		if(!(locate(/structure/ladder) in locate(x,y,z+next_level)))

@@ -1,4 +1,4 @@
-mob/var/can_control_ship = false
+mob/var/can_control_ship = FALSE
 mob/verb/CloseMap()
 	set hidden = 1
 	game.map.StopShowing(src)
@@ -16,15 +16,15 @@ mob/verb/CloseMap()
 		for(var/i = citynames.len, i > 0, i--)
 			var/x
 			var/y
-			var/done = false
+			var/done = FALSE
 			var/iterations = 40
 			do
 				x = rand(16,608)
 				y = rand(16,448)
-				done = true
+				done = TRUE
 				for(var/obj/map_point/port/existing_port in ports)
 					if(DISTSQ(x-existing_port.map_x, y-existing_port.map_y) < SQ(64))
-						done = false
+						done = FALSE
 				iterations--
 			while(!done && iterations > 0)
 			var/obj/map_point/port/test/port = new(x,y)
@@ -35,7 +35,7 @@ mob/verb/CloseMap()
 		icons.Add(ship)
 		spawn Storms()
 
-	proc/ShowTo(mob/M, can_control_ship=false)
+	proc/ShowTo(mob/M, can_control_ship=FALSE)
 		world << "Showing the world map to [M]"
 		if(M.client)
 			if(istype(M,/character)) M.can_control_ship = can_control_ship
@@ -47,7 +47,7 @@ mob/verb/CloseMap()
 			M.client.screen += icons.contents
 
 	proc/StopShowing(mob/M)
-		M.can_control_ship = false
+		M.can_control_ship = FALSE
 		if(M.client)
 			winshow(M,"worldmap",0)
 			M.client.screen -= icons.contents

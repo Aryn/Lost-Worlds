@@ -24,8 +24,8 @@ To initialize an empty array a to a randomly shuffled copy of source whose lengt
 	var/total = 0
 	var/high_aces = 0
 
-	var/chosen = false
-	var/stand = false
+	var/chosen = FALSE
+	var/stand = FALSE
 
 /combatant/New(character/char, b_deck/deck)
 	src.char = char
@@ -53,8 +53,8 @@ To initialize an empty array a to a randomly shuffled copy of source whose lengt
 			if(istype(char,/character/humanoid))
 				deck.pcs++
 				players.hud.combat.Open(char)
-			stand = false
-		chosen = false
+			stand = FALSE
+		chosen = FALSE
 		hole = null
 
 	//if(!istype(char, /character/lizard))
@@ -75,7 +75,7 @@ To initialize an empty array a to a randomly shuffled copy of source whose lengt
 	view(char) << "\red [char] hits!"
 
 	deck.chosen++
-	chosen = true
+	chosen = TRUE
 
 	if(istype(char,/character/humanoid)) players.hud.combat.Close(char)
 	if(deck.chosen >= deck.pcs && !ai)
@@ -89,8 +89,8 @@ To initialize an empty array a to a randomly shuffled copy of source whose lengt
 	view(char) << "\blue [char] stands!"
 
 	deck.chosen++
-	chosen = true
-	stand = true
+	chosen = TRUE
+	stand = TRUE
 
 	if(istype(char,/character/humanoid))
 		players.hud.combat.Close(char)
@@ -103,14 +103,14 @@ To initialize an empty array a to a randomly shuffled copy of source whose lengt
 
 /combatant/proc/Next()
 	if(istype(char,/character/humanoid)) players.hud.combat.Open(char)
-	chosen = false
+	chosen = FALSE
 	if(stand) Stand()
 
 /combatant/proc/Lose(combatant/atker)
-	return atker.char.WinAgainst(char, false)
+	return atker.char.WinAgainst(char, FALSE)
 
 /combatant/proc/Bust(combatant/atker)
-	. = atker.char.WinAgainst(char, true)
+	. = atker.char.WinAgainst(char, TRUE)
 	deck.RemoveCombatant(src)
 	char.stun(15)
 	char << "Your hand:"
