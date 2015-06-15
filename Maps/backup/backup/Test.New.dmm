@@ -1,0 +1,105 @@
+"a" = (/turf,/area/outside)
+"b" = (/turf/mapping/floor/metal,/area/outside)
+"c" = (/turf/mapping/supports,/area/outside)
+"d" = (/turf/mapping/wall/metal,/area)
+"e" = (/structure/door/metal,/turf/mapping/floor/metal,/area)
+"f" = (/turf/mapping/floor/metal,/area)
+"g" = (/structure/ladder/up,/turf/mapping/floor/metal,/area)
+"h" = (/structure/lamp{pixel_y = 32},/turf/mapping/floor/metal,/area)
+"i" = (/structure/lamp{pixel_x = -32},/turf/mapping/floor/metal,/area)
+"j" = (/turf/mapping/frame/metal,/area)
+"k" = (/structure/lamp{pixel_x = 32},/turf/mapping/floor/metal,/area)
+"l" = (/turf/mapping/window/iron,/area)
+"m" = (/tile/lift,/turf/mapping/floor/metal,/area)
+"n" = (/structure/lift_anchor{dir = 4},/turf/mapping/floor/metal,/area)
+"o" = (/structure/door/glass,/turf/mapping/floor/metal,/area)
+"p" = (/structure/joining/table,/turf/mapping/floor/metal,/area)
+"q" = (/structure/lamp{pixel_y = -32},/structure/joining/table,/turf/mapping/floor/metal,/area)
+"r" = (/turf/mapping/frame,/area/outside)
+"s" = (/turf/mapping/floor,/area/outside)
+"t" = (/turf/mapping/wall,/area)
+"u" = (/turf/mapping/window,/area)
+"v" = (/structure/door/glass,/turf/mapping/floor,/area)
+"w" = (/structure/controls,/turf/mapping/floor/metal,/area)
+"x" = (/structure/ladder/up,/turf/mapping/floor,/area)
+"y" = (/structure/ladder/down,/turf/mapping/floor,/area)
+"z" = (/turf/mapping/floor,/area)
+"A" = (/structure/box/locked,/turf/mapping/floor,/area)
+"B" = (/structure/lamp{pixel_x = -32},/structure/joining/table,/turf/mapping/floor/metal,/area)
+"C" = (/structure/lamp{pixel_x = 32},/structure/joining/table,/turf/mapping/floor/metal,/area)
+"D" = (/structure/joining/table,/turf/mapping/floor,/area)
+"E" = (/structure/lamp{pixel_x = -32},/turf/mapping/floor,/area)
+"F" = (/structure/joining/table,/structure/lamp,/turf/mapping/floor,/area)
+"G" = (/turf/mapping/supports,/area)
+"H" = (/structure/marker,/turf/mapping/floor,/area)
+"I" = (/structure/lamp{pixel_y = -32},/turf/mapping/floor,/area)
+"J" = (/turf/mapping/frame/metal,/area/outside)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaabbbbbbbaaaa
+aaccccccccccccbbbbbbbaaaa
+aacddddddddddddddeddddaaa
+aacdfffffdfgffhffffffdaaa
+aacdfffffdfffffffffffdaaa
+aacdiffffefffffffffffdaaa
+aacdfffffdfffffffffffdaaa
+aacdddeddddjjjjdfffffdaaa
+aacdfffhfjffffffffffkdaaa
+aacdfffffjfffffffffffdaaa
+aaclfmmmfjfffffffffffdaaa
+aaclnmmmfofffffffffffdaaa
+aacdfmmmfjfffffffffffdaaa
+aacdfffffjffpppqpppffdaaa
+aaaddddddddddldddlddddaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+"}
+
+(1,1,2) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaacccccccccccccca
+aaaaaaaaaarssssssssssssca
+aaaddlllddtuvttuuuuuttsca
+aaadffwffdxyztzzzzzzAtsca
+aaadpfffpdzzzuzzzzzzzusca
+aaadBfffCdzzzvzzDDDzzusca
+aaadpfffpdEzzvzzDFDzzusca
+aaadfffffdzzzuzzzzzzzusca
+aaadldedldzzztzzzzzzztsca
+aaatDDzDDDzzzttuuuuuttsca
+aaatzGGGzzzzzzzzzzzzztsca
+aaatzGGGzzzzzHzzzzzzzusca
+aaauzGGGzzzzzzzzzzzzzusca
+aaatzzzzzzzzzIzDDDDDDtsca
+aaattutttttutttuuuuuttrca
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+"}
+
+(1,1,3) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaJJJssstttsssssssJJJaaa
+aaaJbbssstytsssssssbbJaaa
+aaaJbsssstztssssssssbJaaa
+aaasssssssssssssssssssaaa
+aaasssssssssssssssssssaaa
+aaasssssssssssssssssssaaa
+aaasssssssssssssssssssaaa
+aaasssssssssssssssssssaaa
+aaasssssssssssssssssssaaa
+aaasssssssssssssssssssaaa
+aaaJbsssssssssssssssbJaaa
+aaaJbbsssssssssssssbbJaaa
+aaaJJJsssssssssssssJJJaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+"}
