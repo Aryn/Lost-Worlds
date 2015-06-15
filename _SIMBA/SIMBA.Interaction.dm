@@ -13,7 +13,8 @@
 	var/character/user = usr
 	if(get_dist(user, src) <= 1)
 		if(user.active_slot.item)
-			Applied(user, user.active_slot.item)
+			if(!user.active_slot.item.ApplyTo(src))
+				Applied(user, user.active_slot.item)
 		else
 			Operated(user)
 	else

@@ -1,10 +1,9 @@
 /item_slot/var/item/item
 /item_slot/var/item_layer
 /item_slot/var/button/slot_type/slot_type
+/item_slot/var/image/equip_image
 /item_slot/var/character/owner
 /item_slot/var/shown = 0
-
-/item_slot/var/image/item_equip_overlay
 
 /item_slot/New(button/slot_type/slot_type, mob/owner)
 	src.slot_type = slot_type
@@ -49,7 +48,9 @@
 		return 0
 
 /item_slot/proc/ForceEquip(item/item)
-	if(item.slot) item.slot._Clear()
+	if(item.slot)
+		item.slot._Clear()
+		item.OnSwap(owner)
 
 	item.slot = src
 	item_layer = item.layer
@@ -69,7 +70,7 @@
 		owner.client.screen -= item
 
 	item.layer = item_layer
-	owner.overlays -= item_equip_overlay
+	owner.overlays -= equip_image
 
 	item.slot = null
 	item = null
@@ -82,7 +83,7 @@
 
 /item_slot/proc/OverlayEquipment()
 	if(!item || !slot_type.shows_equipment) return
-	if(!item_equip_overlay) item_equip_overlay = image(layer = 5)
-	item_equip_overlay.icon = item.icon
-	item_equip_overlay.icon_state = slot_type.equip_state
-	owner.overlays += item_equip_overlay
+	if(!equip_image) equip_image = image(layer = MOB_LAYER+1+item.equip_layer/10)
+	equip_image.icon = item.icon
+	equip_image.icon_state = slot_type.equip_state
+	owner.overlays += equip_image

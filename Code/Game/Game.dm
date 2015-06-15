@@ -188,12 +188,12 @@ game/proc/Departed(data/port/port)
 	//P.SetupDamage()
 
 	if(started)
-		var/item_slot/fill = P.ItemSlot("Shirt")
-		fill.ForceEquip(new/item/clothing/shirt/assistant(P))
-		fill = P.ItemSlot("Trousers")
-		fill.ForceEquip(new/item/clothing/trousers/assistant(P))
-		fill = P.ItemSlot("Coat")
-		fill.ForceEquip(new/item/clothing/coat/brown(P))
+		//var/item_slot/fill = P.ItemSlot("Shirt")
+		//fill.ForceEquip(new/item/clothing/shirt/assistant(P))
+		//fill = P.ItemSlot("Trousers")
+		//fill.ForceEquip(new/item/clothing/trousers/assistant(P))
+		//fill = P.ItemSlot("Coat")
+		//fill.ForceEquip(new/item/clothing/coat/brown(P))
 	else
 		CRASH("Job-based equipment needs implementation.")
 

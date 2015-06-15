@@ -12,9 +12,10 @@ proc/ShipSway()
 		pixel_y = round(sway_displacement * cos(sway_angle))
 
 	for(var/client/C)
-		if(!isturf(C.mob.loc) || istype(C.mob.loc:loc, /area/surface))
-			C.pixel_x = 0
-			C.pixel_y = 0
-		else
-			C.pixel_x = pixel_x
-			C.pixel_y = pixel_y
+		if(C.mob)
+			if(!isturf(C.mob.loc) || istype(C.mob.loc:loc, /area/surface))
+				C.pixel_x = 0
+				C.pixel_y = 0
+			else
+				C.pixel_x = pixel_x
+				C.pixel_y = pixel_y

@@ -7,6 +7,7 @@
 /button/proc/Pressed(character/user)
 
 /button/proc/CheckRequirements(character/user)
+	return TRUE
 
 /button/Click()
 	var/character/user = usr

@@ -113,6 +113,7 @@
 #include "Code\Characters\Creation\CharacterData.dm"
 #include "Code\Characters\Creation\Login.dm"
 #include "Code\Characters\Creation\Test.dm"
+#include "Code\Characters\Player\Equipment.dm"
 #include "Code\Characters\Player\Player.dm"
 #include "Code\Characters\Player\Player.Forms.dm"
 #include "Code\Characters\Player\Player.MoveDelay.dm"

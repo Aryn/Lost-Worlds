@@ -39,7 +39,7 @@ character/humanoid/human/Hide()
 	overlays -= hair
 	overlays -= beard
 	for(var/item/item in src)
-		overlays -= item.equip_image
+		overlays -= item.slot.equip_image
 
 	var/turf/T = loc
 	if(T.lit_value >= 2)

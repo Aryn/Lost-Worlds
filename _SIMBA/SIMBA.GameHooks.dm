@@ -1,6 +1,14 @@
-/hook/parent_type = /atom
+/proc/CallHook(hook)
+	var/hook_path = text2path("/hook/[hook]")
+	if(!hook_path)
+		CRASH("Invalid hook '/hook/[hook]' called.")
+		return 0
 
-/proc/DoHook(hook_type)
-	var/hook/hook = new hook_type
-	for(var/v in hook.verbs)
-		call(hook,v)()
+	var/caller = new hook_path
+	var/status = 1
+	for(var/P in typesof("[hook_path]/proc"))
+		if(!call(caller, P)())
+			CRASH("Hook '[P]' failed or runtimed.")
+			status = 0
+
+	return status

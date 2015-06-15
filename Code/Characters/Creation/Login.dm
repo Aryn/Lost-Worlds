@@ -12,13 +12,20 @@ var/selection_css = {"<style>
 		}
 	</style>"}
 
-var/list/all_forms = list("male" = /character_form/male, "female" = /character_form/female)
+var/list/all_forms = list("male" = new/character_form/male, "female" = new/character_form/female)
 var/list/all_beards = 'Icons/Creatures/Players/Beards.dmi'
 var/image/hiding_img
 
 var/list/random_names_male
 var/list/random_names_female
 var/list/random_names_last
+
+/hook/startup/proc/SetupBeards()
+	var/beard_icon = all_beards
+	all_beards = list()
+	for(var/beard_state in icon_states(beard_icon))
+		all_beards[beard_state]=image(beard_icon, icon_state = beard_state, layer = MOB_LAYER+1)
+	return TRUE
 
 mob/login
 	var/data/savefile/chars

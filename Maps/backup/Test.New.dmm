@@ -64,19 +64,19 @@
 "bl" = (/turf/mapping/wall,/area/surface)
 "bm" = (/turf/map_edge,/area/surface)
 "bn" = (/turf/mapping/frame/metal,/area/surface)
-"bo" = (/turf/mapping/floor,/area/surface/loading_area/hirugard)
+"bo" = (/turf/mapping/floor,/area/surface/loading_area/Hirugard)
 "bp" = (/turf/mapping/wall/metal,/area/surface)
 "bq" = (/turf/mapping/floor,/area/surface/unloading_area)
-"br" = (/turf/mapping/floor/metal,/area/surface/loading_area/devteros)
+"br" = (/turf/mapping/floor/metal,/area/surface/loading_area/Devteros)
 "bs" = (/turf/mapping/floor/metal,/area/surface/unloading_area)
-"bt" = (/tile/lift_equipment,/tile/support,/turf/sky,/area/surface)
+"bt" = (/tile/lift_equipment,/tile/support,/turf/sky/pure,/area/surface)
 "bu" = (/structure/marker/landing_site{name = "Hirugard"; tag = "Hirugard"},/turf/mapping/floor,/area/surface/unloading_area)
 "bv" = (/structure/marker/landing_site{name = "Devteros"; tag = "Devteros"},/turf/mapping/floor/metal,/area/surface/unloading_area)
-"bw" = (/turf/mapping/floor/metal,/area/surface/loading_area/arrajin)
-"bx" = (/turf/mapping/wall/metal,/area/outside)
-"by" = (/tile/lift_equipment,/tile/support,/turf/sky,/area/outside)
+"bw" = (/turf/sky/pure,/area/surface)
+"bx" = (/turf/mapping/floor/metal,/area/surface/loading_area/Arrajin)
+"by" = (/tile/support,/tile/lift_equipment,/structure/marker{density = 1; name = "Blocker"},/turf/sky/pure,/area/surface)
 "bz" = (/structure/marker/landing_site{name = "Arrajin"; tag = "Arrajin"},/turf/mapping/floor/metal,/area/surface/unloading_area)
-"bA" = (/structure/marker/landing_site{name = "Airborne"; tag = "Airborne"},/turf/sky,/area/outside)
+"bA" = (/structure/marker/landing_site{name = "Airborne"; tag = "Airborne"},/tile/support,/tile/lift_equipment,/structure/marker{density = 1; name = "Blocker"},/turf/sky/pure,/area/surface)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -158,14 +158,14 @@ blbobobpbubqbqbqbpbqbqblbmbnbrbrbpbvbsbsbsbpbsbsbn
 blblblblblblblblblblblblbmbnbnbnbnbnbnbnbnbnbnbnbn
 bmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbm
 bmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbm
-bpbpbpbpbpbpbpbpbpbpbpbpbmaaaaaaaaaaaaaaaaaaaaaaaa
-bpbwbwbwbsbsbsbsbsbsbsbpbmaaaaaaaaaaaaaaaaaaaaaaaa
-bpbwbwbpbsbsbsbsbpbsbsbpbmaaaaaabxaaaaaaaabxaaaaaa
-bpbwbwbwbtbtbtbtbsbsbsbpbmaaaaaaaabybybybyaaaaaaaa
-bpbwbwbwbtbtbtbtbsbsbsbpbmaaaaaaaabybybybyaaaaaaaa
-bpbwbwbwbtbtbtbtbsbsbsbpbmaaaaaaaabybybybyaaaaaaaa
-bpbwbwbwbtbtbtbtbsbsbsbpbmaaaaaaaabybybybyaaaaaaaa
-bpbwbwbpbzbsbsbsbpbsbsbpbmaaaaaabxbAaaaaaabxaaaaaa
-bpbwbwbwbsbsbsbsbsbsbsbpbmaaaaaaaaaaaaaaaaaaaaaaaa
-bpbpbpbpbpbpbpbpbpbpbpbpbmaaaaaaaaaaaaaaaaaaaaaaaa
+bpbpbpbpbpbpbpbpbpbpbpbpbmbwbwbwbwbwbwbwbwbwbwbwbw
+bpbxbxbxbsbsbsbsbsbsbsbpbmbwbwbwbwbwbwbwbwbwbwbwbw
+bpbxbxbpbsbsbsbsbpbsbsbpbmbwbwbwbnbybwbwbybnbwbwbw
+bpbxbxbxbtbtbtbtbsbsbsbpbmbwbwbwbybwbwbwbwbybwbwbw
+bpbxbxbxbtbtbtbtbsbsbsbpbmbwbwbwbwbwbwbwbwbwbwbwbw
+bpbxbxbxbtbtbtbtbsbsbsbpbmbwbwbwbwbwbwbwbwbwbwbwbw
+bpbxbxbxbtbtbtbtbsbsbsbpbmbwbwbwbybwbwbwbwbybwbwbw
+bpbxbxbpbzbsbsbsbpbsbsbpbmbwbwbwbnbAbwbwbybnbwbwbw
+bpbxbxbxbsbsbsbsbsbsbsbpbmbwbwbwbwbwbwbwbwbwbwbwbw
+bpbpbpbpbpbpbpbpbpbpbpbpbmbwbwbwbwbwbwbwbwbwbwbwbw
 "}

@@ -59,9 +59,17 @@ client/proc/UpdateEye()
 		new_eye_loc.client_eyes[mob] = 1
 	last_eye_loc = new_eye_loc
 
+client/proc/SetEye(atom/A)
+	eye = A
+	UpdateEye()
+
+client/var/tmp_eye = FALSE
+
 client/Move()
 	. = ..()
-	if(.) UpdateEye()
+	if(.)
+		if(tmp_eye) eye = mob
+		UpdateEye()
 
 proc/Viewers(range, atom/A)
 	var/list/all = list()
