@@ -1,6 +1,3 @@
-//Commands
-#define NORMAL 1
-#define BATTLE 2
 
 //Density
 atom/movable/proc/IsDense(atom/mover)

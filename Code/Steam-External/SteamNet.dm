@@ -25,22 +25,22 @@ hook/game_start/proc/StartSteam()
 		var/old_nets = updates.len //New nets are added to the end of the list, so this spares any that were created by rebuild().
 		for(var/i = 1, i <= old_nets, i++)
 			var/steam_net/net = updates[i]
-			if(net.status & INVALID) continue
-			if(net.status & NEED_UPDATE)
+			if(net.status & PIPE_INVALID) continue
+			if(net.status & PIPE_NEED_UPDATE)
 				net.update()
-			if(net.status & NEED_REBUILD)
+			if(net.status & PIPE_NEED_REBUILD)
 				net.rebuild()
-			net.status &= INVALID //Clear update flags.
+			net.status &= PIPE_INVALID //Clear update flags.
 		updates.Cut(1,old_nets+1)
 
 	proc/Mark(steam_net/net, status)
-		if(net.status == NORMAL) updates.Add(net)
+		if(net.status == PIPE_NORMAL) updates.Add(net)
 		net.status |= status
 
 /steam_net
 	var/list/nodes = list() //The set of all pipes and machines in this network.
 	var/list/leaks
-	var/status = NORMAL
+	var/status = PIPE_NORMAL
 
 	var/delta_in = 0
 	var/delta_out = 0
@@ -79,19 +79,19 @@ hook/game_start/proc/StartSteam()
 		if(new_power > 0) delta_in += new_power
 		else delta_out += -new_power
 
-		steam_controller.Mark(src, NEED_UPDATE)
+		steam_controller.Mark(src, PIPE_NEED_UPDATE)
 
 	proc/Merge(steam_net/other)
-		if(status & INVALID) CRASH("Cannot merge invalid net.")
-		if(other.status & INVALID) CRASH("Cannot merge into invalid net.")
+		if(status & PIPE_INVALID) CRASH("Cannot merge PIPE_INVALID net.")
+		if(other.status & PIPE_INVALID) CRASH("Cannot merge into PIPE_INVALID net.")
 
-		status |= INVALID
+		status |= PIPE_INVALID
 		for(var/structure/steam/node/node in nodes)
 			node.NetChanged(other)
 			other.Add(node)
 
 	proc/Split()
-		steam_controller.Mark(src, NEED_REBUILD)
+		steam_controller.Mark(src, PIPE_NEED_REBUILD)
 
 	proc/addLeak(turf/T)
 		if(!leaks) leaks = list()
@@ -102,7 +102,7 @@ hook/game_start/proc/StartSteam()
 		if(leaks.len == 0) leaks = null
 
 	proc/rebuild()
-		status |= INVALID
+		status |= PIPE_INVALID
 		for(var/turf/T in leaks)
 			removeLeak(T, FALSE)
 		for(var/structure/steam/node/node in nodes)

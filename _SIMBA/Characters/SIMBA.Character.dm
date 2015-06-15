@@ -8,7 +8,7 @@
 /character/proc/ChangeActiveSlot()
 
 /character/proc/GetCommandContext()
-	return 1
+	return ALL
 
 //Returns TRUE if the character is in close range, FALSE if character must use ranged proc variations.
 /character/proc/InRangeOf(atom/movable/A)

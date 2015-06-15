@@ -2,20 +2,26 @@
 	var/name = ""
 	var/context = ALL
 	var/desc = ""
-	var/needs_skill = FALSE
+	var/must_be_adjacent = TRUE
+	var/custom_icon
 
-/command/New(name, context, desc, needs_skill = FALSE)
-	src.name = name
-	src.context = context
-	src.desc = desc
-	src.needs_skill = needs_skill
+	proc/Requirements(character/user, atom/commanded)
+		if(must_be_adjacent) return get_dist(user,commanded) <= 1
+		else return TRUE
+
+/command/New(name, context, desc, must_be_adjacent = TRUE)
+	if(name)
+		src.name = name
+		src.context = context
+		src.desc = desc
+		src.must_be_adjacent = must_be_adjacent
 
 
 atom/movable/var/list/commands
 atom/movable/var/command_icon = DEFAULT_COMMAND_ICON
 
 var/list/universal_commands = list(
-new/command("Examine", ALL, "Just what is this thing anyway?")
+new/command("Examine", ALL, "Just what is this thing anyway?", FALSE)
 )
 
 atom/movable/proc/Examine()
@@ -28,19 +34,23 @@ atom/movable/proc/Description()
 client/var/tmp/keep_selectors = FALSE
 client/var/tmp/list/selectors = list()
 
-client/Click(atom/A,control,location,params)
+client/Click(atom/A,location,control,params)
 	var/list/plist = params2list(params)
-	if(istype(A) && isturf(A.loc))
+	if(isturf(location))
 		if(selectors.len)
 			screen -= selectors
 			selectors.Cut()
 		if(plist["right"])
-			DisplaySelectors(GetTurf(A),plist["screen-loc"])
+			world << "@[location]"
+			DisplaySelectors(location,plist["screen-loc"])
 			return
 	. = ..()
 
+obj/display/layer = UI_LAYER + 2
+obj/display/New(screen_loc)
+	src.screen_loc = screen_loc
+
 obj/display/command
-	layer = UI_LAYER+2
 	var/atom/movable/thing
 	var/command/command
 	New(screen_loc,atom/movable/S,command/command)
@@ -48,7 +58,10 @@ obj/display/command
 		thing = S
 		src.command = command
 		name = command.name
-		icon = S.command_icon
+		if(command.custom_icon)
+			icon = command.custom_icon
+		else
+			icon = S.command_icon
 		icon_state = command.name
 
 	Click(location, control, params)
@@ -78,7 +91,11 @@ client/proc/DisplayCommands(atom/movable/S, screen_loc)
 	var/context = C.GetCommandContext()
 
 	for(var/command/command in S.commands)
-		if(!(command.context & context)) continue
+		world << "\red [command.name]!"
+		if(command.context && !(command.context & context)) continue
+		if(!command.Requirements(C, S)) continue
+		world << "\green [command.name]!"
+
 		var/obj/display/command/c = new("[sloc.x]:[sloc.pixel_x+nextx*24],[sloc.y]:[sloc.pixel_y+nexty*24]",S,command)
 		selectors.Add(c)
 		nextx++
@@ -87,7 +104,8 @@ client/proc/DisplayCommands(atom/movable/S, screen_loc)
 			nexty++
 
 	for(var/command/command in universal_commands)
-		if(!(command.context & context)) continue
+		if(command.context && !(command.context & context)) continue
+		if(!command.Requirements(C, S)) continue
 		var/obj/display/command/standard/c = new("[sloc.x]:[sloc.pixel_x+nextx*24],[sloc.y]:[sloc.pixel_y+nexty*24]",S,command)
 
 		selectors.Add(c)
@@ -130,17 +148,23 @@ client/Move()
 client/proc/DisplaySelectors(turf/T,screen_loc)
 	var/data/screenloc/sloc = parse_screenloc(screen_loc)
 
+	world << "Selectors:"
 	var/remaining_screen = (17 - sloc.y)*32
 	var/nextx = 0
 	var/nexty = 0
 	for(var/atom/A in T)
-		if(!A.can_select || A.invisibility > mob.see_invisible) continue
+		world << "[A]: \..."
+		if(!A.can_select || A.invisibility > mob.see_invisible)
+			world << "Denied"
+			continue
 		var/obj/display/selector/s = new("[sloc.x]:[16+nextx*24],[sloc.y]:[nexty*24]",A)
 		selectors.Add(s)
+		world << "Added - [nexty],[nextx]"
 		nexty++
 		if(nexty*24+48 > remaining_screen)
 			nexty = 0
 			nextx++
+
 	screen += selectors
 
 /data/screenloc

@@ -47,6 +47,8 @@ client/verb/ScreenSize(n as num)
 	winset(src, "screen.Map", "icon-size=[n]")
 
 turf/var/list/client_eyes = list()
+
+client/perspective = EYE_PERSPECTIVE
 client/var/turf/last_eye_loc
 client/proc/UpdateEye()
 	if(last_eye_loc)

@@ -5,7 +5,7 @@ mob
 	proc
 		getColor(command_name,the_color)
 			the_color = lowertext(the_color)
-			if(!is_hex(the_color)) CRASH("Invalid hex value: [the_color]")
+			if(!is_hex(the_color)) CRASH("PIPE_INVALID hex value: [the_color]")
 			var/r=hex2rgb(the_color)[1]
 			var/g=hex2rgb(the_color)[2]
 			var/b=hex2rgb(the_color)[3]

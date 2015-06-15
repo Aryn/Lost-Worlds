@@ -43,10 +43,10 @@ proc
 			decimal value of the number
 	*/
 		if(!istext(number))
-			world.log << "sd_base2dec: invalid number string- [number]"
+			world.log << "sd_base2dec: PIPE_INVALID number string- [number]"
 			return null
 		if(!isnum(base) || (base < 2) || (base > 36))
-			world.log << "sd_base2dec: invalid base - [base]"
+			world.log << "sd_base2dec: PIPE_INVALID base - [base]"
 			return null
 
 		var/decimal = 0
@@ -59,7 +59,7 @@ proc
 			else if((digit >= "A") && (digit <= "Z"))
 				decimal = decimal * base + (text2ascii(digit) - 55)
 			else
-				break	// terminate when it encounters an invalid character
+				break	// terminate when it encounters an PIPE_INVALID character
 
 		return decimal
 
@@ -78,10 +78,10 @@ proc
 		if(istext(decimal)) decimal = text2num(decimal)
 		decimal = round(decimal)
 		if(!isnum(decimal) || (decimal < 0))
-			world.log << "sd_dec2base: invalid decimal number - [decimal]"
+			world.log << "sd_dec2base: PIPE_INVALID decimal number - [decimal]"
 			return null
 		if(!isnum(base) || (base < 2) || (base > 36))
-			world.log << "sd_dec2base: invalid base - [base]"
+			world.log << "sd_dec2base: PIPE_INVALID base - [base]"
 			return null
 
 		var/text = ""

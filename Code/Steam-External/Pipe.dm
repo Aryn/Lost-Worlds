@@ -18,7 +18,7 @@ structure/steam/node/pipe
 			usr << "None"
 			return
 		else
-			usr << "[(net.status & INVALID) ? "\red" : "\green"][net.nodes.len] nodes, [net.leaks ? net.leaks.len : 0] leaks."
+			usr << "[(net.status & PIPE_INVALID) ? "\red" : "\green"][net.nodes.len] nodes, [net.leaks ? net.leaks.len : 0] leaks."
 			usr << "Differential: [net.Differential()] units"
 
 structure/steam/valve

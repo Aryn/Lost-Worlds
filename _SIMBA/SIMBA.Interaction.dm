@@ -9,8 +9,9 @@
 /atom/proc/Applied(mob/user, item/item)
 /atom/proc/AppliedAtRange(mob/user, item/item)
 
-/atom/Click()
+/atom/Click(location,control,params)
 	var/character/user = usr
+
 	if(get_dist(user, src) <= 1)
 		if(user.active_slot.item)
 			if(!user.active_slot.item.ApplyTo(src))
@@ -22,7 +23,6 @@
 			AppliedAtRange(user,user.active_slot.item)
 		else
 			OperatedAtRange(user)
-
 
 /*
 Proc that force-moves the atom into a new location, ignoring checks.

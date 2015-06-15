@@ -22,6 +22,57 @@
 	overlays += hair
 	overlays += beard
 
+/character/humanoid/Login()
+	. = ..()
+	if(!client.in_game)
+		world.log << "Added [client.key] to player list."
+		game.players.Add(client)
+		client.in_game = TRUE
+
+client/Del()
+	if(in_game)
+		world.log << "Removed [key] from player list."
+		game.players.Remove(src)
+	. = ..()
+
+/character/humanoid/var/item_slot/left_hand
+/character/humanoid/var/item_slot/right_hand
+
+/character/humanoid/human/New()
+	. = ..()
+	item_slots = list()
+	for(var/button/slot_type/slot_type in ITEM_SLOTS_HUMAN)
+		var/item_slot/slot = new(slot_type, src)
+		if(slot_type.name == "left") left_hand = slot
+		else if(slot_type.name == "right") right_hand = slot
+
+		item_slots.Add(slot)
+
+/character/humanoid/human/Login()
+	. = ..()
+	for(var/item_slot/slot in item_slots)
+		if(slot.slot_type.group) continue
+		slot.Show()
+	for(var/button/button in BUTTONS_HUMAN)
+		button.Show(src)
+	if(!active_slot)
+		left_hand.Activate()
+
+/character/humanoid/ItemSlot(slot_name)
+	for(var/item_slot/slot in item_slots)
+		if(slot.slot_type.name == slot_name) return slot
+
+/character/humanoid/ChangeActiveSlot()
+	if(active_slot == left_hand) right_hand.Activate()
+	else left_hand.Activate()
+
+/*character/player/ClientMoved()
+	. = ..()
+	if(client.last_moved > world.time-1)
+		var/turf/T = loc
+		if(isturf(T) && T.top && !T.top.muted_footstep)
+			Sound(T.top.Footstep(),rand(10,25))*/
+
 /*character/humanoid/SetupEquipmentSlots()
 	slots = new
 	slots["L Hand"] = new/item_slot/grabber(src, "L Hand", players.hud.l_hand)
@@ -81,24 +132,3 @@
 	slots.Add(slot_name)
 	slots[slot_name] = slot
 */
-
-/character/humanoid/Login()
-	. = ..()
-	SetupAppearance()
-	if(!client.in_game)
-		world.log << "Added [client.key] to player list."
-		game.players.Add(client)
-		client.in_game = TRUE
-
-client/Del()
-	if(in_game)
-		world.log << "Removed [key] from player list."
-		game.players.Remove(src)
-	. = ..()
-
-/*character/player/ClientMoved()
-	. = ..()
-	if(client.last_moved > world.time-1)
-		var/turf/T = loc
-		if(isturf(T) && T.top && !T.top.muted_footstep)
-			Sound(T.top.Footstep(),rand(10,25))*/

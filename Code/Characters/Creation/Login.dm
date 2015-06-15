@@ -24,7 +24,7 @@ var/list/random_names_last
 	var/beard_icon = all_beards
 	all_beards = list()
 	for(var/beard_state in icon_states(beard_icon))
-		all_beards[beard_state]=image(beard_icon, icon_state = beard_state, layer = MOB_LAYER+1)
+		all_beards[beard_state]=image(beard_icon, icon_state = beard_state, layer = BEARD_LAYER)
 	return TRUE
 
 mob/login

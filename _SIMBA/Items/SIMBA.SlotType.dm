@@ -8,10 +8,6 @@
 /button/slot_type/proc/Deactivate(character/owner)
 /button/slot_type/proc/Activate(character/owner)
 
-/button/slot_type/New()
-	. = ..()
-	icon_state = equip_state
-
 /button/slot_type/Pressed(character/user)
 	var/item_slot/myslot = user.ItemSlot(name)
 	if(myslot && user.active_slot.item)

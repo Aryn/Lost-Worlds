@@ -73,7 +73,7 @@ proc/sd_Alert(client/who, message, title, buttons = list("Ok"),\
 	if(ismob(who))
 		var/mob/M = who
 		who = M.client
-	if(!istype(who)) CRASH("sd_Alert: Invalid target:[who] (\ref[who])")
+	if(!istype(who)) CRASH("sd_Alert: PIPE_INVALID target:[who] (\ref[who])")
 
 	var/sd_alert/T = locate(tag)
 	if(T)

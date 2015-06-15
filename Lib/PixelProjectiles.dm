@@ -130,7 +130,7 @@ proc/FirePixelProjectile(atom/owner, destination, proj_type = \
 			return P
 
 	else
-		world.log << "Invalid destination: FirePixelProjectile([owner], [destination], \
+		world.log << "PIPE_INVALID destination: FirePixelProjectile([owner], [destination], \
 			[proj_type])"
 		Erase(P)
 		return

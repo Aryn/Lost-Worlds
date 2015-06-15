@@ -50,11 +50,11 @@
 /item_slot/proc/ForceEquip(item/item)
 	if(item.slot)
 		item.slot._Clear()
-		item.OnSwap(owner)
+		item.OnSwap(src)
 
 	item.slot = src
 	item_layer = item.layer
-	item.layer = FLY_LAYER+2
+	item.layer = UI_LAYER+2
 	item.screen_loc = slot_type.screen_loc
 
 	src.item = item
@@ -78,7 +78,7 @@
 /item_slot/proc/Drop(atom/newloc)
 	if(!item) return
 	if(item.Move(newloc))
-		item.OnDrop(newloc)
+		item.OnDrop(newloc, owner)
 		_Clear()
 
 /item_slot/proc/OverlayEquipment()
@@ -86,4 +86,7 @@
 	if(!equip_image) equip_image = image(layer = MOB_LAYER+1+item.equip_layer/10)
 	equip_image.icon = item.icon
 	equip_image.icon_state = slot_type.equip_state
+	if(item.respects_form && slot_type.name == item.equip_slot)
+		equip_image.icon_state += "-[owner.form]"
+	equip_image.color = item.color
 	owner.overlays += equip_image

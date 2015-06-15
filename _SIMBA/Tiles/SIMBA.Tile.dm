@@ -1,5 +1,6 @@
 //A tile is very similar to a turf, but is far faster and less hazardous to change or replace, being derived from /obj.
 /tile/parent_type = /obj
+/tile/layer = 2
 
 
 /* MOVEMENT HANDLING */

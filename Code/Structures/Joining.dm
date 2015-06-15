@@ -4,6 +4,7 @@
 	return 1
 
 structure/joining/var/jdir = 0
+structure/joining/is_anchored = 1
 
 structure/joining/proc/Join()
 	jdir = 0

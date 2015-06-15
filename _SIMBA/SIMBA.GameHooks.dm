@@ -1,7 +1,7 @@
 /proc/CallHook(hook)
 	var/hook_path = text2path("/hook/[hook]")
 	if(!hook_path)
-		CRASH("Invalid hook '/hook/[hook]' called.")
+		CRASH("PIPE_INVALID hook '/hook/[hook]' called.")
 		return 0
 
 	var/caller = new hook_path

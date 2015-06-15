@@ -142,7 +142,7 @@
 #define SEEK_SET "S"
 
 binfile
-	var/handle	= null		//the file handle string - null if invalid
+	var/handle	= null		//the file handle string - null if PIPE_INVALID
 
 	// Called when a binfile datum is deleted
 	// If the file handle is still valid, close the file.
@@ -156,7 +156,7 @@ binfile
 		// Open a file with the given filename and mode settings.
 		// The default mode is "rb+", allowing you to read and write from an existing file in binary mode.
 		// If the file does not exist, the proc fails
-		// Returns 0 to signal an error condition (such as the file does not exist or is invalid)
+		// Returns 0 to signal an error condition (such as the file does not exist or is PIPE_INVALID)
 
 		// note see C/C++ fopen() documentation for other mode settings
 
@@ -180,7 +180,7 @@ binfile
 
 
 		// Close the file.
-		// Should be called after all reads and writes are completed. This invalidates the file handle.
+		// Should be called after all reads and writes are completed. This PIPE_INVALIDates the file handle.
 		// Should also be called before any standard DM file i/o is attempted on the same file.
 
 		close()
@@ -394,8 +394,8 @@ binfile
 		// 3 = unknown file handle
 		// 4 = failed to close file
 		// 5 = end of file reached
-		// 6 = invalid file seek/tell
-		// 7 = invalid seek origin
+		// 6 = PIPE_INVALID file seek/tell
+		// 7 = PIPE_INVALID seek origin
 		// 8 = malloc failed (out of memory/heap space)
 		// 9 = read failure
 		// 10 = write failure

@@ -10,4 +10,4 @@ mob/verb/Vote()
 		if("Grand Tour Linear") game.Start(new /route_type/grand_tour/linear)
 		if("Grand Tour Circular") game.Start(new /route_type/grand_tour)
 		if("Distant Ports") game.Start(new/route_type/distant_ports)
-		else world.log << "Invalid Route: [vote]"
+		else world.log << "PIPE_INVALID Route: [vote]"

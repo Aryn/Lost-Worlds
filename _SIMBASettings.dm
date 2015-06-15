@@ -12,3 +12,8 @@
 
 #define ITEM_SCALE 0.91666
 #define SELECT_SCALE 0.75
+
+//Command Context
+#define ALL 0xFFFF
+#define NORMAL 1
+#define BATTLE 2

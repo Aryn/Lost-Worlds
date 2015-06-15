@@ -28,7 +28,13 @@ character/Bump(atom/A)
 	if(A == pulling) pulling = null
 	. = ..()
 
-var/command/pull_command = new("Pull", ALL, "Pull this object behind your character.")
+/command/pull
+	name = "Pull"
+	context = ALL
+	desc = "Pull this object along behind your character."
+	custom_icon = 'Icons/Commands/Standard.dmi'
+
+var/command/pull_command = new/command/pull
 
 structure/New()
 	if(!is_anchored)
