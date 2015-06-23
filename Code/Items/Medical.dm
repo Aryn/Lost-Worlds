@@ -9,7 +9,7 @@ var/process/process_tweezers = new/process(/character/humanoid/human, "TweezerHe
 
 /item/stack/bandages
 	name = "Bandages"
-	icon_state = "stack"
+	icon_state = "Stacked"
 	icon = 'Icons/Items/Medical/Bandages.dmi'
 	max_stacks = 5
 	stacks = 5
@@ -64,7 +64,7 @@ character/humanoid/human/proc/BandageHeal(character/healer, item/stack/bandages/
 
 character/humanoid/human/proc/SutureHeal(character/healer, item/medical/sutures/sutures)
 	view(src) << "\green [src] is healed!"
-	sutures.icon_state = "blood"
+	sutures.icon_state = "Blood"
 	sutures.blood = src
 	if(slash_damage > 15)
 		slash_damage -= 15
@@ -77,7 +77,7 @@ character/humanoid/human/proc/SutureHeal(character/healer, item/medical/sutures/
 
 character/humanoid/human/proc/TweezerHeal(character/healer, item/medical/tweezers/tweezers)
 	view(src) << "\green [src] is healed!"
-	tweezers.icon_state = "blood"
+	tweezers.icon_state = "Blood"
 	tweezers.blood = src
 	if(shrapnel_damage > 15)
 		shrapnel_damage -= 15

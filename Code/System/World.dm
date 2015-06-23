@@ -2,6 +2,7 @@ world/mob = /mob/login
 world/fps = 30
 world/view = 7
 world/area = /area/outside
+world/turf = /turf/sky
 
 /area/outside
 	icon = 'Icons/Lighting/SimpleDark.dmi'

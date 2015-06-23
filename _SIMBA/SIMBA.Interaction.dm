@@ -11,7 +11,9 @@
 
 /atom/Click(location,control,params)
 	var/character/user = usr
+	Interacted(user)
 
+/atom/proc/Interacted(character/user)
 	if(get_dist(user, src) <= 1)
 		if(user.active_slot.item)
 			if(!user.active_slot.item.ApplyTo(src))

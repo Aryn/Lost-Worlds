@@ -21,7 +21,7 @@
 		if(I.stacks > 1)
 			world << "Stacks > 1, Pluralizing."
 			I.name = I.plural_name
-			I.icon_state = "stack"
+			I.icon_state = "Stacked"
 		Consume()
 		M.Sound('Sounds/Inventory/Get.ogg')
 		return TRUE

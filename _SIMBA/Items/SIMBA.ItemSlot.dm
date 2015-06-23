@@ -55,6 +55,7 @@
 	item.slot = src
 	item_layer = item.layer
 	item.layer = UI_LAYER+2
+	item.mouse_opacity = 2
 	item.screen_loc = slot_type.screen_loc
 
 	src.item = item
@@ -70,6 +71,7 @@
 		owner.client.screen -= item
 
 	item.layer = item_layer
+	item.mouse_opacity = 1
 	owner.overlays -= equip_image
 
 	item.slot = null
@@ -77,16 +79,20 @@
 
 /item_slot/proc/Drop(atom/newloc)
 	if(!item) return
-	if(item.Move(newloc))
+	var/result = item.Move(newloc)
+	if(result)
 		item.OnDrop(newloc, owner)
 		_Clear()
+	else
+		CRASH("Item can't move there: [result]")
 
 /item_slot/proc/OverlayEquipment()
 	if(!item || !slot_type.shows_equipment) return
 	if(!equip_image) equip_image = image(layer = MOB_LAYER+1+item.equip_layer/10)
+	equip_image.pixel_y = item.equip_offset_y //Used for hats and other things taller than the character.
 	equip_image.icon = item.icon
 	equip_image.icon_state = slot_type.equip_state
 	if(item.respects_form && slot_type.name == item.equip_slot)
-		equip_image.icon_state += "-[owner.form]"
+		equip_image.icon_state += " - [owner.form]"
 	equip_image.color = item.color
 	owner.overlays += equip_image

@@ -1,6 +1,9 @@
 
 //Density
 atom/movable/proc/IsDense(atom/mover)
+	return density && mover.density
+
+tile/IsDense(atom/mover)
 	return density
 
 turf/Enter(atom/A)

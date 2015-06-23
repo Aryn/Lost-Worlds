@@ -43,8 +43,8 @@ client/Del()
 	item_slots = list()
 	for(var/button/slot_type/slot_type in ITEM_SLOTS_HUMAN)
 		var/item_slot/slot = new(slot_type, src)
-		if(slot_type.name == "left") left_hand = slot
-		else if(slot_type.name == "right") right_hand = slot
+		if(slot_type.name == "Left Hand") left_hand = slot
+		else if(slot_type.name == "Right Hand") right_hand = slot
 
 		item_slots.Add(slot)
 
@@ -57,10 +57,6 @@ client/Del()
 		button.Show(src)
 	if(!active_slot)
 		left_hand.Activate()
-
-/character/humanoid/ItemSlot(slot_name)
-	for(var/item_slot/slot in item_slots)
-		if(slot.slot_type.name == slot_name) return slot
 
 /character/humanoid/ChangeActiveSlot()
 	if(active_slot == left_hand) right_hand.Activate()

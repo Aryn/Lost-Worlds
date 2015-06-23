@@ -4,6 +4,7 @@ var/sway_displacement = 0
 var/sway_angle = 0
 
 proc/ShipSway()
+	if(!game.map || !game.map.ship) return
 	sway_displacement += rand() * SHIP_SWAY_INTENSITY - SHIP_SWAY_INTENSITY / 2
 	sway_angle += rand() * SHIP_SWAY_INTENSITY * 10 - SHIP_SWAY_INTENSITY / 0.2
 	while(sway_angle > 360) sway_angle -= 360

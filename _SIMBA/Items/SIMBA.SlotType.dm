@@ -10,5 +10,8 @@
 
 /button/slot_type/Pressed(character/user)
 	var/item_slot/myslot = user.ItemSlot(name)
-	if(myslot && user.active_slot.item)
-		myslot.TryEquip(user.active_slot.item)
+	if(myslot)
+		if(myslot.item)
+			myslot.item.Interacted(user)
+		else if(user.active_slot.item)
+			myslot.TryEquip(user.active_slot.item)

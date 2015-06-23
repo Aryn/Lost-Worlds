@@ -65,10 +65,10 @@ cargo_controller/test
 				break
 
 	Unload(data/cargo_box/box, data/port/dest)
-		var/structure/box/best_match
+		var/structure/lockable/box/best_match
 		var/best_ratio = 0.5
 		for(var/turf/loc in unloading_area)
-			for(var/structure/box/obj in loc)
+			for(var/structure/lockable/box/obj in loc)
 				var/match_ratio = box.Check(obj, dest)
 				if(match_ratio > 0.95 && match_ratio < 1.05)
 					world << "\green Total Match For [box]: [obj.x], [obj.y], [obj.z]"

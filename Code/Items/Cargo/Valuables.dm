@@ -7,7 +7,7 @@
 
 /item/stack/coins
 	name = "Gold Coins"
-	icon_state = "stack"
+	icon_state = "Stacked"
 	desc = "A pile of gold coins."
 	icon = 'Icons/Items/Cargo/Coins.dmi'
 	stacks = 5
@@ -18,5 +18,5 @@
 	name = "Gold Statue"
 	desc = "A golden statue in the shape of a snake."
 	icon = 'Icons/Items/Cargo/Vase.dmi'
-	icon_state = "statue"
+	icon_state = "Statue"
 	cargo_value = 40

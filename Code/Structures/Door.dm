@@ -1,4 +1,4 @@
-structure/door
+structure/lockable/door
 	name = "Wooden Door"
 	icon = 'Icons/Ship/Doors/Wooden.dmi'
 	icon_state = "closed"
@@ -17,65 +17,60 @@ structure/door
 	var/structure/blocked_with
 	var/item/security/lock/lock
 
-	proc/Lock(item/security/lock/lock)
+	Lock(item/security/lock/lock)
 		overlays += 'Icons/Ship/Doors/Lock.dmi'
 		src.lock = lock
 
-/structure/door/metal
+/structure/lockable/door/metal
 	name = "Metal Door"
 	icon = 'Icons/Ship/Doors/Iron.dmi'
 
-/structure/door/glass
+/structure/lockable/door/glass
 	name = "Glass Door"
 	icon = 'Icons/Ship/Doors/Glass.dmi'
 	opacity = 0
 	closed_opacity = 0
 	commands = null
 
-/structure/marker/initial/door_lock
-	icon = 'Icons/Ship/Doors/Lock.dmi'
-	icon_state = "closed"
-	var/code = "00000"
 
-	Initialize()
-		var/structure/door/door = locate() in loc
-		if(door)
-			var/item/security/lock/lock = new(door)
-			lock.code = code
-			door.Lock(lock)
-
-
-structure/door/proc/Peek()
+structure/lockable/door/proc/Peek()
 	var/character/C = usr
 	if(istype(C) && C.InRangeOf(src))
 		usr.client.SetEye(src)
 		usr.client.tmp_eye = TRUE
 
-structure/door/Bumped(character/C)
-	if(istype(C) && CanOpen(C.active_slot.item))
+structure/lockable/door/Bumped(character/C)
+	//Yes, it's true, you can't auto-open locked doors without the key in your hand.
+	//If SS13 didn't spam ID doors everywhere I wouldn't have to do this.
+	if(istype(C) && !blocked_with && (!lock || lock.CanOpen(C)))
 		Open()
 		C.ForceMove(loc)
 		if(C.client) C.client.last_moved = world.time
+		return
+	if(lock)
+		C << "\red The door is locked."
+	else if(blocked_with)
+		C << "\red The door won't open."
+	if(C.client) C.client.last_moved = world.time
 
-structure/door/Operated(character/C)
-	if(CanOpen(null))
+
+structure/lockable/door/Operated(character/C)
+	if(blocked_with) C << "\red The door won't open."
+	if(!lock || lock.CanOpenWith(C.ItemInSlot("keys")))
 		if(!open)
 			Open(TRUE)
 		else
 			Close(TRUE)
 
-structure/door/Applied(character/C, item/I)
-	if(CanOpen(I))
+structure/lockable/door/Applied(character/C, item/I)
+	if(blocked_with) C << "\red The door won't open."
+	if(!lock || lock.CanOpenWith(I))
 		if(!open)
 			Open(TRUE)
 		else
 			Close(TRUE)
 
-structure/door/proc/CanOpen(item/key)
-	if(lock) return istype(key, /item/security/key) && lock.Check(key)
-	else return !blocked_with
-
-structure/door/proc/Open(soft = FALSE)
+structure/lockable/door/proc/Open(soft = FALSE)
 	icon_state = "open"
 	flick("opening",src)
 	density = 0
@@ -83,9 +78,15 @@ structure/door/proc/Open(soft = FALSE)
 	Sound('Sounds/Structure/DoorOpen.ogg',soft ? 25 : 60)
 	open = TRUE
 	if(!soft)
-		spawn(50) CloseCheck()
+		spawn CloseCheck()
 
-structure/door/proc/CloseCheck()
+structure/lockable/door/proc/CloseCheck()
+	var/time = 50 + (lock ? 50 : 0)
+	while(time > 0)
+		sleep(10)
+		time -= 10
+		if(!open) return
+
 	if(!loc || !open) return
 	var/stay_open = FALSE
 	for(var/atom/A in loc)
@@ -96,7 +97,7 @@ structure/door/proc/CloseCheck()
 	if(!stay_open) Close()
 	else spawn(50) .()
 
-structure/door/proc/Close(soft = FALSE)
+structure/lockable/door/proc/Close(soft = FALSE)
 	icon_state = "closed"
 	flick("closing",src)
 	density = 1

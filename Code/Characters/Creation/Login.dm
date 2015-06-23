@@ -12,7 +12,7 @@ var/selection_css = {"<style>
 		}
 	</style>"}
 
-var/list/all_forms = list("male" = new/character_form/male, "female" = new/character_form/female)
+var/list/all_forms = list("Male" = new/character_form/male, "Female" = new/character_form/female)
 var/list/all_beards = 'Icons/Creatures/Players/Beards.dmi'
 var/image/hiding_img
 
@@ -107,12 +107,12 @@ Unrecognized or inaccessible verb: ChangeSeal
 */
 
 mob/login/verb/BeMale()
-	selected.form = all_forms["male"]
+	selected.form = all_forms["Male"]
 	selected.UpdateImage("EditIcon")
 	winset(src,"facialhair","is-visible=true;text=\"[selected.beard]\"")
 
 mob/login/verb/BeFemale()
-	selected.form = all_forms["female"]
+	selected.form = all_forms["Female"]
 	selected.UpdateImage("EditIcon")
 	winset(src,"facialhair","is-visible=false")
 

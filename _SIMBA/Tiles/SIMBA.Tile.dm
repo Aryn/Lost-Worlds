@@ -53,8 +53,8 @@
 	. = ..()
 	turf._AddTile(src)
 
-/tile/Move(newloc)
-	return 0
+//tile/Move(newloc)
+//	return 0
 
 /tile/Erase()
 	var/turf/turf = loc

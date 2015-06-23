@@ -2,13 +2,13 @@
 "ab" = (/turf/mapping/floor/metal,/area/outside)
 "ac" = (/turf/mapping/supports,/area/outside)
 "ad" = (/turf/mapping/wall/metal,/area)
-"ae" = (/structure/door/metal,/turf/mapping/floor/metal,/area)
+"ae" = (/structure/lockable/door/metal,/turf/mapping/floor/metal,/area)
 "af" = (/turf/mapping/floor/metal,/area)
 "ag" = (/structure/ladder/up,/turf/mapping/floor/metal,/area)
 "ah" = (/structure/lamp{pixel_y = 32},/turf/mapping/floor/metal,/area)
 "ai" = (/structure/joining/table,/turf/mapping/floor/metal,/area)
 "aj" = (/structure/lamp{pixel_x = -32},/turf/mapping/floor/metal,/area)
-"ak" = (/structure/door/metal,/structure/marker/initial/door_lock{code = "90210"; name = "Lock - Power"},/turf/mapping/floor/metal,/area)
+"ak" = (/structure/lockable/door/metal,/structure/marker/initial/lock{code = "90210"; name = "Lock - Power"},/turf/mapping/floor/metal,/area)
 "al" = (/structure/joining/table,/item/security/key{code = "90210"; name = "Key - Power"},/turf/mapping/floor/metal,/area)
 "am" = (/turf/mapping/frame/metal,/area)
 "an" = (/structure/lamp{pixel_x = 32},/turf/mapping/floor/metal,/area)
@@ -16,21 +16,21 @@
 "ap" = (/tile/lift,/structure/lift/controls,/turf/mapping/supports,/area)
 "aq" = (/turf/mapping/floor/metal,/area/cargo_bay)
 "ar" = (/turf/mapping/window/iron,/area)
-"as" = (/structure/door/glass,/turf/mapping/floor/metal,/area)
+"as" = (/structure/lockable/door/glass,/turf/mapping/floor/metal,/area)
 "at" = (/structure/lift/anchor/cargo{tag = "icon-anchor (NORTH)"; icon_state = "anchor"; dir = 1},/turf/mapping/floor/metal,/area)
 "au" = (/structure/lamp{pixel_y = -32},/turf/mapping/floor/metal,/area)
 "av" = (/turf/mapping/frame,/area/outside)
 "aw" = (/turf/mapping/floor,/area/outside)
 "ax" = (/turf/mapping/wall,/area)
 "ay" = (/turf/mapping/window,/area)
-"az" = (/structure/door/glass,/turf/mapping/floor,/area)
+"az" = (/structure/lockable/door/glass,/turf/mapping/floor,/area)
 "aA" = (/structure/controls/aux,/turf/mapping/floor/metal,/area)
 "aB" = (/structure/controls/wheel,/turf/mapping/floor/metal,/area)
 "aC" = (/structure/controls/throttle,/turf/mapping/floor/metal,/area)
 "aD" = (/structure/ladder/up,/turf/mapping/floor,/area)
 "aE" = (/structure/ladder/down,/turf/mapping/floor,/area)
 "aF" = (/turf/mapping/floor,/area)
-"aG" = (/structure/box/locked,/turf/mapping/floor,/area)
+"aG" = (/structure/lockable/box,/structure/marker/initial/lock{code = "80027"; name = "Lock - Bridge"},/turf/mapping/floor,/area)
 "aH" = (/structure/joining/table,/structure/lamp{pixel_x = -32},/turf/mapping/floor/metal,/area)
 "aI" = (/structure/joining/table,/structure/lamp{pixel_x = 32},/turf/mapping/floor/metal,/area)
 "aJ" = (/structure/joining/table,/turf/mapping/floor,/area)
@@ -39,43 +39,44 @@
 "aM" = (/structure/lamp{pixel_x = -32},/turf/mapping/floor,/area)
 "aN" = (/structure/joining/table,/structure/lamp,/turf/mapping/floor,/area)
 "aO" = (/structure/joining/table,/item/medical/sutures,/turf/mapping/floor,/area)
-"aP" = (/structure/door/metal,/structure/marker/initial/door_lock{code = "80027"; name = "Lock - Bridge"},/turf/mapping/floor/metal,/area)
+"aP" = (/structure/lockable/door/metal,/structure/marker/initial/lock{code = "80027"; name = "Lock - Bridge"},/turf/mapping/floor/metal,/area)
 "aQ" = (/structure/joining/table,/item/security/key{code = "80027"; name = "Key - Bridge"},/turf/mapping/floor,/area)
-"aR" = (/structure/joining/table,/item/clothing/hat/layton{color = "#222222"},/turf/mapping/floor,/area)
-"aS" = (/structure/marker,/turf/mapping/floor,/area)
-"aT" = (/structure/steam/node/pipe{tag = "icon-2"; icon_state = "2"},/turf/mapping/floor,/area)
-"aU" = (/structure/steam/node/pipe{tag = "icon-6"; icon_state = "6"},/turf/mapping/floor,/area)
-"aV" = (/structure/steam/node/pipe{tag = "icon-14"; icon_state = "14"},/turf/mapping/floor,/area)
-"aW" = (/structure/steam/node/pipe{tag = "icon-10"; icon_state = "10"},/turf/mapping/floor,/area)
-"aX" = (/structure/steam/node/pipe{tag = "icon-4"; icon_state = "4"},/turf/mapping/floor,/area)
-"aY" = (/structure/steam/node/pipe{tag = "icon-12"; icon_state = "12"},/turf/mapping/floor,/area)
-"aZ" = (/structure/steam/node/pipe{tag = "icon-8"; icon_state = "8"},/turf/mapping/floor,/area)
-"ba" = (/structure/steam/node/pipe{tag = "icon-3"; icon_state = "3"},/turf/mapping/floor,/area)
-"bb" = (/structure/steam/node/pipe{tag = "icon-7"; icon_state = "7"},/turf/mapping/floor,/area)
-"bc" = (/structure/steam/node/pipe{tag = "icon-15"; icon_state = "15"},/turf/mapping/floor,/area)
-"bd" = (/structure/steam/node/pipe{tag = "icon-11"; icon_state = "11"},/turf/mapping/floor,/area)
-"be" = (/structure/steam/node/pipe{tag = "icon-1"; icon_state = "1"},/turf/mapping/floor,/area)
-"bf" = (/structure/steam/node/pipe{tag = "icon-5"; icon_state = "5"},/turf/mapping/floor,/area)
-"bg" = (/structure/steam/node/pipe{tag = "icon-13"; icon_state = "13"},/turf/mapping/floor,/area)
-"bh" = (/structure/steam/node/pipe{tag = "icon-9"; icon_state = "9"},/turf/mapping/floor,/area)
-"bi" = (/structure/lamp{pixel_y = -32},/turf/mapping/floor,/area)
-"bj" = (/turf/mapping/frame/metal,/area/outside)
-"bk" = (/turf/mapping/wall,/area/surface)
-"bl" = (/turf/map_edge,/area/surface)
-"bm" = (/turf/mapping/frame/metal,/area/surface)
-"bn" = (/turf/mapping/floor,/area/surface/loading_area/Hirugard)
-"bo" = (/turf/mapping/wall/metal,/area/surface)
-"bp" = (/turf/mapping/floor,/area/surface/unloading_area)
-"bq" = (/turf/mapping/floor/metal,/area/surface/loading_area/Devteros)
-"br" = (/turf/mapping/floor/metal,/area/surface/unloading_area)
-"bs" = (/tile/lift_equipment,/tile/support,/turf/sky/pure,/area/surface)
-"bt" = (/structure/marker/landing_site{name = "Hirugard"; tag = "Hirugard"},/turf/mapping/floor,/area/surface/unloading_area)
-"bu" = (/structure/marker/landing_site{name = "Devteros"; tag = "Devteros"},/turf/mapping/floor/metal,/area/surface/unloading_area)
-"bv" = (/turf/sky/pure,/area/surface)
-"bw" = (/turf/mapping/floor/metal,/area/surface/loading_area/Arrajin)
-"bx" = (/tile/support,/tile/lift_equipment,/structure/marker{density = 1; name = "Blocker"},/turf/sky/pure,/area/surface)
-"by" = (/structure/marker/landing_site{name = "Arrajin"; tag = "Arrajin"},/turf/mapping/floor/metal,/area/surface/unloading_area)
-"bz" = (/structure/marker/landing_site{name = "Airborne"; tag = "Airborne"},/tile/support,/tile/lift_equipment,/structure/marker{density = 1; name = "Blocker"},/turf/sky/pure,/area/surface)
+"aR" = (/structure/joining/table,/item/clothing/hat/cowboy_hat,/turf/mapping/floor,/area)
+"aS" = (/structure/joining/table,/item/clothing/hat/top_hat{color = "#222222"},/turf/mapping/floor,/area)
+"aT" = (/structure/marker,/turf/mapping/floor,/area)
+"aU" = (/structure/steam/node/pipe{tag = "icon-2"; icon_state = "2"},/turf/mapping/floor,/area)
+"aV" = (/structure/steam/node/pipe{tag = "icon-6"; icon_state = "6"},/turf/mapping/floor,/area)
+"aW" = (/structure/steam/node/pipe{tag = "icon-14"; icon_state = "14"},/turf/mapping/floor,/area)
+"aX" = (/structure/steam/node/pipe{tag = "icon-10"; icon_state = "10"},/turf/mapping/floor,/area)
+"aY" = (/structure/steam/node/pipe{tag = "icon-4"; icon_state = "4"},/turf/mapping/floor,/area)
+"aZ" = (/structure/steam/node/pipe{tag = "icon-12"; icon_state = "12"},/turf/mapping/floor,/area)
+"ba" = (/structure/steam/node/pipe{tag = "icon-8"; icon_state = "8"},/turf/mapping/floor,/area)
+"bb" = (/structure/steam/node/pipe{tag = "icon-3"; icon_state = "3"},/turf/mapping/floor,/area)
+"bc" = (/structure/steam/node/pipe{tag = "icon-7"; icon_state = "7"},/turf/mapping/floor,/area)
+"bd" = (/structure/steam/node/pipe{tag = "icon-15"; icon_state = "15"},/turf/mapping/floor,/area)
+"be" = (/structure/steam/node/pipe{tag = "icon-11"; icon_state = "11"},/turf/mapping/floor,/area)
+"bf" = (/structure/steam/node/pipe{tag = "icon-1"; icon_state = "1"},/turf/mapping/floor,/area)
+"bg" = (/structure/steam/node/pipe{tag = "icon-5"; icon_state = "5"},/turf/mapping/floor,/area)
+"bh" = (/structure/steam/node/pipe{tag = "icon-13"; icon_state = "13"},/turf/mapping/floor,/area)
+"bi" = (/structure/steam/node/pipe{tag = "icon-9"; icon_state = "9"},/turf/mapping/floor,/area)
+"bj" = (/structure/lamp{pixel_y = -32},/turf/mapping/floor,/area)
+"bk" = (/turf/mapping/frame/metal,/area/outside)
+"bl" = (/turf/mapping/wall,/area/surface)
+"bm" = (/turf/map_edge,/area/surface)
+"bn" = (/turf/mapping/frame/metal,/area/surface)
+"bo" = (/turf/mapping/floor,/area/surface/loading_area/Hirugard)
+"bp" = (/turf/mapping/wall/metal,/area/surface)
+"bq" = (/turf/mapping/floor,/area/surface/unloading_area)
+"br" = (/turf/mapping/floor/metal,/area/surface/loading_area/Devteros)
+"bs" = (/turf/mapping/floor/metal,/area/surface/unloading_area)
+"bt" = (/tile/lift_equipment,/tile/support,/turf/sky/pure,/area/surface)
+"bu" = (/structure/marker/landing_site{name = "Hirugard"; tag = "Hirugard"},/turf/mapping/floor,/area/surface/unloading_area)
+"bv" = (/structure/marker/landing_site{name = "Devteros"; tag = "Devteros"},/turf/mapping/floor/metal,/area/surface/unloading_area)
+"bw" = (/turf/sky/pure,/area/surface)
+"bx" = (/turf/mapping/floor/metal,/area/surface/loading_area/Arrajin)
+"by" = (/tile/support,/tile/lift_equipment,/structure/marker{density = 1; name = "Blocker"},/turf/sky/pure,/area/surface)
+"bz" = (/structure/marker/landing_site{name = "Arrajin"; tag = "Arrajin"},/turf/mapping/floor/metal,/area/surface/unloading_area)
+"bA" = (/structure/marker/landing_site{name = "Airborne"; tag = "Airborne"},/tile/support,/tile/lift_equipment,/structure/marker{density = 1; name = "Blocker"},/turf/sky/pure,/area/surface)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -112,12 +113,12 @@ aaaaaaadaHafafafaIadaFaFaFazaFaFaJaKaLaFaFayawacaa
 aaaaaaadaiafafafaiadaMaFaFazaFaFaJaNaOaFaFayawacaa
 aaaaaaadafafafafafadaFaFaFayaFaFaFaFaFaFaFayawacaa
 aaaaaaadaradaPadaradaFaFaFaxaFaFaFaFaFaFaFaxawacaa
-aaaaaaaxaJaJaFaQaJaRaFaSaFaxaxayayayayayaxaxawacaa
-aaaaaaaxaMaFaFaFaFaFaFaFaFaFaFaFaFaTaUaVaWaxawacaa
-aaaaaaaxaFaFaFaFaFaFaFaFaFaFaXaYaZbabbbcbdayawacaa
-aaaaaaayaFaFaFaFaFaFaFaFaFaFaFaFaFbebfbgbhayawacaa
-aaaaaaaxaFaFaFaFaFaFaFaFaFbiaFaJaJaJaJaJaJaxawacaa
-aaaaaaaxaxayaxaxaxaxaxayaxaxaxayayayayayaxaxavacaa
+aaaaaaaxaJaJaFaQaRaSaFaTaFaxaxayayayayayaxaxawacaa
+aaaaaaaxaMaFaFaFaFaFaFaFaFaFaFaFaFaUaVaWaXaxawacaa
+aaaaaaaxaFaFaFaFaFaFaFaFaFaFaYaZbabbbcbdbeayawacaa
+aaaaaaayaFaFaFaFaFaFaFaFaFaFaFaFaFbfbgbhbiayawacaa
+aaaaaaaxaFaFaFaFaFaFaFaFaFbjaFaJaJaJaJaJaJaxawacaa
+aaaaaaaxaxaxaxaxaxaxaxayaxaxaxaxaxaxaxaxaxaxavacaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -128,9 +129,9 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaabjbjbjawawawaxaxaxawawawawawawawbjbjbjaaaaaa
-aaaaaabjababawawawaxaEaxawawawawawawawababbjaaaaaa
-aaaaaabjabawawawawaxaFaxawawawawawawawawabbjaaaaaa
+aaaaaabkbkbkawawawaxaxaxawawawawawawawbkbkbkaaaaaa
+aaaaaabkababawawawaxaEaxawawawawawawawababbkaaaaaa
+aaaaaabkabawawawawaxaFaxawawawawawawawawabbkaaaaaa
 aaaaaaawawawawawawawawawawawawawawawawawawawaaaaaa
 aaaaaaawawawawawawawawawawawawawawawawawawawaaaaaa
 aaaaaaawawawawawawawawawawawawawawawawawawawaaaaaa
@@ -138,33 +139,33 @@ aaaaaaawawawawawawawawawawawawawawawawawawawaaaaaa
 aaaaaaawawawawawawawawawawawawawawawawawawawaaaaaa
 aaaaaaawawawawawawawawawawawawawawawawawawawaaaaaa
 aaaaaaawawawawawawawawawawawawawawawawawawawaaaaaa
-aaaaaabjabawawawawawawawawawawawawawawawabbjaaaaaa
-aaaaaabjababawawawawawawawawawawawawawababbjaaaaaa
-aaaaaabjbjbjawawawawawawawawawawawawawbjbjbjaaaaaa
+aaaaaabkabawawawawawawawawawawawawawawawabbkaaaaaa
+aaaaaabkababawawawawawawawawawawawawawababbkaaaaaa
+aaaaaabkbkbkawawawawawawawawawawawawawbkbkbkaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}
 
 (1,1,4) = {"
-bkbkbkbkbkbkbkbkbkbkbkbkblbmbmbmbmbmbmbmbmbmbmbmbm
-bkbnbnbobpbpbpbpbobpbpbkblbmbqbqbobrbrbrbrbobrbrbm
-bkbnbnbnbsbsbsbsbpbpbpbkblbmbqbqbqbsbsbsbsbrbrbrbm
-bkbnbnbnbsbsbsbsbpbpbpbkblbqbqbqbqbsbsbsbsbrbrbrbr
-bkbnbnbnbsbsbsbsbpbpbpbkblbqbqbqbqbsbsbsbsbrbrbrbr
-bkbnbnbnbsbsbsbsbpbpbpbkblbmbqbqbqbsbsbsbsbrbrbrbm
-bkbnbnbobtbpbpbpbobpbpbkblbmbqbqbobubrbrbrbobrbrbm
-bkbkbkbkbkbkbkbkbkbkbkbkblbmbmbmbmbmbmbmbmbmbmbmbm
-blblblblblblblblblblblblblblblblblblblblblblblblbl
-blblblblblblblblblblblblblblblblblblblblblblblblbl
-boboboboboboboboboboboboblbvbvbvbvbvbvbvbvbvbvbvbv
-bobwbwbwbrbrbrbrbrbrbrboblbvbvbvbvbvbvbvbvbvbvbvbv
-bobwbwbobrbrbrbrbobrbrboblbvbvbvbmbxbvbvbxbmbvbvbv
-bobwbwbwbsbsbsbsbrbrbrboblbvbvbvbxbvbvbvbvbxbvbvbv
-bobwbwbwbsbsbsbsbrbrbrboblbvbvbvbvbvbvbvbvbvbvbvbv
-bobwbwbwbsbsbsbsbrbrbrboblbvbvbvbvbvbvbvbvbvbvbvbv
-bobwbwbwbsbsbsbsbrbrbrboblbvbvbvbxbvbvbvbvbxbvbvbv
-bobwbwbobybrbrbrbobrbrboblbvbvbvbmbzbvbvbxbmbvbvbv
-bobwbwbwbrbrbrbrbrbrbrboblbvbvbvbvbvbvbvbvbvbvbvbv
-boboboboboboboboboboboboblbvbvbvbvbvbvbvbvbvbvbvbv
+blblblblblblblblblblblblbmbnbnbnbnbnbnbnbnbnbnbnbn
+blbobobpbqbqbqbqbpbqbqblbmbnbrbrbpbsbsbsbsbpbsbsbn
+blbobobobtbtbtbtbqbqbqblbmbnbrbrbrbtbtbtbtbsbsbsbn
+blbobobobtbtbtbtbqbqbqblbmbrbrbrbrbtbtbtbtbsbsbsbs
+blbobobobtbtbtbtbqbqbqblbmbrbrbrbrbtbtbtbtbsbsbsbs
+blbobobobtbtbtbtbqbqbqblbmbnbrbrbrbtbtbtbtbsbsbsbn
+blbobobpbubqbqbqbpbqbqblbmbnbrbrbpbvbsbsbsbpbsbsbn
+blblblblblblblblblblblblbmbnbnbnbnbnbnbnbnbnbnbnbn
+bmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbm
+bmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbm
+bpbpbpbpbpbpbpbpbpbpbpbpbmbwbwbwbwbwbwbwbwbwbwbwbw
+bpbxbxbxbsbsbsbsbsbsbsbpbmbwbwbwbwbwbwbwbwbwbwbwbw
+bpbxbxbpbsbsbsbsbpbsbsbpbmbwbwbwbnbybwbwbybnbwbwbw
+bpbxbxbxbtbtbtbtbsbsbsbpbmbwbwbwbybwbwbwbwbybwbwbw
+bpbxbxbxbtbtbtbtbsbsbsbpbmbwbwbwbwbwbwbwbwbwbwbwbw
+bpbxbxbxbtbtbtbtbsbsbsbpbmbwbwbwbwbwbwbwbwbwbwbwbw
+bpbxbxbxbtbtbtbtbsbsbsbpbmbwbwbwbybwbwbwbwbybwbwbw
+bpbxbxbpbzbsbsbsbpbsbsbpbmbwbwbwbnbAbwbwbybnbwbwbw
+bpbxbxbxbsbsbsbsbsbsbsbpbmbwbwbwbwbwbwbwbwbwbwbwbw
+bpbpbpbpbpbpbpbpbpbpbpbpbmbwbwbwbwbwbwbwbwbwbwbwbw
 "}

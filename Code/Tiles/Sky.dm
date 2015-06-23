@@ -62,7 +62,7 @@ tile/Fall(turf/T)
 
 structure/Fall(turf/T)
 	if(is_anchored) return
-	else . = ..()
+	else return ..()
 
 /turf/map_edge
 	layer = 0.5

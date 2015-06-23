@@ -5,13 +5,13 @@
 /character_form/var/bearded = FALSE //You can have bearded ladies, but your beard won't carry over with gender swaps in edit mode.
 
 /character_form/male
-	name = "male"
+	name = "Male"
 	body = 'Icons/Creatures/Players/Male.dmi'
 	hair_icon = 'Icons/Creatures/Players/MaleHair.dmi'
 	bearded = TRUE
 
 /character_form/female
-	name = "female"
+	name = "Female"
 	body = 'Icons/Creatures/Players/Female.dmi'
 	hair_icon = 'Icons/Creatures/Players/FemaleHair.dmi'
 

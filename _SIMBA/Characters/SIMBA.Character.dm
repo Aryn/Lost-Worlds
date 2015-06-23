@@ -5,6 +5,13 @@
 /character/var/character_form/form
 
 /character/proc/ItemSlot(slot_name)
+	for(var/item_slot/slot in item_slots)
+		if(slot.slot_type.name == slot_name) return slot
+
+/character/proc/ItemInSlot(slot_name)
+	for(var/item_slot/slot in item_slots)
+		if(slot.slot_type.name == slot_name) return slot.item
+
 /character/proc/ChangeActiveSlot()
 
 /character/proc/GetCommandContext()

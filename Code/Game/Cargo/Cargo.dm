@@ -77,12 +77,12 @@ var/list/carried_boxes = list()
 
 
 /data/cargo_box
-	var/boxtype = /structure/box //Determines box type.
+	var/boxtype = /structure/lockable/box //Determines box type.
 	var/list/items               //Expected items in the box.
 	var/value                    //Value of items in the box.
 
 /data/cargo_box/proc/Assemble(turf/T, label) //Makes the box and puts items inside.
-	var/structure/box/box = new boxtype(T)
+	var/structure/lockable/box/box = new boxtype(T)
 	var/computed_value = 0
 	for(var/item_type in items)
 		var/n = items[item_type]
@@ -97,7 +97,7 @@ var/list/carried_boxes = list()
 	box.destination_tag = label
 	box.desc = "\[Destination: [label]\]"
 
-/data/cargo_box/proc/Check(structure/box/B, data/port/dest)
+/data/cargo_box/proc/Check(structure/lockable/box/B, data/port/dest)
 	if(B.destination_tag != dest.point.name) return 0
 	var/list/remaining_items = items.Copy()
 	var/matching_number = 0

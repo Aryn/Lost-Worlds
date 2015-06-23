@@ -4,6 +4,7 @@
 	var/equip_slot
 	var/respects_form = FALSE
 	var/equip_layer = 0
+	var/equip_offset_y = 0
 
 /item/proc/OnPickup(item_slot/slot)
 /item/proc/OnDrop(atom/newloc, character/user)

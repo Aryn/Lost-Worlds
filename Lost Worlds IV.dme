@@ -27,6 +27,7 @@
 #define FILE_DIR "Icons/Items/Cargo"
 #define FILE_DIR "Icons/Items/Clothes"
 #define FILE_DIR "Icons/Items/Clothes/Coats"
+#define FILE_DIR "Icons/Items/Clothes/Hats"
 #define FILE_DIR "Icons/Items/Lock"
 #define FILE_DIR "Icons/Items/Materials"
 #define FILE_DIR "Icons/Items/Medical"
@@ -96,7 +97,6 @@
 #include "_SIMBA\Lighting\Light.dm"
 #include "_SIMBA\Lighting\Lightpoint.dm"
 #include "_SIMBA\Tiles\SIMBA.Tile.dm"
-#include "Arca\Libs\Theodis-QuickSort.dm"
 #include "Code\_Enum\_Compile.dm"
 #include "Code\_Enum\_Game.dm"
 #include "Code\_Enum\_Layers.dm"
@@ -174,8 +174,10 @@
 #include "Lib\SD-Alert.dm"
 #include "Lib\SD-HSL.dm"
 #include "Lib\SDMath.dm"
+#include "Lib\Theodis-QuickSort.dm"
 #include "Lib\Stephen001\Event.dm"
 #include "Lib\Stephen001\EventScheduler.dm"
+#include "Maps\Test.Elaborate.dmm"
 #include "Maps\Test.New.dmm"
 // END_INCLUDE
 
