@@ -178,6 +178,5 @@
 #include "Lib\Stephen001\Event.dm"
 #include "Lib\Stephen001\EventScheduler.dm"
 #include "Maps\Test.Elaborate.dmm"
-#include "Maps\Test.New.dmm"
 // END_INCLUDE
 
