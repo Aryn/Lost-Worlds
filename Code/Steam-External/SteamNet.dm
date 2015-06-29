@@ -39,6 +39,7 @@ hook/game_start/proc/StartSteam()
 
 /steam_net
 	var/list/nodes = list() //The set of all pipes and machines in this network.
+	var/list/updating_nodes = list()
 	var/list/leaks
 	var/status = PIPE_NORMAL
 
@@ -58,6 +59,7 @@ hook/game_start/proc/StartSteam()
 		if(IS_VALID(equipment.net)) CRASH("Added equipment to net which already has a valid net. Use Merge() instead.")
 
 		nodes.Add(equipment)
+		if(istype(equipment,/structure/steam/node/updating)) updating_nodes.Add(equipment)
 		equipment.net = src
 
 		ChangePower(0, equipment.energy_delta)
@@ -68,6 +70,7 @@ hook/game_start/proc/StartSteam()
 		if(equipment.net != src) CRASH("Removed equipment from net it is not contained in.")
 
 		nodes.Remove(equipment)
+		if(istype(equipment,/structure/steam/node/updating)) updating_nodes.Remove(equipment)
 		equipment.net = null
 
 		ChangePower(equipment.energy_delta, 0)
@@ -109,5 +112,6 @@ hook/game_start/proc/StartSteam()
 			node.FindNet()
 
 	proc/update()
-		for(var/structure/steam/node/node in nodes)
+		if(status & PIPE_INVALID) return
+		for(var/structure/steam/node/updating/node in nodes)
 			node.NetUpdate()

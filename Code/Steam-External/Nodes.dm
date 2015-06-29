@@ -43,4 +43,5 @@
 		return TRUE
 
 	proc/NetChanged(steam_net/net)
-	proc/NetUpdate()
+
+/structure/steam/node/updating/proc/NetUpdate()

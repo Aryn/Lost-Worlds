@@ -5,5 +5,8 @@
 	icon_state = "wood"
 	name = "Wall"
 
+/tile/wall/half
+	icon_state = "wood - half"
+
 /tile/wall/metal
 	icon_state = "iron"
