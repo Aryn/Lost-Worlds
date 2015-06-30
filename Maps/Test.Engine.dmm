@@ -1,0 +1,85 @@
+"aa" = (/turf/sky,/area/outside)
+"ab" = (/structure/steam/node/pipe/left_aligned{tag = "icon-3"; icon_state = "3"},/structure/steam/node/pipe/coolant{tag = "icon-3"; icon_state = "3"},/turf/sky,/area/outside)
+"ac" = (/turf/mapping/supports,/area/outside)
+"ad" = (/structure/steam/node/pipe/left_aligned{tag = "icon-3"; icon_state = "3"},/structure/steam/node/pipe/coolant{tag = "icon-3"; icon_state = "3"},/turf/mapping/supports,/area/outside)
+"ae" = (/turf/mapping/wall/metal,/area)
+"af" = (/structure/lockable/door/metal,/turf/mapping/floor/metal,/area)
+"ag" = (/turf/mapping/floor/metal,/area)
+"ah" = (/structure/steam/node/pipe/left_aligned{tag = "icon-3"; icon_state = "3"},/structure/steam/node/pipe/coolant{tag = "icon-5"; icon_state = "5"},/structure/lamp{tag = "icon-Map (NORTH)"; icon_state = "Map"; dir = 1},/turf/mapping/floor/metal,/area)
+"ai" = (/structure/steam/node/pipe/coolant{tag = "icon-10"; icon_state = "10"},/turf/mapping/floor/metal,/area)
+"aj" = (/structure/steam/node/pipe/coolant{tag = "icon-6"; icon_state = "6"},/turf/mapping/floor/metal,/area)
+"ak" = (/structure/steam/node/pipe/left_aligned{tag = "icon-3"; icon_state = "3"},/structure/steam/node/pipe/coolant{tag = "icon-9"; icon_state = "9"},/structure/lamp{tag = "icon-Map (NORTH)"; icon_state = "Map"; dir = 1},/turf/mapping/floor/metal,/area)
+"al" = (/structure/steam/node/aligner{tag = "icon-left (NORTH)"; icon_state = "left"; dir = 1},/turf/mapping/floor/metal,/area)
+"am" = (/structure/steam/node/pipe/coolant{tag = "icon-3"; icon_state = "3"},/turf/mapping/floor/metal,/area)
+"an" = (/structure/lamp{tag = "icon-Map (WEST)"; icon_state = "Map"; dir = 8},/turf/mapping/floor/metal,/area)
+"ao" = (/structure/steam/node/pipe{tag = "icon-6"; icon_state = "6"},/turf/mapping/floor/metal,/area)
+"ap" = (/structure/steam/node/pipe{tag = "icon-12"; icon_state = "12"},/turf/mapping/floor/metal,/area)
+"aq" = (/structure/steam/node/pipe{tag = "icon-11"; icon_state = "11"},/turf/mapping/floor/metal,/area)
+"ar" = (/structure/steam/node/pipe{tag = "icon-7"; icon_state = "7"},/turf/mapping/floor/metal,/area)
+"as" = (/structure/steam/node/pipe{tag = "icon-10"; icon_state = "10"},/turf/mapping/floor/metal,/area)
+"at" = (/structure/lamp{tag = "icon-Map (EAST)"; icon_state = "Map"; dir = 4},/turf/mapping/floor/metal,/area)
+"au" = (/structure/steam/node/pipe{tag = "icon-3"; icon_state = "3"},/turf/mapping/floor/metal,/area)
+"av" = (/structure/steam/node/pipe/coolant{tag = "icon-12"; icon_state = "12"},/structure/steam/node/pipe{tag = "icon-3"; icon_state = "3"},/turf/mapping/floor/metal,/area)
+"aw" = (/structure/steam/node/pipe/coolant{tag = "icon-11"; icon_state = "11"},/turf/mapping/floor/metal,/area)
+"ax" = (/structure/cosmetic/tank{tag = "icon-left 0,1"; icon_state = "left 0,1"},/turf/mapping/floor/metal,/area)
+"ay" = (/structure/cosmetic/tank{tag = "icon-left 1,1"; icon_state = "left 1,1"},/turf/mapping/floor/metal,/area)
+"az" = (/structure/steam/node/pipe/coolant{tag = "icon-7"; icon_state = "7"},/turf/mapping/floor/metal,/area)
+"aA" = (/structure/steam/node/pipe/left_aligned{tag = "icon-5"; icon_state = "5"},/turf/mapping/floor/metal,/area)
+"aB" = (/structure/steam/node/pipe/left_aligned{tag = "icon-12"; icon_state = "12"},/structure/steam/node/pipe{tag = "icon-6"; icon_state = "6"},/turf/mapping/floor/metal,/area)
+"aC" = (/structure/steam/node/pipe/left_aligned{tag = "icon-12"; icon_state = "12"},/structure/steam/node/pipe{tag = "icon-12"; icon_state = "12"},/turf/mapping/floor/metal,/area)
+"aD" = (/structure/steam/node/pipe/left_aligned{tag = "icon-12"; icon_state = "12"},/structure/steam/node/pipe{tag = "icon-12"; icon_state = "12"},/structure/lamp{tag = "icon-Map (NORTH)"; icon_state = "Map"; dir = 1},/turf/mapping/floor/metal,/area)
+"aE" = (/structure/steam/node/pipe/left_aligned{tag = "icon-14"; icon_state = "14"},/structure/steam/node/pipe{tag = "icon-12"; icon_state = "12"},/turf/mapping/floor/metal,/area)
+"aF" = (/structure/steam/node/pipe/left_aligned{tag = "icon-9"; icon_state = "9"},/structure/steam/node/pipe{tag = "icon-9"; icon_state = "9"},/turf/mapping/floor/metal,/area)
+"aG" = (/structure/steam/boiler_tank{tag = "icon-tank (NORTH)"; icon_state = "tank"; dir = 1},/turf/mapping/floor/metal,/area)
+"aH" = (/structure/steam/node/pipe/coolant{tag = "icon-9"; icon_state = "9"},/turf/mapping/floor/metal,/area)
+"aI" = (/structure/steam/node/tank/coolant,/turf/mapping/floor/metal,/area)
+"aJ" = (/structure/cosmetic/tank,/turf/mapping/floor/metal,/area)
+"aK" = (/structure/marker,/turf/mapping/floor/metal,/area)
+"aL" = (/structure/cosmetic/tank{tag = "icon-right 0,0"; icon_state = "right 0,0"},/turf/mapping/floor/metal,/area)
+"aM" = (/structure/steam/node/tank/coolant{icon_state = "right 1,0"},/turf/mapping/floor/metal,/area)
+"aN" = (/structure/steam/node/pipe/coolant{tag = "icon-5"; icon_state = "5"},/turf/mapping/floor/metal,/area)
+"aO" = (/structure/steam/node/pipe{tag = "icon-5"; icon_state = "5"},/turf/mapping/floor/metal,/area)
+"aP" = (/structure/steam/node/test/generator{tag = "icon-outlet (NORTH)"; icon_state = "outlet"; dir = 1},/turf/mapping/floor/metal,/area)
+"aQ" = (/structure/steam/node/pipe/fire{tag = "icon-12"; icon_state = "12"},/turf/mapping/floor/metal,/area)
+"aR" = (/structure/steam/node/pipe/fire{tag = "icon-13"; icon_state = "13"},/turf/mapping/floor/metal,/area)
+"aS" = (/structure/steam/node/pipe/fire{tag = "icon-14"; icon_state = "14"},/turf/mapping/floor/metal,/area)
+"aT" = (/structure/steam/node/pipe/fire{tag = "icon-9"; icon_state = "9"},/turf/mapping/floor/metal,/area)
+"aU" = (/structure/cosmetic/tank{tag = "icon-right 0,1"; icon_state = "right 0,1"},/turf/mapping/floor/metal,/area)
+"aV" = (/structure/cosmetic/tank{tag = "icon-right 1,1"; icon_state = "right 1,1"},/turf/mapping/floor/metal,/area)
+"aW" = (/structure/steam/node/pipe/fire{tag = "icon-5"; icon_state = "5"},/turf/mapping/floor/metal,/area)
+"aX" = (/structure/steam/node/tank/fuel{icon_state = "right 1,0"},/turf/mapping/floor/metal,/area)
+"aY" = (/structure/steam/node/tank/fuel,/turf/mapping/floor/metal,/area)
+"aZ" = (/structure/steam/node/pipe/fuel{tag = "icon-12"; icon_state = "12"},/structure/steam/node/pipe/coolant{tag = "icon-3"; icon_state = "3"},/turf/mapping/floor/metal,/area)
+"ba" = (/structure/steam/node/pipe/fuel{tag = "icon-12"; icon_state = "12"},/turf/mapping/floor/metal,/area)
+"bb" = (/structure/steam/node/pipe/fuel{tag = "icon-9"; icon_state = "9"},/turf/mapping/floor/metal,/area)
+"bc" = (/structure/steam/node/pipe/fuel{tag = "icon-5"; icon_state = "5"},/turf/mapping/floor/metal,/area)
+"bd" = (/structure/steam/engine/turbine,/turf/mapping/floor/metal,/area)
+"be" = (/structure/steam/node/pipe/coolant{tag = "icon-12"; icon_state = "12"},/turf/mapping/floor/metal,/area)
+"bf" = (/structure/steam/node/pipe/coolant{tag = "icon-13"; icon_state = "13"},/turf/mapping/floor/metal,/area)
+"bg" = (/structure/steam/node/pipe{tag = "icon-13"; icon_state = "13"},/turf/mapping/floor/metal,/area)
+"bh" = (/structure/steam/node/pipe{tag = "icon-9"; icon_state = "9"},/turf/mapping/floor/metal,/area)
+"bi" = (/turf/mapping/frame/metal,/area)
+"bj" = (/turf/mapping/window/iron,/area)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaacadacacacacacacacadacaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaeaeaeaeaeaeaeaeaeafaeaeaeaeaeaeaeaeaeaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaeagagagagahaiagagagagagajakagagagagaeaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaeagagagagalamagagagagagamalagagagagaeaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaeanagaoapaqamagagagagagamarapasagataeaaaaaaaaaaaaaaaa
+aeaeaeaeaeaeaeaeaeagagauajavawaxayagaxayazavaiauagagaeaeaeaeaeaeaeaeae
+aeaAaBaCaDaEaCaFaeagagaGaHaGawaIaJaKaLaMazaGaNaGagagaeagagagagagagagae
+aeagaOasagalagagagagagaPagaPazaHagagagaNawaPagaPagagagagagagagagagagae
+aeagagauagauagagaeaQaQaRaSaTamaUaVagaUaVamaWaSaRaQaQaeagagagagagagagae
+aeanagauagauagataeagagagagagamaLaXagaYaJamagagagagagaeagagagagagagagae
+aeagagauagagagagaeanajagagagaZbabbagbcbaaZagagagaiataeagagagagagagagae
+aeaxayauagaxayagaeagambdagagamagagagagagambdagagamagaeagagagagagagagae
+aeaLaXauagaIaJagaebebfbebebeaHagagagagagaNbebebebfbeaeagagagagagagagae
+aeagaObgapbhagagagagagagagagagagagagagagagagagagagagagagagagagagagagae
+aeaebibibibibiaeaeagagagagagagagagagagagagagagagagagaeaebibibibibiaeae
+aaaaaaaaaaaaaaaaaeaeaebjaeaebjaeaebjaeaebjaeaebjaeaeaeaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaacacacacacacacacacacacacacacacacacaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+"}

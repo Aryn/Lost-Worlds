@@ -122,6 +122,7 @@ proc/EndWeather(type, severity)
 			ChangeWeather(/weather/lightning/rain, weather.severity - severity)
 
 proc/TurbulenceLoop()
+	if(!game.map.ship) return
 	if(prob(weather.severity * game.map.ship.Instability() / 5))
 		Turbulence()
 

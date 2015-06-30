@@ -10,6 +10,12 @@ structure/steam/node/pipe
 
 	SteamSetup()
 		pipe_dirs = text2num(icon_state)
+		if(color)
+			var/image/img = image('Icons/Ship/Equipment/Steam/Pipe-Band.dmi')
+			img.color = color
+			overlays += img
+			color = null
+			icon = 'Icons/Ship/Equipment/Steam/Pipe.dmi'
 
 	proc/Check()
 		usr << "Pipe Dirs: [pipe_dirs]"
@@ -19,7 +25,33 @@ structure/steam/node/pipe
 			return
 		else
 			usr << "[(net.status & PIPE_INVALID) ? "\red" : "\green"][net.nodes.len] nodes, [net.leaks ? net.leaks.len : 0] leaks."
-			usr << "Differential: [net.Differential()] units"
+			for(var/fluid_name in net.fluids)
+				var/steam_fluid/fluid = net.fluids[fluid_name]
+				usr << "[fluid_name] Differential: [fluid.Differential()] units"
+
+	coolant
+		icon = 'Icons/Ship/Equipment/Steam/Pipe-Map.dmi'
+		color = "#00AAAA"
+	fuel
+		icon = 'Icons/Ship/Equipment/Steam/Pipe-Map.dmi'
+		color = "#AAAA00"
+	fire
+		icon = 'Icons/Ship/Equipment/Steam/Pipe-Map.dmi'
+		color = "#AA0000"
+
+	left_aligned
+		icon = 'Icons/Ship/Equipment/Steam/Pipe-E.dmi'
+		alignment = -1
+
+structure/steam/node/aligner
+	icon = 'Icons/Ship/Equipment/Steam/Aligner.dmi'
+	icon_state = "left"
+	alignment = -1
+	SteamSetup()
+		pipe_dirs = dir | turn(dir,180)
+
+	Aligned(structure/steam/node/node)
+		return !node.alignment || node.alignment == alignment
 
 structure/steam/valve
 	var/is_open = 1

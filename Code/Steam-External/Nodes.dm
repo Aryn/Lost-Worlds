@@ -3,6 +3,7 @@
 	var/sealed_dirs = 0 //Direction flags indicating which pipe directions allow no flow, but do not leak.
 	var/energy_delta = 0 //The amount of energy added to or drained from the system at rest.
 	var/leak_dirs = 0
+	var/alignment
 
 	var/steam_net/net
 
@@ -38,9 +39,11 @@
 		if(!IS_VALID(net))
 			new/steam_net(src)
 
+	proc/Aligned(structure/steam/node/other)
+		return alignment == other.alignment
+
 	proc/CanConnect(structure/steam/node/other, direction)
-		if(pipe_dirs & direction == 0) return FALSE
-		return TRUE
+		return (Aligned(other) || other.Aligned(src)) && (pipe_dirs & direction)
 
 	proc/NetChanged(steam_net/net)
 

@@ -37,20 +37,48 @@ hook/game_start/proc/StartSteam()
 		if(net.status == PIPE_NORMAL) updates.Add(net)
 		net.status |= status
 
+/steam_fluid
+	var/name
+	var/delta_in
+	var/delta_out
+
+	proc/Differential(exclude = 0)
+		return delta_in - (delta_out - exclude)
+
+	proc/ChangeDelta(net, old_value, new_value)
+		if(old_value > 0) delta_in -= old_value
+		else delta_out -= -old_value
+
+		if(new_value > 0) delta_in += new_value
+		else delta_out += -new_value
+
+		steam_controller.Mark(net, PIPE_NEED_UPDATE)
+
+	New(name)
+		src.name = name
+
 /steam_net
 	var/list/nodes = list() //The set of all pipes and machines in this network.
 	var/list/updating_nodes = list()
 	var/list/leaks
 	var/status = PIPE_NORMAL
 
-	var/delta_in = 0
-	var/delta_out = 0
+	var/list/fluids = list()
+	var/steam_fluid/steam = new("Steam")
+
+	//var/delta_in = 0
+	//var/delta_out = 0
 
 	New(structure/steam/init)
 		if(init) Add(init)
+		fluids["Steam"] = steam
 
-	proc/Differential(exclude = 0)
-		return delta_in - (delta_out - exclude)
+	proc/ChangeFluid(name, old_value, new_value)
+		var/steam_fluid/fluid = fluids[name]
+		if(!fluid)
+			fluid = new(name)
+			fluids[name] = fluid
+		fluid.ChangeDelta(src,old_value,new_value)
 
 	proc/Add(structure/steam/node/equipment)
 		if(isturf(equipment)) return addLeak(equipment)
@@ -60,9 +88,10 @@ hook/game_start/proc/StartSteam()
 
 		nodes.Add(equipment)
 		if(istype(equipment,/structure/steam/node/updating)) updating_nodes.Add(equipment)
+		equipment.NetChanged(src)
 		equipment.net = src
 
-		ChangePower(0, equipment.energy_delta)
+		steam.ChangeDelta(src, 0, equipment.energy_delta)
 
 	proc/Remove(structure/steam/node/equipment)
 		if(isturf(equipment)) return removeLeak(equipment)
@@ -71,18 +100,10 @@ hook/game_start/proc/StartSteam()
 
 		nodes.Remove(equipment)
 		if(istype(equipment,/structure/steam/node/updating)) updating_nodes.Remove(equipment)
+		equipment.NetChanged(null)
 		equipment.net = null
 
-		ChangePower(equipment.energy_delta, 0)
-
-	proc/ChangePower(old_power, new_power)
-		if(old_power > 0) delta_in -= old_power
-		else delta_out -= -old_power
-
-		if(new_power > 0) delta_in += new_power
-		else delta_out += -new_power
-
-		steam_controller.Mark(src, PIPE_NEED_UPDATE)
+		steam.ChangeDelta(src, equipment.energy_delta, 0)
 
 	proc/Merge(steam_net/other)
 		if(status & PIPE_INVALID) CRASH("Cannot merge PIPE_INVALID net.")
